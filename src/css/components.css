@@ -36,14 +36,16 @@ ol {
 }
 .container {
   width: 100%;
-  max-width: 373px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0px auto;
 }
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 734px;
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   body {
     font-size: 18px;
@@ -51,41 +53,8 @@ ol {
 }
 @media screen and (min-width: 1440px) {
   .container {
-    max-width: 1350px;
-  }
-}
-
-.shadow-drop-2-center:is(:hover, :focus) {
-  -webkit-animation: shadow-drop-2-center 0.4s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: shadow-drop-2-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@-webkit-keyframes shadow-drop-2-center {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-  100% {
-    -webkit-transform: translateZ(50px);
-    transform: translateZ(50px);
-    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-  }
-}
-@keyframes shadow-drop-2-center {
-  0% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-  100% {
-    -webkit-transform: translateZ(50px);
-    transform: translateZ(50px);
-    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    max-width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
