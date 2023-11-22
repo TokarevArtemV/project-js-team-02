@@ -11,6 +11,9 @@ ol {
   margin-bottom: 0;
   padding-left: 0;
 }
+button {
+  border: none;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -23,6 +26,7 @@ ol {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 .list {
   list-style-type: none;
 }
