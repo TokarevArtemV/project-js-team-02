@@ -19,7 +19,6 @@
 }
 
 .logo-box {
-    position: relative;
     height: 32px;
 }
 
@@ -66,6 +65,7 @@
 }
 
 .btn-home-text {
+    text-transform: capitalize;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -81,7 +81,7 @@
     }
 
     .logo:is(:hover, :focus) .logo-text {
-        color: var(--olive-hover-color);
+        text-shadow: 1px 0.5px 1px #586f1fd3;
     }
 
     .heder-cart-link:is(:hover, :focus) {
@@ -90,6 +90,10 @@
 
     .btn-home:is(:hover, :focus) {
         background-color: var(--olive-hover-color);
+    }
+
+    .btn-home:is(:hover, :focus) .btn-home-text {
+        text-shadow: 1px 0.5px 1px #2e2e2ed3;
     }
 
     /* hover */
@@ -106,12 +110,14 @@
     .logo-img {
         height: 32px;
         width: 32px;
+        transition: background-color var(--default-tranzition);
     }
 
     .logo-text {
         font-size: 24px;
         line-height: 1;
         letter-spacing: -0.48px;
+        transition: text-shadow var(--default-tranzition);
     }
 
     .heder-cart-text {
@@ -130,20 +136,17 @@
         width: 104px;
         height: 48px;
         margin-right: 24px;
+        transition: background-color var(--default-tranzition);
     }
 
     .heder-cart-link {
         margin-right: 14px;
+        transition: background-color var(--default-tranzition);
     }
 
     .btn-home-text {
         font-size: 18px;
         line-height: 1.3;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .header {
-        padding: 0 100px 0 100px;
+        transition: text-shadow var(--default-tranzition);
     }
 }
