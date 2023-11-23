@@ -14,7 +14,10 @@
 @import url('./section-home-page.css');
 @import url('./filters.css');
 @import url('./products-list.css');
+@import url('./pagination.css');
 @import url('./popular-products.css');
 @import url('./discount-products.css');
 @import url('./modal-product-card.css');
 @import url('./footer.css');
+
+@import url('./cart.css');

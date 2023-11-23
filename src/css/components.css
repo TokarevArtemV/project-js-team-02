@@ -26,7 +26,11 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .list {
   list-style-type: none;
 }
