@@ -53,10 +53,10 @@
   margin-left: 227px;
   flex-shrink: 0;
 }
-@media screen and (max-width: 375px) {
-  .container {
+@media screen and (max-width: 767px) {
+  /* .container {
     max-width: 100%;
-  }
+  } */
   .hero__image-main {
     max-width: 100%;
     width: 100%;
@@ -64,6 +64,7 @@
     align-items: center;
   }
 }
+
 @media screen and (min-width: 768px) {
   .hero {
     padding-top: 116px;
@@ -94,7 +95,8 @@
   .hero__descr {
     font-size: 18px;
     line-height: 1.3;
-    width: 492px;
+    width: 100%;
+    padding: 0 90px;
     margin-bottom: 40px;
   }
   .hero__image-main {
@@ -127,7 +129,8 @@
     width: 1042px;
   }
   .hero__descr {
-    width: 492px;
+    width: 100%;
+    padding: 0 360px;
   }
   .hero__image-main {
     border-radius: 60px;
