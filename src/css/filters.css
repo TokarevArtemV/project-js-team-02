@@ -59,13 +59,10 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
   body {
     font-size: 18px;
-  }
-  .search-input {
   }
 }
