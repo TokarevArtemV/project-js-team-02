@@ -1,0 +1,149 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+}
+
+.logo-svg {
+    width: 16px;
+    height: 16px;
+}
+
+.logo-img {
+    border-radius: 50px;
+    background-color: var(--olive-color);
+    height: 28px;
+    width: 28px;
+    fill: var(--background-color);
+}
+
+.logo-box {
+    position: relative;
+    height: 32px;
+}
+
+.logo-text {
+    text-transform: capitalize;
+    color: var(--black-color);
+    font-family: Quincy CF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.36px;
+    margin-left: 8px;
+
+}
+
+.heder-cart-text {
+    display: none;
+}
+
+.btn-home {
+    width: 77px;
+    height: 38px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--olive-color);
+    color: var(--background-color);
+    margin-right: 6px;
+}
+
+.heder-cart-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50px;
+    background-color: var(--olive-color);
+
+}
+
+.heder-cart {
+    fill: var(--background-color);
+}
+
+.btn-home-text {
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+
+    /* hover */
+    .logo:is(:hover, :focus) .logo-img {
+        background-color: var(--olive-hover-color);
+    }
+
+    .logo:is(:hover, :focus) .logo-text {
+        color: var(--olive-hover-color);
+    }
+
+    .heder-cart-link:is(:hover, :focus) {
+        background-color: var(--olive-hover-color);
+    }
+
+    .btn-home:is(:hover, :focus) {
+        background-color: var(--olive-hover-color);
+    }
+
+    /* hover */
+
+    .nav {
+        padding-top: 24px;
+    }
+
+    .logo-svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .logo-img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.48px;
+    }
+
+    .heder-cart-text {
+        display: block;
+        text-transform: uppercase;
+        color: var(--black-color);
+        font-family: Neue Montreal;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.3;
+        text-transform: uppercase;
+    }
+
+    .btn-home {
+        width: 104px;
+        height: 48px;
+        margin-right: 24px;
+    }
+
+    .heder-cart-link {
+        margin-right: 14px;
+    }
+
+    .btn-home-text {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .header {
+        padding: 0 100px 0 100px;
+    }
+}
