@@ -1,0 +1,11 @@
+:root {
+  --background-color: #e8e8e2;
+  --white-color: #fafafa;
+  --gray-color: #a3a3a3;
+  --black-color: #010101;
+  --olive-color: #6d8434;
+  --olive-hover-color: #586f1f;
+  --orange-color: #fdc152;
+
+  --default-tranzition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
