@@ -1,1 +1,35 @@
-
+<section class="hero">
+  <div class="container hero-container">
+    <div class="hero__main">
+      <h1 class="hero__header">Welcome to the <span> Food </span> Boutique!</h1>
+      <p class="hero__descr">
+        With Food Boutique, you're not just subscribing to food, you're signing
+        up for a fresher, fitter, and happier you.
+      </p>
+    </div>
+    <div class="hero__image">
+      <picture>
+        <source
+          srcset="./images/hero-desktop.jpg 1x, ./images/hero-desktop-2x.jpg 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="./images/hero-tablet.jpg 1x, ./images/hero-tablet-2x.jpg 2x"
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="./images/hero-mobile.jpg 1x, ./images/hero-mobile-2x.jpg 2x"
+          media="(max-width: 375px)"
+        />
+        <img
+          class="hero__image-main"
+          src="./images/hero-mobile.jpg"
+          alt="Girl with vegetable"
+        />
+      </picture>
+      <svg class="hero-icon" width="100px" height="100px">
+        <use xlink:href="images/icons/icons.svg#icon-organic-food"></use>
+      </svg>
+    </div>
+  </div>
+</section>
