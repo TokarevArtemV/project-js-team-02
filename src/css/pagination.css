@@ -1,0 +1,69 @@
+.pag-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  color: #a3a3a3;
+  background-color: transparent;
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.42em;
+  top: 50%;
+}
+
+.pag-btn {
+  background-color: var(--white-color);
+  position: relative;
+}
+
+.pag-item:hover {
+  background-color: var(--olive-color);
+  color: var(--white-color);
+}
+
+.pag-item:hover .arrow-icon {
+  fill: #fafafa;
+}
+.pag-active {
+  color: white;
+  background-color: var(--olive-color);
+  border-radius: 50%;
+}
+
+.arrow-icon {
+  fill: #a3a3a3;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+}
+
+.pag-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.pag-ribbon {
+  display: flex;
+  max-width: 334px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .pag-wrapper {
+    gap: 8px;
+  }
+
+  .pag-ribbon {
+    max-width: 472px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pag-ribbon {
+    max-width: 472px;
+  }
+}
