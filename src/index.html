@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./images/icons/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FoodBoutique</title>
     <link
@@ -19,11 +19,19 @@
     <load ="partials/header.html" />
     <main>
       <load ="partials/hero.html" />
-      <section id="about-us" class="section-home-page container js-home-page">
+      <section id="home-page" class="section-home-page container js-home-page">
         <load ="partials/filters.html" />
-        <load ="partials/products-list.html" />
-        <load ="partials/popular-products.html" />
-        <load ="partials/discount-products.html" />
+
+        <div class="products-container">
+          <div class="products-wraper">
+            <load ="partials/products-list.html" />
+            <load ="partials/pagination.html" />
+          </div>
+          <div class="popular-products-wraper">
+            <load ="partials/popular-products.html" />
+            <load ="partials/discount-products.html" />
+          </div>
+        </div>
       </section>
       <load ="partials/modal-product-card.html" />
     </main>
