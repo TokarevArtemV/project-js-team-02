@@ -58,7 +58,6 @@ export class GetProduct {
       const url = '/products' + '/' + productId;
       const response = await axios.get(url);
       if (response.status === 200) {
-        this.totalPages = response.data.totalPages;
         return response.data;
       }
       return Promise.reject(response.status);
