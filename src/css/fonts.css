@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal Regular'), local('Neue-Montreal-Regular'),
+    url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
+    url('../fonts/NeueMontreal-Regular.woff') format('woff'),
+    url('../fonts/NeueMontreal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal Medium'), local('Neue-Montreal-Medium'),
+    url('../fonts/NeueMontreal-Medium.woff2') format('woff2'),
+    url('../fonts/NeueMontreal-Medium.woff') format('woff'),
+    url('../fonts/NeueMontreal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quincy CF';
+  src: url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.eot');
+  src: url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.woff2') format('woff2'),
+    url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.woff') format('woff'),
+    url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
