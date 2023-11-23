@@ -1,0 +1,107 @@
+.discount-products-container {}
+
+.products-title {
+    color: var(--black-color);
+        font-family: Neue Montreal;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.16;
+}
+
+.discount-products-list {
+   
+}
+
+.discount-products-item {
+    padding: 16px 16px;
+    background-color: var(--white-color);
+    width: 275px;
+    height: 232px;
+    border-radius: 15px;
+}
+
+.card-image-discount {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 243px;
+    height: 150px;
+    background-color: #E8E8E2;
+    border-radius: 10px;
+    margin-bottom: 21px;
+}
+.icon-discount{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-35%) translateX(10%);
+}
+.discount-card-text {
+    color: var(--black-color);
+    font-family: Neue Montreal;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+}
+
+.price{
+    margin-left: 76px;
+}
+
+.discount-card-info{
+    display: flex;
+    position: relative;
+
+}
+
+
+.button-shopping-discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-15%) translateX(10%);
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--olive-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.button-shopping-discount:hover,
+.button-shopping-discount:focus{
+    background-color: var(--olive-hover-color);
+}
+
+.icon-shopping-discount {
+    fill: var(--background-color);
+}
+
+
+
+@media screen and (min-width: 768px){
+.products-title{
+    font-size: 28px;
+    line-height: 1.14;
+}
+
+.discount-card-text{
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.price {
+    margin-left: 62px;
+}
+
+
+}
+
+
+@media screen and (min-width: 1440px){
+
+}
