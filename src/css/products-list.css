@@ -66,21 +66,13 @@
     cursor: pointer;
 }
 
-.button-shopping:hover {
-    background-color: var(--olive-hover-color);
-}
-
-.button-shopping:focus {
-    background-color: var(--olive-hover-color);
-}
-
 .icon-shopping {
     fill: var(--background-color);
 }
 
 @media screen and (min-width: 768px) {
     .product-card {
-        max-width: 336px;
+        width: calc ((100%-32px)/2);
     }
 
     .image-product {
@@ -92,11 +84,18 @@
     .price-product {
         line-height: 1.2;
     }
+    .button-shopping:hover {
+        background-color: var(--olive-hover-color);
+    }
+    
+    .button-shopping:focus {
+        background-color: var(--olive-hover-color);
+    }
 }
 
 @media screen and (min-width: 1440px) {
     .product-card {
-        max-width: 295px;
+        width: calc((100%-2*20px)/3);
     }
     .image-product {
         padding: 19px 58px;
