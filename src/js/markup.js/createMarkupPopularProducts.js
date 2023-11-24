@@ -1,10 +1,5 @@
-import { GetProduct } from "../products-api/api";
 const productsCards = document.querySelector('.popular-products-list')
-
-const getProduct = new GetProduct()
-
-async function createMarkupPopularProducts() {
-    const objPopular = await getProduct.getPopular().then(data => {
+export function createMarkupPopularProducts() {
         const markup = data.map(({ img, name, category, size, popularity }) => {
             return `<li class="popular-products-item">
           <div class="card-image">
@@ -13,7 +8,7 @@ async function createMarkupPopularProducts() {
           <div class="card-info">
             <h3 class="products-card-title">${name}</h3>
             <p class="popular-cards-text category">
-              Category: <span>${category}</span>
+              Category: <span>${category.replaceAll('_', ' ')}</span>
             </p>
             <div class="text-box">
               <p class="popular-cards-text">Size: <span>${size}</span></p>
@@ -28,10 +23,9 @@ async function createMarkupPopularProducts() {
             </svg>
           </button>
         </li>`
-        }).join('').replaceAll('_', ' ');
+        }).join('');
         productsCards.innerHTML = markup;
-  });
+  };
   
-}
 
-createMarkupPopularProducts()
+
