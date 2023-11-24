@@ -132,7 +132,7 @@
 
 .add-to-cart-btn:hover,
 .add-to-cart-btn:focus{
-    background-color: var(----olive-hover-color);
+    background-color: var(--olive-hover-color);
     transition: background-color var(--default-tranzition);
 }
 
