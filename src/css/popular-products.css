@@ -63,7 +63,7 @@
     line-height: 1.66;
 }
 
-span{
+.popular-cards-text span{
        color: var(--black-color);
 }
 
