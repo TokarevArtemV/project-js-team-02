@@ -20,6 +20,7 @@
   border-radius: 30px;
   border: 1px solid var(--olive-color);
   outline: none;
+  background-color: var(--background-color);
 }
 .home_search-input::placeholder {
   color: var(--black-color);
@@ -30,10 +31,6 @@
 }
 .home_search-input:placeholder-shown {
   border: 1px solid #0101014d;
-}
-
-.home_search-input:active {
-  border-color: var(--olive-color);
 }
 
 .home_search-button {
@@ -59,6 +56,71 @@
   width: 335px;
 }
 
+div.ss-main {
+  align-items: center;
+  color: #010101;
+  padding: 14px 20px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+  border-radius: 30px;
+  background-color: var(--background-color);
+}
+div.home_categorias-sort {
+  background-color: #fff;
+}
+div.ss-main:focus {
+  box-shadow: none;
+}
+div.ss-main.ss-open-below {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+div.ss-main .ss-values .ss-placeholder {
+  line-height: 1.28em;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--black-color);
+  padding: 0;
+}
+div.ss-main .ss-arrow {
+  margin-top: 2px;
+}
+div.ss-content.ss-open-below {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 14px 20px;
+  /* border: none; */
+}
+div.ss-content .ss-list .ss-option {
+  color: rgba(1, 1, 1, 0.5);
+  font-size: 14px;
+  line-height: 1.28em;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+}
+div.ss-content .ss-list .ss-option:not(:last-child) {
+  padding-bottom: 8px;
+}
+div.ss-content .ss-list .ss-option:hover {
+  color: var(--black-color);
+  background-color: #fff;
+}
+div.ss-content.ss-list .ss-option .ss-search-highlight {
+  background-color: no;
+}
+div.ss-content.ss-open-above {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 14px 20px;
+}
+div.ss-main.ss-open-above {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
 @media screen and (min-width: 768px) {
   .home_form {
     display: flex;
@@ -76,5 +138,13 @@
   }
   .home_select-sort {
     width: 200px;
+  }
+  div.ss-main .ss-values .ss-placeholder {
+    font-size: 18px;
+    line-height: 1.33em;
+  }
+  div.ss-content .ss-list .ss-option {
+    font-size: 18px;
+    line-height: 1.33em;
   }
 }
