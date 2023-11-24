@@ -1,5 +1,3 @@
-import '../node_modules/slim-select/dist/slimselect.css';
-
 import SlimSelect from 'slim-select';
 
 new SlimSelect({
