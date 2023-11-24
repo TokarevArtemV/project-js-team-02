@@ -1,7 +1,7 @@
-const productsCards = document.querySelector('.popular-products-list')
-export function createMarkupPopularProducts() {
-        const markup = data.map(({ img, name, category, size, popularity }) => {
-            return `<li class="popular-products-item">
+export function createMarkupPopularProducts(data) {
+  const markup = data
+    .map(({ img, name, category, size, popularity }) => {
+      return `<li class="popular-products-item">
           <div class="card-image">
             <img src="${img}" alt="${name}" />
           </div>
@@ -22,10 +22,8 @@ export function createMarkupPopularProducts() {
               <use href="./images/icons/icons.svg#icon-shopping-cart"></use>
             </svg>
           </button>
-        </li>`
-        }).join('');
-        productsCards.innerHTML = markup;
-  };
-  
-
-
+        </li>`;
+    })
+    .join('');
+  return markup;
+}
