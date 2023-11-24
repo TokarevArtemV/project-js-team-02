@@ -10,8 +10,11 @@
     line-height: 1.16;
 }
 
-/* .popular-products-list {
-} */
+.popular-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
 
 
 
