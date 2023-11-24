@@ -1,1 +1,1 @@
-
+import './js/subscription.js';

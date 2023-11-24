@@ -9,7 +9,7 @@
 .footer {
   background-color: var(--olive-color);
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .footer-logo-text-container {
@@ -80,7 +80,7 @@
   background-color: transparent;
   width: 40px;
   height: 40px;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--default-tranzition);
 }
 
 .footer-text-box {
@@ -131,11 +131,15 @@
   border: 1px solid #e8e8e2;
   background-color: transparent;
   color: var(--background-color);
-  font-family: Neue Montreal;
+  /* font-family: 'Neue Montreal', sans-serif; */
   font-size: 14px;
   line-height: 1.28;
   outline: none;
 }
+
+/* .footer-input:active {
+  background-color: transparent;
+} */
 
 .footer-form-btn {
   display: flex;
@@ -148,7 +152,7 @@
   border-radius: 30px;
   background: #e8e8e2;
   color: #010101;
-  font-family: 'Neue Montreal';
+  /* font-family: 'Neue Montreal'; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.28;
@@ -161,7 +165,6 @@
 .footer-rights-policy-terms {
   color: #e8e8e2;
   font-size: 14px;
-  font-style: normal;
   line-height: 1.28;
 }
 
@@ -175,6 +178,30 @@
 
 /* -------------------------------TABLET  */
 @media screen and (min-width: 768px) {
+  /* .footer-rights-policy-terms a {
+    color: rgba(232, 232, 226, 0.3);
+    text-decoration: none;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    display: inline-block;
+  }
+  .footer-rights-policy-terms a:hover {
+    color: rgba(218, 218, 14, 0.621);
+    text-decoration: none;
+  }
+  .footer-rights-policy-terms a:after {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 0%;
+    background-color: #e8e8e2;
+    transition: width 0.4s ease-in-out;
+  }
+  .footer-rights-policy-terms a:hover:after,
+  .footer-rights-policy-terms a:focus:after {
+    width: 100%;
+  } */
+
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -247,20 +274,56 @@
 
   .footer-form-btn:hover {
     color: var(--olive-color);
-    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--default-tranzition);
   }
+
+  .footer-rights-policy-terms a {
+    transition: color var(--default-tranzition);
+  }
+
+  .footer-logo-link {
+    transition: color var(--default-tranzition);
+  }
+
+  .footer-rights-policy-terms a:hover {
+    color: var(--orange-color);
+    /* color: var(--black-color); */
+  }
+
+  /* .footer-logo-link:hover */
+
+  .footer-policy {
+    padding: 10px;
+    transition: border-bottom var(--default-tranzition);
+  }
+
+  /* .footer-policy:hover,
+  .footer-terms:hover {
+    border-bottom: 1px solid var(--background-color);
+    border-width: 100%;
+  } */
 
   .footer-rights-policy-terms {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .footer-policy {
+    padding: 10px 0;
     margin-right: 8px;
+    transition: border var(--default-tranzition);
+  }
+
+  .footer-terms {
+    padding: 10px 0;
+    transition: border var(--default-tranzition);
+    margin-left: 8px;
   }
 
   .footer-rights {
     margin-bottom: 0;
+    /* padding: 10px 0; */
   }
 
   .socials-link {
@@ -310,3 +373,44 @@
     margin: 0;
   }
 }
+input:-webkit-autofill::first-line,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: 1px solid var(--background-color);
+  -webkit-text-fill-color: var(--background-color);
+  -webkit-box-shadow: 0 0 0px 30px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--background-color);
+  font-family: 'Neue Montreal', sans-serif !important;
+  /* font-size: 16px;
+  line-height: 1.5;
+  line-height: 1.333; */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+/* pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" */
+
+/* pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" */
+
+.footer-form-btn:disabled:hover,
+.footer-form-btn:disabled {
+  /* background-color: rgba(232, 232, 226, 0.2); */
+  cursor: not-allowed;
+  color: var(--black-color);
+}
+
+/* input:invalid:not(:placeholder-shown) {
+  border: 1px solid red;
+  outline: transparent;
+  color: red;
+}
+input:valid:not(:placeholder-shown) {
+  border: 1px solid green;
+  outline: transparent;
+  color: green;
+} */
+
+/* зробити label текст  html */
