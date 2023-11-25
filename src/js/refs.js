@@ -7,4 +7,6 @@ export const refs = {
   footerModalBtnCloseEl: document.querySelector('[ data-modal-close]'),
   footerFormEl: document.querySelector('.footer-form'),
   //
+  popularProdEl: document.querySelector('.popular-products-list'),
+  discountProdEl: document.querySelector('.discount-products-list'),
 };
