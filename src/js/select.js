@@ -8,7 +8,6 @@ import { getSerchParamsFromLocStg } from './getSerchParamsFromLocStg';
 const searchElCategories = document.getElementById('searchParams1');
 const form_search = document.querySelector('.home__form-search');
 
-startPage();
 // инициализация библиотеки сортировки
 
 new SlimSelect({
@@ -21,12 +20,13 @@ new SlimSelect({
   events: {
     // формирование запроса
     afterChange: newVal => {
-      const serchParams = getSerchParams();
+      const serchParams = setSerchParams();
       saveSerchParamsToLocStg(serchParams);
     },
   },
 });
-async function startPage() {
+
+async function loadPage() {
   // получение масива категорий
   const arrCategories = await getCategories();
 
@@ -47,13 +47,13 @@ async function startPage() {
     events: {
       // формирование запроса
       afterChange: newVal => {
-        const serchParams = getSerchParams();
+        const serchParams = setSerchParams();
         saveSerchParamsToLocStg(serchParams);
       },
     },
   });
   // сохранение параметров поиска в локальное хранилище при загрузке страницы
-  const serchParams = getSerchParams();
+  const serchParams = setSerchParams();
   saveSerchParamsToLocStg(serchParams);
 }
 
@@ -62,20 +62,18 @@ form_search.addEventListener('submit', submitSearchForm);
 
 function submitSearchForm(event) {
   event.preventDefault();
-  const serchParams = getSerchParams();
+  const serchParams = setSerchParams();
   saveSerchParamsToLocStg(serchParams);
 }
 
 // формирование параметров поиска
-function getSerchParams() {
+function setSerchParams() {
   const getProduct = new GetProduct();
 
   let objSearch = Object.fromEntries(new FormData(form_search));
-  console.log(objSearch);
   objSearch.page = getProduct.page;
   objSearch.limit = getProduct.perPage;
   return objSearch;
 }
-// сохранение параметров поиска в локальное хранилище при загрузке страницы
-const serchParams = getSerchParams();
-saveSerchParamsToLocStg(serchParams);
+
+loadPage();
