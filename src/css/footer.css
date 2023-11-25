@@ -162,6 +162,9 @@ input:-webkit-autofill:active {
 
 .footer-rights {
   margin-bottom: 8px;
+  color: #e8e8e2;
+  font-size: 14px;
+  line-height: 1.28;
 }
 
 .footer-form-container {
@@ -170,7 +173,7 @@ input:-webkit-autofill:active {
 
 /* -------------------------------TABLET  */
 @media screen and (min-width: 768px) {
-  .wrapper {
+  .footer-wrapper {
     display: flex;
     justify-content: space-between;
     margin-bottom: 120px;
@@ -312,11 +315,11 @@ input:-webkit-autofill:active {
   overflow: hidden;
 }
 
-.is-hidden {
+/* .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
+} */
 /* ------------------Mobile */
 .footer-backdrop {
   position: fixed;
@@ -365,7 +368,7 @@ input:-webkit-autofill:active {
   fill: var(--black-color);
 } */
 
-.footer-modal-message {
+#footer-modal-message {
   margin-bottom: 15px;
 }
 
@@ -396,7 +399,8 @@ input:-webkit-autofill:active {
     padding: 50px 50px 40px;
   }
 
-  .footer-modal-message {
+  #footer-modal-message {
+    color: var(--black-color);
     font-size: 18px;
   }
 }

@@ -47,12 +47,13 @@
   margin-bottom: 14px;
 }
 
-p {
+/* p {
   color: rgba(1, 1, 1, 0.7);
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
-}
+} */
+
 /* PRODUCTS IN THE BASKET */
 /* .cart-title{
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -192,6 +193,7 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 .checkout-button:hover {
   background-color: #4d602b;
 }
+
 
 /* VECTOR */
 .product-cart::after {
