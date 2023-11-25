@@ -1,122 +1,109 @@
-/* .popular-products-container {
-    
-} */
+.popular-products-container {
+  width: 335px;
+  padding-bottom: 80px;
+}
 
 .products-title {
-    color: var(--black-color);
-    font-family: Neue Montreal;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.16;
+  color: var(--black-color);
+  font-family: Neue Montreal;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
+  padding-bottom: 20px;
 }
 
 .popular-products-list {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
-
-
 
 .popular-products-item {
-    position: relative;
-    display: flex;
-    padding: 12px 12px;
-    width: 335px;
-    height: 98px;
-    border-radius: 10px;
-    background-color: var(--white-color);
+  position: relative;
+  display: flex;
+  padding: 12px 12px;
+  width: 335px;
+  height: 98px;
+  border-radius: 10px;
+  background-color: var(--white-color);
 }
 
-.card-image{
-    padding: 12px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #E8E8E2;
-    width: 74px;
-    height: 74px;
+.card-image {
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #e8e8e2;
+  width: 74px;
+  height: 74px;
 }
-.text-box{
-    display: flex;
-     gap: 9px;
+.text-box {
+  display: flex;
+  gap: 9px;
 }
 
-
-.card-info{
-    margin-left: 10px;
+.card-info {
+  margin-left: 10px;
 }
 .products-card-title {
-    color: var(--black-color);
-    font-family: Neue Montreal;
-     font-size: 18px;
-     font-weight: 500;
-     line-height: 1.11;
-     margin-bottom: 10px;
+  color: var(--black-color);
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin-bottom: 10px;
 }
 
 .popular-cards-text {
-    color: rgba(1, 1, 1, 0.30);
-   font-family: Neue Montreal;
-    font-size: 12px;
-    line-height: 1.66;
+  color: rgba(1, 1, 1, 0.3);
+  font-family: Neue Montreal;
+  font-size: 12px;
+  line-height: 1.66;
 }
 
-.popular-cards-text span{
-       color: var(--black-color);
+.popular-cards-text span {
+  color: var(--black-color);
 }
 
 .button-shopping {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateY(50%) translateX(-50%);
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-    border-radius: 50%;
-    background-color: #E8E8E2;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(50%) translateX(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #e8e8e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
 }
-
-
 
 .icon-shopping {
-    fill: var(--olive-color);
+  fill: var(--olive-color);
 }
 .button-shopping:hover,
-.button-shopping:focus
- {
-    background-color: var(--olive-color);
+.button-shopping:focus {
+  background-color: var(--olive-color);
 }
 .icon-shopping:hover,
-.icon-shopping:focus{
-    fill:var(--background-color);
+.icon-shopping:focus {
+  fill: var(--background-color);
 }
 
-
-
-
-@media screen and (min-width: 768px){
-
-.products-title {
-        font-size: 28px;
-        line-height: 1.14;
-    }
-.products-card-title{
+@media screen and (min-width: 768px) {
+  .products-title {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+  .products-card-title {
     font-size: 20px;
     line-height: 1.2;
+  }
 }
 
-
-}
-
-
-@media screen and (min-width: 1440px){
-
+@media screen and (min-width: 1440px) {
 }
