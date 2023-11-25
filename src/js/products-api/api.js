@@ -89,12 +89,12 @@ export class GetProduct {
   }
 
   async subscription(bodyData) {
-    try {
-      const url = '/subscription';
-      const response = await axios.post(url, bodyData);
-      return response.data;
-    } catch (error) {
-      return Promise.reject(response.status);
-    }
+    const url = '/subscription';
+    const response = await axios.post(url, bodyData, {
+      validateStatus: function (status) {
+        return status < 500;
+      },
+    });
+    return response.data;
   }
 }
