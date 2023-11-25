@@ -97,6 +97,9 @@
     }
 
     /* hover */
+    .cart-number-box {
+        width: 16px;
+    }
 
     .nav {
         padding-top: 24px;
@@ -135,7 +138,7 @@
     .btn-home {
         width: 104px;
         height: 48px;
-        margin-right: 24px;
+        margin-right: 16px;
         transition: background-color var(--default-tranzition);
     }
 
@@ -148,5 +151,19 @@
         font-size: 18px;
         line-height: 1.3;
         transition: text-shadow var(--default-tranzition);
+    }
+
+    .basket-header-box {
+        width: 253px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .basket-header-box {
+        width: 253px;
+    }
+
+    .btn-home {
+        margin-right: 24px;
     }
 }
