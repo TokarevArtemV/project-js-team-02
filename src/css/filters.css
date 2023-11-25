@@ -82,9 +82,6 @@ div.ss-main .ss-values .ss-placeholder {
   color: var(--black-color);
   padding: 0;
 }
-div.ss-main .ss-arrow {
-  margin-top: 2px;
-}
 div.ss-content.ss-open-below {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
