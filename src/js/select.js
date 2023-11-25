@@ -2,6 +2,7 @@ import SlimSelect from 'slim-select';
 import { GetProduct } from './products-api/api';
 import { getCategories } from './createRequestCategory';
 import { markupOptionsCategory } from './markupOptionsCategory';
+import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
 
 const searchElCategories = document.getElementById('searchParams1');
 const form_search = document.querySelector('.home__form-search');
@@ -51,9 +52,9 @@ new SlimSelect({
 });
 
 // формирование запроса по сабмиту
-form_search.addEventListener('submit', submitForm);
+form_search.addEventListener('submit', submitSearchForm);
 
-function submitForm(event) {
+function submitSearchForm(event) {
   event.preventDefault();
   const serchParams = getSerchParams();
   saveSerchParamsToLocStg(serchParams);
@@ -72,8 +73,3 @@ function getSerchParams() {
 // сохранение параметров поиска в локальное хранилище при загрузке страницы
 const serchParams = getSerchParams();
 saveSerchParamsToLocStg(serchParams);
-
-// функция сохранения параметров поиска в локальное хранилище
-function saveSerchParamsToLocStg(serchParams) {
-  console.log(serchParams);
-}
