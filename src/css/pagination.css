@@ -16,7 +16,7 @@
 
 .pag-btn {
   background-color: var(--white-color);
-  position: relative;
+  padding: 8px;
 }
 
 .pag-item:hover {
@@ -35,9 +35,6 @@
 
 .arrow-icon {
   fill: #a3a3a3;
-  position: absolute;
-  top: 33%;
-  left: 33%;
 }
 
 .pag-wrapper {
