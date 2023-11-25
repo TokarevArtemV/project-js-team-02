@@ -47,6 +47,7 @@
 }
 
 .home_categorias-search {
+  display: none;
   margin-bottom: 12px;
 }
 .home_select-categories {

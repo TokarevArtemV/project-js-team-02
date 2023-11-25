@@ -10,7 +10,7 @@ export class GetProduct {
     this.byPopularity = false;
     this.page = 1;
     this.totalPages = 1;
-    this.perPage = 9;
+    this.perPage = 6;
   }
 
   async getCategories() {
