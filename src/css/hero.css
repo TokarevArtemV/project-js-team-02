@@ -1,0 +1,145 @@
+.hero {
+  padding-top: 72px;
+  padding-bottom: 74px;
+  background-color: var(--background-color);
+}
+.hero__main {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.hero__header {
+  font-family: Neue Montreal;
+  color: var(--black-color);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.88px;
+  /* width: 335px; */
+  width: 100%;
+  margin-bottom: 16px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.hero__header > span {
+  color: var(--olive-color);
+}
+.hero__descr {
+  font-family: Neue Montreal;
+  width: 100%;
+  padding: 0 20px;
+  color: rgba(1, 1, 1, 0.8);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  margin-bottom: 32px;
+  margin: 0 auto;
+}
+.hero__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero__image-main {
+  border-radius: 30px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.hero-icon {
+  top: -7px;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  margin-left: 227px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 767px) {
+  /* .container {
+    max-width: 100%;
+  } */
+  .hero__image-main {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 116px;
+  }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  body {
+    font-size: 18px;
+  }
+  .hero {
+    padding-top: 116px;
+  }
+  .hero__header {
+    font-size: 80px;
+    line-height: 1;
+    letter-spacing: -1.6px;
+    width: 658px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__header > span {
+    letter-spacing: -1.6px;
+  }
+  .hero__descr {
+    font-size: 18px;
+    line-height: 1.3;
+    width: 100%;
+    padding: 0 90px;
+    margin-bottom: 40px;
+  }
+  .hero__image-main {
+    margin-bottom: 8px;
+    border-radius: 60px;
+  }
+  .hero-icon {
+    top: -30px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    margin-left: 594px;
+    flex-shrink: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    padding-top: 77px;
+  }
+  .container {
+    max-width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .hero {
+    padding-top: 77px;
+  }
+  .hero__header {
+    letter-spacing: -1.6px;
+    width: 1042px;
+  }
+  .hero__descr {
+    width: 100%;
+    padding: 0 360px;
+  }
+  .hero__image-main {
+    border-radius: 60px;
+  }
+  .hero-icon {
+    top: -50px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    margin-left: 1120px;
+    flex-shrink: 0;
+  }
+}
