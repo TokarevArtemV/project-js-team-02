@@ -110,6 +110,9 @@ div.ss-content .ss-list .ss-option:hover {
 div.ss-content.ss-list .ss-option .ss-search-highlight {
   background-color: no;
 }
+div.ss-main .ss-values .ss-single {
+  font-size: 14px;
+}
 div.ss-content.ss-open-above {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -120,6 +123,10 @@ div.ss-content.ss-open-above {
 div.ss-main.ss-open-above {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+}
+div.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+  color: var(--black-color);
+  background-color: #fff;
 }
 @media screen and (min-width: 768px) {
   .home_form {
@@ -144,6 +151,10 @@ div.ss-main.ss-open-above {
     line-height: 1.33em;
   }
   div.ss-content .ss-list .ss-option {
+    font-size: 18px;
+    line-height: 1.33em;
+  }
+  div.ss-main .ss-values .ss-single {
     font-size: 18px;
     line-height: 1.33em;
   }
