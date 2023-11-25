@@ -1,16 +1,25 @@
-/* body {
-  font-family: Neue Montreal;
-  font-size: 14px;
-  line-height: 1.33;
-  color: var(--#010101);
-  background-color: var(--#E8E8E2); 
-} */
+/* -------------Скинути стилі автозаповнення полів */
+input:-webkit-autofill::first-line,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  border: 1px solid var(--background-color);
+  -webkit-text-fill-color: var(--background-color);
+  -webkit-box-shadow: 0 0 0px 30px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--background-color);
+  font-family: 'Neue Montreal', sans-serif !important;
+}
+/* --------------------------------Mobile */
 
 .footer {
-  background-color: var(--olive-color);
   padding-top: 40px;
   padding-bottom: 40px;
+  background-color: var(--olive-color);
 }
+
+/* загальні стилі  logo  ? */
 
 .footer-logo-text-container {
   display: flex;
@@ -22,34 +31,12 @@
 .footer-logo-link {
   color: var(--background-color);
   font-family: 'Quincy CF', sans-serif;
-  /* font-size: 18px; */
   font-weight: 900;
-  /* не працює 900 а 500 шрифти налашт */
   line-height: 1.11;
   letter-spacing: -0.36px;
 }
 
-.footer-form-subscribe {
-  color: var(--background-color);
-  /* font-family: 'Neue Montreal',  sans-serif; */
-  font-size: 14px;
-  /* font-weight: 400; */
-  line-height: 1.28;
-  margin-bottom: 20px;
-}
-
-.socials-logo {
-  fill: var(--background-color);
-  opacity: 0.8;
-  width: 24px;
-  height: 24px;
-}
-
-/* загальні стилі  logo */
-
-/* mob */
-
-.logo-link {
+.logo-link-svg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,11 +46,9 @@
   border-radius: 50%;
 }
 
-.logo {
+.logo-svg {
   fill: var(--olive-color);
 }
-
-/* ---------------------------FOOTER - MOBILE */
 
 .footer-socials-list {
   margin-bottom: 48px;
@@ -83,12 +68,18 @@
   transition: background-color var(--default-tranzition);
 }
 
+.socials-svg {
+  fill: var(--background-color);
+  opacity: 0.8;
+  width: 24px;
+  height: 24px;
+}
+
 .footer-text-box {
   display: flex;
   flex-direction: column;
-  max-width: 335px;
-  /*   335px ?*/
   gap: 14px;
+  max-width: 335px;
   margin-bottom: 80px;
 }
 
@@ -103,21 +94,19 @@
 .footer-second-text {
   color: rgba(232, 232, 226, 0.7);
   font-size: 14px;
-  /* font-weight: 400; */
   line-height: 1.28;
 }
 
 .footer-form {
-  /* width: 100%; */
-
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
 }
 
-.footer-label {
-  display: block;
-  margin-bottom: 14px;
+.footer-form-subscribe {
+  color: var(--background-color);
+  font-size: 14px;
+  line-height: 1.28;
+  margin-bottom: 20px;
 }
 
 .footer-input::placeholder {
@@ -125,21 +114,18 @@
 }
 
 .footer-input {
+  display: block;
   width: 100%;
   padding: 12px 18px;
+  margin-bottom: 14px;
   border-radius: 30px;
   border: 1px solid #e8e8e2;
   background-color: transparent;
   color: var(--background-color);
-  /* font-family: 'Neue Montreal', sans-serif; */
   font-size: 14px;
   line-height: 1.28;
   outline: none;
 }
-
-/* .footer-input:active {
-  background-color: transparent;
-} */
 
 .footer-form-btn {
   display: flex;
@@ -152,10 +138,16 @@
   border-radius: 30px;
   background: #e8e8e2;
   color: #010101;
-  /* font-family: 'Neue Montreal'; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1.28;
+  font-family: 'Neue Montreal', sans-serif;
+}
+
+.footer-form-btn:disabled {
+  cursor: not-allowed;
+  /* color: var(--black-color); */
+  color: rgba(1, 1, 1, 0.3);
 }
 
 .footer-rights-policy-terms {
@@ -178,30 +170,6 @@
 
 /* -------------------------------TABLET  */
 @media screen and (min-width: 768px) {
-  /* .footer-rights-policy-terms a {
-    color: rgba(232, 232, 226, 0.3);
-    text-decoration: none;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    display: inline-block;
-  }
-  .footer-rights-policy-terms a:hover {
-    color: rgba(218, 218, 14, 0.621);
-    text-decoration: none;
-  }
-  .footer-rights-policy-terms a:after {
-    display: block;
-    content: '';
-    height: 1px;
-    width: 0%;
-    background-color: #e8e8e2;
-    transition: width 0.4s ease-in-out;
-  }
-  .footer-rights-policy-terms a:hover:after,
-  .footer-rights-policy-terms a:focus:after {
-    width: 100%;
-  } */
-
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -212,24 +180,28 @@
     margin: 0;
   }
 
-  .footer-logo-span {
-    width: 32px;
-    height: 32px;
-  }
-
-  .socials-logo {
-    width: 28px;
-    height: 28px;
-  }
-
   .footer-logo-link {
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.48px;
+    transition: color var(--default-tranzition);
   }
 
   .footer-socials-list {
     margin: 0;
+  }
+
+  .socials-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .socials-link:hover {
+    background-color: rgba(232, 232, 226, 0.2);
+  }
+  .socials-svg {
+    width: 28px;
+    height: 28px;
   }
 
   .footer-text-box {
@@ -245,7 +217,6 @@
   }
 
   .footer-second-text {
-    font-size: 18px;
     line-height: 1.33;
   }
 
@@ -257,17 +228,14 @@
     font-size: 18px;
   }
 
-  .footer-label {
-    margin-bottom: 20px;
-  }
   .footer-input {
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5;
   }
 
   .footer-form-btn {
     color: #010101;
-    font-family: 'Neue Montreal', sans-serif;
     font-size: 16px;
     line-height: 1.5;
   }
@@ -281,27 +249,9 @@
     transition: color var(--default-tranzition);
   }
 
-  .footer-logo-link {
-    transition: color var(--default-tranzition);
-  }
-
   .footer-rights-policy-terms a:hover {
-    color: var(--orange-color);
-    /* color: var(--black-color); */
+    color: var(--black-color);
   }
-
-  /* .footer-logo-link:hover */
-
-  .footer-policy {
-    padding: 10px;
-    transition: border-bottom var(--default-tranzition);
-  }
-
-  /* .footer-policy:hover,
-  .footer-terms:hover {
-    border-bottom: 1px solid var(--background-color);
-    border-width: 100%;
-  } */
 
   .footer-rights-policy-terms {
     display: flex;
@@ -323,36 +273,19 @@
 
   .footer-rights {
     margin-bottom: 0;
-    /* padding: 10px 0; */
   }
 
-  .socials-link {
-    width: 44px;
-    height: 44px;
-  }
-  .socials-link:hover {
-    background-color: rgba(232, 232, 226, 0.2);
-  }
-
-  .socials-logo {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* загальні стилі  logo */
-
-  /* tablet */
-  .logo-link {
+  .logo-link-svg {
     width: 32px;
     height: 32px;
   }
 
-  .logo {
+  .logo-svg {
     width: 20px;
     height: 20px;
   }
 
-  /* ховери на ссилки полиси та термс ? */
+  /* hover logo?  */
 }
 
 /* -------------------------------------DESKTOP  */
@@ -363,54 +296,110 @@
 
   .footer-text-box {
     max-width: 410px;
+    margin: 0;
   }
   .footer-second-box {
     display: flex;
     gap: 148px;
   }
-
-  .footer-text-box {
-    margin: 0;
-  }
-}
-input:-webkit-autofill::first-line,
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  border: 1px solid var(--background-color);
-  -webkit-text-fill-color: var(--background-color);
-  -webkit-box-shadow: 0 0 0px 30px transparent inset;
-  transition: background-color 5000s ease-in-out 0s;
-  caret-color: var(--background-color);
-  font-family: 'Neue Montreal', sans-serif !important;
-  /* font-size: 16px;
-  line-height: 1.5;
-  line-height: 1.333; */
-  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
-/* pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" */
+/* -------------------------------MODAL  */
+.no-scroll {
+  overflow: hidden;
+}
 
-/* pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" */
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+/* ------------------Mobile */
+.footer-backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.4);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity var(--default-tranzition),
+    visibility var(--default-tranzition);
+}
 
-.footer-form-btn:disabled:hover,
-.footer-form-btn:disabled {
-  /* background-color: rgba(232, 232, 226, 0.2); */
-  cursor: not-allowed;
+.footer-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%) scaleY(1);
+  min-width: calc(100vw - 40px);
+  padding: 30px 30px 20px;
+  height: max-content;
+  text-align: center;
+  font-size: 14px;
   color: var(--black-color);
+  border-radius: 20px;
+  background: var(--background-color);
+  transition: transform var(--default-tranzition);
 }
 
-/* input:invalid:not(:placeholder-shown) {
-  border: 1px solid red;
-  outline: transparent;
-  color: red;
+.footer-backdrop.is-hidden .footer-modal {
+  transform: translate(-50%, -50%) scaleY(0);
 }
-input:valid:not(:placeholder-shown) {
-  border: 1px solid green;
-  outline: transparent;
-  color: green;
+/* 
+.footer-modal-close-btn {
+    position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 0;
+  height: 22px;
+  cursor: pointer;
+  transition: background-color var(--default-tranzition),
+    border var(--default-tranzition);
 } */
 
-/* зробити label текст  html */
+/* .footer-modal-icon {
+  fill: var(--black-color);
+} */
+
+.footer-modal-message {
+  margin-bottom: 15px;
+}
+
+.footer-btn-ok {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: #6d8434;
+  color: var(--background-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+  transition: background-color var(--default-tranzition);
+}
+
+.footer-btn-ok:hover {
+  background-color: var(--olive-hover-color);
+}
+
+@media screen and (min-width: 375px) {
+  .footer-modal {
+    width: 335px;
+    min-width: unset;
+    padding: 50px 50px 40px;
+  }
+
+  .footer-modal-message {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-modal {
+    width: 560px;
+  }
+}

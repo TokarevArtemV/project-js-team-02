@@ -1,10 +1,10 @@
 <footer class="footer">
-  <div class="footer-container container">
+  <div class="container">
     <div class="wrapper">
       <div class="footer-first-box">
         <div class="footer-logo-text-container">
-          <a href="./index.html" class="logo-link link">
-            <svg class="logo" width="16" height="16">
+          <a href="./index.html" class="logo-link-svg link">
+            <svg class="logo-svg" width="16" height="16">
               <use href="./images/icons/icons.svg#icon-cabbage"></use>
             </svg>
           </a>
@@ -18,7 +18,7 @@
               target="_blank"
               rel="noopener no-referrer"
               class="socials-link link"
-              ><svg class="socials-logo" width="24" height="24">
+              ><svg class="socials-svg" width="24" height="24">
                 <use href="./images/icons/icons.svg#icon-facebook"></use>
               </svg>
             </a>
@@ -30,7 +30,7 @@
               rel="noopener no-referrer"
               class="socials-link link"
             >
-              <svg class="socials-logo" width="24" height="24">
+              <svg class="socials-svg" width="24" height="24">
                 <use href="./images/icons/icons.svg#icon-instagram"></use>
               </svg>
             </a>
@@ -42,7 +42,7 @@
               rel="noopener no-referrer"
               class="socials-link link"
             >
-              <svg class="socials-logo" width="24" height="24">
+              <svg class="socials-svg" width="24" height="24">
                 <use href="./images/icons/icons.svg#icon-youtube"></use>
               </svg>
             </a>
@@ -62,24 +62,21 @@
           </p>
         </div>
         <div class="footer-form-container">
-          <p class="footer-form-subscribe">
-            Subscribe and learn about new products!
-          </p>
           <form class="footer-form">
-            <label class="footer-label">
-              <input
-                id="input"
-                class="footer-input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                title="xxxx@yyy.com"
-                aria-label="Email"
-                autofocus
-                required
-                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-              />
-            </label>
+            <label for="email" class="footer-form-subscribe"
+              >Subscribe and learn about new products!</label
+            >
+            <input
+              id="email"
+              class="footer-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              title="Invalid email address"
+              aria-label="Email"
+              required
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            />
             <button class="footer-form-btn" type="submit">Send</button>
           </form>
         </div>
@@ -108,3 +105,13 @@
     </div>
   </div>
 </footer>
+<div class="footer-backdrop is-hidden" data-modal>
+  <div class="footer-modal footer-mob-modal">
+    <!-- <button class="footer-modal-close-btn" type="button" data-modal-close>
+      <svg class="footer-modal-icon" width="22" height="22">
+        <use href="./images/icons/icons.svg#icon-close-sharp"></use>
+      </svg>
+    </button> -->
+    <button class="footer-btn-ok data-modal-close" data-modal-close>OK</button>
+  </div>
+</div>

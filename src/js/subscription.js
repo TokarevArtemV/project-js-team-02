@@ -1,16 +1,22 @@
 import { GetProduct } from './products-api/api';
-import axios from 'axios';
 
 const refs = {
   footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
   footerInputEl: document.querySelector('.footer-input'),
+  footerBackdropEl: document.querySelector('[data-modal]'),
+  footerModalEl: document.querySelector('.footer-modal'),
+  footerModalBtnCloseEl: document.querySelector('[ data-modal-close]'),
+  footerFormEl: document.querySelector('.footer-form'),
 };
 
+const getProduct = new GetProduct();
+
 refs.footerSubmitBtnEl.addEventListener('click', onSubmit);
-refs.footerInputEl.addEventListener('input', onInput); //throttle библиотека и отрабативать every n мс
+refs.footerInputEl.addEventListener('input', onInput); //throttle библиотека ?
 
 refs.footerSubmitBtnEl.disabled = true;
 
+// ------------------------------валідація форми
 function onInput() {
   const isValid = this.validity.valid;
   console.log(isValid);
@@ -18,68 +24,51 @@ function onInput() {
   if (isValid) {
     refs.footerSubmitBtnEl.disabled = false;
   }
-
-  //   const isValid = refs.footerInputEl.ValidityState.patternMismatch;
-  //   console.log(isValid);
-  //is  valid
 }
 
-// refs.footerSubmitBtnEl.disabled = true;
-
+// -----------------------------сабміт форми
 async function onSubmit(e) {
   e.preventDefault();
-
   const userEmailData = {
     email: refs.footerInputEl.value,
   };
-  const getProduct = new GetProduct();
-  //   console.log(getProduct.subscription(userEmailData));
 
   try {
     const data = await getProduct.subscription(userEmailData);
-    // if (userEmailData.email.trim() === 0) {
-    //   alert('Enter your email please');
-    // }
-    refs.footerSubmitBtnEl.disabled = false;
-    console.log(data);
-    alert(data.message);
-    //   "message": "Welcome to the Food Boutique! 🥦🍓 With Food Boutique, you're not just subscribing to food, you're signing up for a fresher, fitter, and happier you. Get ready to elevate your wellness journey, one bite at a time!"
-    // }
 
-    // console.log(userEmailData);
+    refs.footerSubmitBtnEl.disabled = false;
+
+    const modalMarkup = renderDataMarkup(data.message);
+    appendMarkup(refs.footerModalEl, modalMarkup);
+
+    refs.footerBackdropEl.classList.toggle('is-hidden');
+    document.body.classList.toggle('no-scroll');
+
+    refs.footerFormEl.reset();
   } catch (error) {
     console.error(error);
-
-    //   if ()
-    //   alert('Please enter your email')
-    //    alert(data.message);
   }
 }
 
-// if(201)  message modal?
-//    if (response.status === 200) return;
-//       {
-//if (409)
+// ----------------------------render and append markup
 
-// const userEmail = refs.footerInputEl.value.
+function renderDataMarkup(mes) {
+  return `<p class="footer-modal-message">${mes}</p>`;
+}
 
-//     {
-//     email: 'test@gmail.com',
-//   };
+function appendMarkup(parentEl, markup) {
+  parentEl.insertAdjacentHTML('afterbegin', markup);
+}
 
-// async subscription(bodyData) {
-//     try {
-//       const url = '/subscription';
-//       const response = await axios.post(url, bodyData);
-//       return response.data;
-//     } catch (error) {
-//       return Promise.reject(response.status);
-//     }
-//   }
-
-//   const dataJson = JSON.stringify(userEmailData);
-//   console.log(dataJson);
-
-//    if (response.status === 400) {
-//      alert(response.data.message);
-//    }
+// -------------------------по кліку на кнопку модалки
+function onClick() {
+  function toggleModal() {
+    refs.footerBackdropEl.classList.toggle('is-hidden');
+    document.body.classList.toggle('no-scroll');
+  }
+  toggleModal();
+  const mesEl = document.querySelector('.footer-modal-message');
+  refs.footerSubmitBtnEl.disabled = true;
+  mesEl.remove();
+}
+refs.footerModalBtnCloseEl.addEventListener('click', onClick);
