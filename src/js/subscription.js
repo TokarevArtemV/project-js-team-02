@@ -1,4 +1,5 @@
 import { GetProduct } from './products-api/api';
+import throttle from 'lodash.throttle';
 
 const refs = {
   footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
@@ -12,7 +13,7 @@ const refs = {
 const getProduct = new GetProduct();
 
 refs.footerSubmitBtnEl.addEventListener('click', onSubmit);
-refs.footerInputEl.addEventListener('input', onInput); //throttle библиотека ?
+refs.footerInputEl.addEventListener('input', throttle(onInput, 700)); //throttle библиотека ?
 
 refs.footerSubmitBtnEl.disabled = true;
 

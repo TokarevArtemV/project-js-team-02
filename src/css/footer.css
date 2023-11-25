@@ -244,6 +244,9 @@ input:-webkit-autofill:active {
     color: var(--olive-color);
     transition: color var(--default-tranzition);
   }
+  .footer-form-btn:hover:disabled {
+    color: rgba(1, 1, 1, 0.3);
+  }
 
   .footer-rights-policy-terms a {
     transition: color var(--default-tranzition);
