@@ -1,2 +1,4 @@
 import './header';
-import './getProductFormBasket.js';
+import { modalProductCard } from './getProductFormBasket';
+
+modalProductCard();
