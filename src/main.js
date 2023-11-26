@@ -5,3 +5,4 @@ import './js/loadProduct.js';
 import './js/popularProducts.js';
 import './js/discountProducts.js';
 import './js/subscription.js';
+import './js/pagination.js';
