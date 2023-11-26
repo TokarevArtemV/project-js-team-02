@@ -28,7 +28,7 @@ export class GetProduct {
     this.keyword = keyword;
     this.category = category;
 
-    // this.byABC = searchSort.slice(6);
+    this.byABC = searchSort.slice(6);
     this.page = page;
     this.perPage = limit;
     const PARAMS = new URLSearchParams({
