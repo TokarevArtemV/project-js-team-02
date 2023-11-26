@@ -5,6 +5,13 @@
   column-gap: 20px;
   row-gap: 40px;
 }
+.products-wraper {
+  width: 925px;
+}
+.products-container {
+  display: flex;
+}
+
 /* Cards */
 .product-card {
   height: 356px;
@@ -112,7 +119,7 @@
 @media screen and (min-width: 1440px) {
   .product-card {
     height: 360px;
-    width: calc((100%-2 * 20px) / 3);
+    width: calc((100% - (2 * 20px)) / 3);
   }
   .image-product {
     padding: 19px 58px;
