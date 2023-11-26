@@ -3,7 +3,7 @@ import { GetProduct } from './products-api/api';
 import { getCategories } from './createRequestCategory';
 import { markupOptionsCategory } from './markupOptionsCategory';
 import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
-import { getSerchParamsFromLocStg } from './getSerchParamsFromLocStg';
+import { getProductsFromServer } from './loadProduct';
 
 const searchElCategories = document.getElementById('searchParams1');
 const form_search = document.querySelector('.home__form-search');
@@ -64,13 +64,18 @@ function submitSearchForm(event) {
   event.preventDefault();
   const serchParams = setSerchParams();
   saveSerchParamsToLocStg(serchParams);
+  getProductsFromServer();
 }
 
 // формирование параметров поиска
 function setSerchParams() {
   const getProduct = new GetProduct();
-
-  let objSearch = Object.fromEntries(new FormData(form_search));
+  let objSearch = {};
+  new FormData(form_search).forEach((value, key) => {
+    if (value) {
+      objSearch[key] = value;
+    }
+  });
   objSearch.page = getProduct.page;
   objSearch.limit = getProduct.perPage;
   return objSearch;

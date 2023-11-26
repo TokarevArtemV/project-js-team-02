@@ -24,18 +24,19 @@ export class GetProduct {
     }
   }
 
-  async getProducts({ keyword, category, page, perPage }) {
-    this.keyword = keyword;
-    this.category = category;
-    this.page = page;
-    this.perPage = perPage;
+  async getProducts({ keyword, category, searchSort, page, limit }) {
+    // this.keyword = keyword || null;
+    // this.category = category || null;
 
+    this.byABC = searchSort.slice(6);
+    this.page = page;
+    this.perPage = limit;
     const PARAMS = new URLSearchParams({
-      keyword: this.keyword,
-      category: this.category,
+      // keyword: this.keyword,
+      // category: this.category,
       byABC: this.byABC,
-      byPrice: this.byPrice,
-      byPopularity: this.byPopularity,
+      // byPrice: this.byPrice,
+      // byPopularity: this.byPopularity,
       page: this.page,
       limit: this.perPage,
     });
