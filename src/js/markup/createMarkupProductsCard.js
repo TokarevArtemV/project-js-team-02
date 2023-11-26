@@ -16,7 +16,7 @@ export function createMarkupProducts(data) {
                 <div class="product-card-price">
                     <p class="price-product">${price}</p>
                     <button class="js-button-shopping">
-                    <svg class="icon-shopping" width="28" height="28">
+                    <svg class="icon-shopping-card" width="28" height="28">
                         <use href="./images/icons/icons.svg#icon-shopping-cart"></use>
                     </svg>
                     </button>

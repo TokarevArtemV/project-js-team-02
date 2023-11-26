@@ -1,13 +1,13 @@
 import { refs } from './refs';
 
-const KEY_BUSKET = 'busket';
-const busketArr = JSON.parse(localStorage.getItem(KEY_BUSKET)) ?? [];
+const BUSKET = 'busket';
+const busketArr = JSON.parse(localStorage.getItem(BUSKET)) ?? [];
 
 function findProduct(productId) {
     return results.find(({ _id }) => _id === productId);
 }
 
-refs.buttonShopping.addEventListener('click', onClick);
+refs.prodElContainer.addEventListener('click', onClick);
 
 function onClick(evt) {
     evt.preventDafault();
@@ -18,13 +18,13 @@ function onClick(evt) {
         const inStorage = busketArr.some(({ _id }) => _id === product._id)
         
         // if (inStorage) {
-        //     const ChangeIcon = function (icon) {
-        //         icon.classList.toggle('#icon-check');
+        //     const changeIcon = function (icon) {
+        //         icon.classList.replace();
         //     }
         //     return;
         // }
 
         busketArr.push(product);
-        lokalStorage.setItem(KEY_BUSKET, JSON.stringify(busketArr));
+        lokalStorage.setItem(BUSKET, JSON.stringify(busketArr));
     }
 }

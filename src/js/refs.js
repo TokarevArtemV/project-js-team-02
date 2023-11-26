@@ -11,6 +11,7 @@ export const refs = {
   popularProdEl: document.querySelector('.popular-products-list'),
   discountProdEl: document.querySelector('.discount-products-list'),
   //
-  prodEl: document.querySelector('.products-list'),
+  prodElContainer: document.querySelector('.home_product-card-container'),
+  prodEl: document.querySelector('.js-product-card'),
   buttonShopping: document.querySelector('.js-button-shopping'),
 };
