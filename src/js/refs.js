@@ -10,19 +10,18 @@ export const refs = {
   //
   popularProdEl: document.querySelector('.popular-products-list'),
   discountProdEl: document.querySelector('.discount-products-list'),
-  
- // зміна іконки корзини
+
+  // зміна іконки корзини
   prodEl: document.querySelector('.js-product-card'),
   buttonShopping: document.querySelector('.js-button-shopping'),
-// зміна іконки корзини
-  
+  // зміна іконки корзини
+
   productFormBasket: document.querySelector('.flex-cart-js'),
 
   //pagination
   pagesRibbonEL: document.querySelector('.pag-ribbon'),
 
   //Modal
-  cards: document.querySelectorAll('.product-card'),
+  cards: document.querySelectorAll('.js-product-card'),
   modal: document.querySelector('[ data-modal ]'),
-
 };
