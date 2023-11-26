@@ -17,7 +17,6 @@
 
 /* Cards */
 .js-product-card {
-  height: 100%;
   max-width: 335px;
   padding: 20px;
   background-color: var(--white-color);

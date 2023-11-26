@@ -8,6 +8,7 @@ refs.prodEl.addEventListener('click', onClick);
 function onClick(evt) {
     evt.preventDafault();
     if (evt.target.classList.contains('.js-button-shopping')) {
+        // debugger;
         const product = findProduct(evt.target);
         const inStorage = busketArr.some(({ _id }) => _id === product._id)
         

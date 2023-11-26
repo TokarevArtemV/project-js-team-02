@@ -25,4 +25,4 @@ export function createMarkupProducts(data) {
         })
         .join('');
     return markup;
-}
+    }
