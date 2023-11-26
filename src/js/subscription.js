@@ -11,8 +11,6 @@ import { refs } from './refs';
 //   footerFormEl: document.querySelector('.footer-form'),
 // };
 
-const getProduct = new GetProduct();
-
 refs.footerSubmitBtnEl.addEventListener('click', onSubmit);
 refs.footerInputEl.addEventListener('input', throttle(onInput, 700)); //throttle библиотека ?
 
@@ -30,6 +28,7 @@ function onInput() {
 
 // -----------------------------сабміт форми
 async function onSubmit(e) {
+  const getProduct = new GetProduct();
   e.preventDefault();
   const userEmailData = {
     email: refs.footerInputEl.value,
@@ -37,40 +36,37 @@ async function onSubmit(e) {
 
   try {
     const data = await getProduct.subscription(userEmailData);
-
     refs.footerSubmitBtnEl.disabled = false;
 
     const modalMarkup = renderDataMarkup(data.message);
     appendMarkup(refs.footerModalEl, modalMarkup);
 
-    refs.footerBackdropEl.classList.toggle('is-hidden');
-    document.body.classList.toggle('no-scroll');
-
+    toggleModal();
     refs.footerFormEl.reset();
   } catch (error) {
     console.error(error);
   }
 }
-
-// ----------------------------render and append markup
-
-function renderDataMarkup(mes) {
-  return `<p class="footer-modal-message" id="footer-modal-message">${mes}</p>`;
-}
-
-function appendMarkup(parentEl, markup) {
-  parentEl.insertAdjacentHTML('afterbegin', markup);
-}
-
 // -------------------------по кліку на кнопку модалки
 function onClick() {
-  function toggleModal() {
-    refs.footerBackdropEl.classList.toggle('is-hidden');
-    document.body.classList.toggle('no-scroll');
-  }
   toggleModal();
   const mesEl = document.querySelector('.footer-modal-message');
   refs.footerSubmitBtnEl.disabled = true;
   mesEl.remove();
 }
 refs.footerModalBtnCloseEl.addEventListener('click', onClick);
+
+// ---------------------------helpers
+
+function renderDataMarkup(mes) {
+  return `<p class="footer-modal-message"">${mes}</p>`;
+}
+
+function appendMarkup(parentEl, markup) {
+  parentEl.insertAdjacentHTML('afterbegin', markup);
+}
+
+function toggleModal() {
+  refs.footerBackdropEl.classList.toggle('is-hidden');
+  document.body.classList.toggle('no-scroll');
+}
