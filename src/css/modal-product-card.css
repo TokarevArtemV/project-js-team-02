@@ -91,7 +91,7 @@
 
 .modal-text{
     margin: 20px 0 0;
-    max-height: 120px;
+    max-height: 70px;
     color: var(--black-color);
     font-family: 'NeueMontreal', sans-serif;
     font-size: 14px;
@@ -141,7 +141,7 @@
 }
 
 /* TODO close-btn */
-.close {
+.modal-close-btn {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -204,9 +204,10 @@
         font-size: 16px;
         line-height: 1.5;
         font-weight: 300;
+        max-height: 120px;
     }
 
-    .close{
+    .modal-close-btn{
         top: 24px;
         right: 24px;
     }
