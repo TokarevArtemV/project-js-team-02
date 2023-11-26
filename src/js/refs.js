@@ -11,6 +11,10 @@ export const refs = {
   popularProdEl: document.querySelector('.popular-products-list'),
   discountProdEl: document.querySelector('.discount-products-list'),
 
+  //filters(пошук+селект1)
+  searchForm: document.querySelector('.home__form-search'),
+  searchElCategories: document.getElementById('searchParams1'),
+
   // зміна іконки корзини
   prodEl: document.querySelector('.js-product-card'),
   buttonShopping: document.querySelector('.js-button-shopping'),
