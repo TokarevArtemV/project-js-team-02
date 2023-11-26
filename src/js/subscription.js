@@ -1,14 +1,15 @@
 import { GetProduct } from './products-api/api';
 import throttle from 'lodash.throttle';
+import { refs } from './refs';
 
-const refs = {
-  footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
-  footerInputEl: document.querySelector('.footer-input'),
-  footerBackdropEl: document.querySelector('[data-modal]'),
-  footerModalEl: document.querySelector('.footer-modal'),
-  footerModalBtnCloseEl: document.querySelector('[ data-modal-close]'),
-  footerFormEl: document.querySelector('.footer-form'),
-};
+// const refs = {
+//   footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
+//   footerInputEl: document.querySelector('.footer-input'),
+//   footerBackdropEl: document.querySelector('[data-modal]'),
+//   footerModalEl: document.querySelector('.footer-modal'),
+//   footerModalBtnCloseEl: document.querySelector('[ data-modal-close]'),
+//   footerFormEl: document.querySelector('.footer-form'),
+// };
 
 const getProduct = new GetProduct();
 
@@ -54,7 +55,7 @@ async function onSubmit(e) {
 // ----------------------------render and append markup
 
 function renderDataMarkup(mes) {
-  return `<p class="footer-modal-message">${mes}</p>`;
+  return `<p class="footer-modal-message" id="footer-modal-message">${mes}</p>`;
 }
 
 function appendMarkup(parentEl, markup) {
