@@ -1,4 +1,5 @@
 export const refs = {
+  productCardsContainer: document.querySelector('.home_product-card-container'),
   //footer
   footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
   footerInputEl: document.querySelector('.footer-input'),
