@@ -1,10 +1,12 @@
+import icon from '../../images/icons/icons.svg';
+
 export function createMarkupModalProductCard(data) {
   const markup = data
-    .map(({ image, name, category, size, popularity, desc, price }) => {
+    .map(({ image, name, category, size, popularity, desc, price, _id }) => {
       return `<div class="modal-content">
             <button type="button" data-modal-close class="close">
                 <svg class="close-icon" width="28" height="28">
-                    <use href="./images/icons/icons.svg#icon-close"></use>
+                    <use href="${icon}#icon-close"></use>
                 </svg>
             </button> 
             <div class="wrapper">
@@ -30,7 +32,7 @@ export function createMarkupModalProductCard(data) {
                 <button class="add-to-cart-btn btn" type="button">
                     Add to
                     <svg width="18" height="18">
-                        <use href="./images/icons/icons.svg#icon-cart"></use>
+                        <use href="${icon}#icon-cart"></use>
                     </svg>
                 </button>
             </div>

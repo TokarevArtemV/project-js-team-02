@@ -1,3 +1,5 @@
+import icon from '../../images/icons/icons.svg';
+
 export function createMarkupBasketProductsCard(data) {
   const markup = data
     .map(({ img, name, category, price }) => {

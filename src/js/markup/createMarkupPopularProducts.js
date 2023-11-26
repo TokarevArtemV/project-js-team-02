@@ -1,7 +1,9 @@
+import icon from '../../images/icons/icons.svg';
+
 export function createMarkupPopularProducts(data) {
   const markup = data
-    .map(({ img, name, category, size, popularity }) => {
-      return `<li class="popular-products-item">
+    .map(({ img, name, category, size, popularity, _id }) => {
+      return `<li class="popular-products-item" data-cardId=${_id}>
           <div class="card-image">
             <img src="${img}" alt="${name}" />
           </div>
@@ -19,7 +21,7 @@ export function createMarkupPopularProducts(data) {
           </div>
           <button class="button-shopping">
             <svg class="icon-shopping" width="12" height="12">
-              <use href="./images/icons/icons.svg#icon-shopping-cart"></use>
+              <use href="${icon}#icon-shopping-cart"></use>
             </svg>
           </button>
         </li>`;

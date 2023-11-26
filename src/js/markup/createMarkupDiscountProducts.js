@@ -2,8 +2,8 @@ import icon from '../../images/icons/icons.svg';
 
 export function createMarkupDiscountProducts(data) {
   const markup = data
-    .map(({ img, name, price }) => {
-      return `<li class="discount-products-item">
+    .map(({ img, name, price, _id }) => {
+      return `<li class="discount-products-item" data-cardId=${_id}>
           <div class="card-image-discount">
             <svg class="icon-discount" width="60" height="60">
               <use href="${icon}#icon-discount"></use>
