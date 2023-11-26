@@ -1,0 +1,142 @@
+.discount-products-container {
+}
+
+.products-title.discount {
+  color: var(--black-color);
+  font-family: Neue Montreal;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
+  margin-bottom: 20px;
+}
+
+.discount-products-list {
+}
+
+.discount-products-item {
+  padding: 16px 16px;
+  background-color: var(--white-color);
+  width: 335px;
+  height: 232px;
+  border-radius: 15px;
+}
+.discount-products-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.card-image-discount {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 304px;
+  height: 150px;
+  background-color: #e8e8e2;
+  border-radius: 10px;
+  margin-bottom: 21px;
+}
+.icon-discount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-35%) translateX(10%);
+}
+.discount-card-text {
+  color: var(--black-color);
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
+.price {
+  margin-right: 38px;
+}
+
+.discount-info-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.discount-card-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: self-start;
+}
+
+.button-shopping-discount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-15%) translateX(10%);
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: var(--olive-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.button-shopping-discount:hover,
+.button-shopping-discount:focus {
+  background-color: var(--olive-hover-color);
+}
+
+.icon-shopping-discount {
+  fill: var(--background-color);
+}
+
+@media screen and (max-width: 375px) {
+  .discount-products-item {
+    max-width: 100%;
+  }
+
+  .card-image-discount {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .discount-products-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+  .products-title {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+
+  .discount-card-text {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .discount-products-list {
+    display: flex;
+    gap: 32px;
+  }
+
+   .discount-products-item:hover,
+   .discount-products-item:focus{
+    box-shadow: 0px 9.1px 16.53437px 0px rgba(0, 0, 0, 0.02),
+        0px 41.6px 46.475px 0px rgba(0, 0, 0, 0.04),
+        0px 105.3px 124.67812px 0px rgba(0, 0, 0, 0.05),
+        0px 208px 286px 0px rgba(0, 0, 0, 0.07);
+
+   }
+}
+
+@media screen and (min-width: 1440px) {
+  .card-image-discount {
+    width: 243px;
+  }
+  .discount-products-item {
+    width: 275px;
+  }
+
+  .discount-products-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

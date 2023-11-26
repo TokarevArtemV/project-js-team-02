@@ -10,7 +10,7 @@ export class GetProduct {
     this.byPopularity = false;
     this.page = 1;
     this.totalPages = 1;
-    this.perPage = 9;
+    this.perPage = 6;
   }
 
   async getCategories() {
@@ -24,18 +24,19 @@ export class GetProduct {
     }
   }
 
-  async getProducts({ keyword, category, page, perPage }) {
-    this.keyword = keyword;
-    this.category = category;
-    this.page = page;
-    this.perPage = perPage;
+  async getProducts({ keyword, category, searchSort, page, limit }) {
+    // this.keyword = keyword || null;
+    // this.category = category || null;
 
+    this.byABC = searchSort.slice(6);
+    this.page = page;
+    this.perPage = limit;
     const PARAMS = new URLSearchParams({
-      keyword: this.keyword,
-      category: this.category,
+      // keyword: this.keyword,
+      // category: this.category,
       byABC: this.byABC,
-      byPrice: this.byPrice,
-      byPopularity: this.byPopularity,
+      // byPrice: this.byPrice,
+      // byPopularity: this.byPopularity,
       page: this.page,
       limit: this.perPage,
     });
@@ -89,12 +90,12 @@ export class GetProduct {
   }
 
   async subscription(bodyData) {
-    try {
-      const url = '/subscription';
-      const response = await axios.post(url, bodyData);
-      return response.data;
-    } catch (error) {
-      return Promise.reject(response.status);
-    }
+    const url = '/subscription';
+    const response = await axios.post(url, bodyData, {
+      validateStatus: function (status) {
+        return status < 500;
+      },
+    });
+    return response.data;
   }
 }

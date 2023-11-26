@@ -1,0 +1,206 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding: 40px 20px;
+    max-width: 335px;
+    max-height: 535px;
+
+    font-family: 'NeueMontreal', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 510px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.price-wrapper{
+   margin-top: 40px;
+   height: 42px;
+}
+
+.picture{
+    width: 100%;
+    max-height: 212px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 26px 68px;
+}
+
+.modal-name{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.modal-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'NeueMontreal', sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.group-item{
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.modal-list li, .group-item li{
+    height: 14px;
+    color: var(--gray-color);
+}
+
+.modal-item{
+    color: var(--black-color);
+    margin-left: 4px;
+}
+
+.modal-list li:nth-child(3){
+    max-width: 66px;
+}
+
+.modal-text{
+    margin: 20px 0 0;
+    color: var(--black-color);
+    font-family: 'NeueMontreal', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.modal-price{
+    font-size: 18px;
+    font-family: 'NeueMontreal', sans-serif;
+    line-height: 1.1;
+}
+
+.add-to-cart-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    max-width: 157px;
+    height: 42px;
+    background-color: var(--olive-color);
+    border-radius: 30px;
+    border: none;
+    padding: 12px 24px;
+    
+
+    font-family: 'NeueMontreal', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--background-color);
+    white-space: nowrap;
+}
+
+.icon-cart{
+    fill: var(--background-color);
+}
+
+.add-to-cart-btn:hover,
+.add-to-cart-btn:focus{
+    background-color: var(--olive-hover-color);
+    transition: background-color var(--default-tranzition);
+}
+
+/* TODO close-btn */
+.close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+    font-size: 16px;
+}
+
+
+
+
+/* TODO breakpoints */
+
+@media screen and (max-width: 340px) {
+    .modal-content{
+        width: 295px;
+    }
+
+    .picture{
+        padding: 26px 48px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-content{
+        max-width: 600px;
+        max-height: 380px;
+        padding: 40px;
+    }
+
+    .wrapper{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .picture{
+        max-width: 240px;
+        padding: 26px 40px;
+    }
+
+    .modal-name{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .modal-text{
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .close{
+        top: 24px;
+        right: 24px;
+    }
+    
+    .icon-close{
+        width: 28px;
+        height: 28px;
+    }
+}
