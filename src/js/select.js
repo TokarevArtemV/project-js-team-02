@@ -1,6 +1,6 @@
 import SlimSelect from 'slim-select';
 import { getCategories } from './createRequestCategory';
-import { markupOptionsCategory } from './markupOptionsCategory';
+import { markupOptionsCategory } from './markup/markupOptionsCategory';
 import { getProductsFromServer } from './loadProduct';
 import { updateLocStor } from './search';
 import { refs } from './refs';
