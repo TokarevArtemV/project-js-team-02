@@ -24,7 +24,7 @@
     font-weight: normal;
 }
 
-.wrapper{
+.modal-content-wrapper{
     display: flex;
     flex-wrap: wrap;
     max-width: 510px;
@@ -33,8 +33,9 @@
 }
 
 .price-wrapper{
-   margin-top: 40px;
-   height: 42px;
+    align-items: flex-end;
+    margin-top: 24px;
+    height: 42px;
 }
 
 .picture{
@@ -90,12 +91,15 @@
 
 .modal-text{
     margin: 20px 0 0;
+    max-height: 70px;
     color: var(--black-color);
     font-family: 'NeueMontreal', sans-serif;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.3;
+
+    overflow-y: auto;
 }
 
 .modal-price{
@@ -126,7 +130,7 @@
     white-space: nowrap;
 }
 
-.icon-cart{
+.modal-cart-icon{
     fill: var(--background-color);
 }
 
@@ -137,7 +141,7 @@
 }
 
 /* TODO close-btn */
-.close {
+.modal-close-btn {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -167,6 +171,12 @@
     }
 }
 
+@media screen and (min-width: 341px) {
+    .picture {
+        min-width: 295px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .modal-content{
         max-width: 600px;
@@ -174,13 +184,13 @@
         padding: 40px;
     }
 
-    .wrapper{
+    .modal-content-wrapper{
         flex-direction: row;
         flex-wrap: nowrap;
     }
 
     .picture{
-        max-width: 240px;
+        min-width: 240px;
         padding: 26px 40px;
     }
 
@@ -190,11 +200,14 @@
     }
 
     .modal-text{
+        font-family: 'Neue Montreal';
         font-size: 16px;
         line-height: 1.5;
+        font-weight: 300;
+        max-height: 120px;
     }
 
-    .close{
+    .modal-close-btn{
         top: 24px;
         right: 24px;
     }
