@@ -1,10 +1,10 @@
 export function createMarkupModalProductCard(data) {
-    const markup = data
-        .map(({ image, name, category, size, popularity, desc, price }) => {
-            return `<div class="modal-content">
+  const markup = data
+    .map(({ image, name, category, size, popularity, desc, price }) => {
+      return `<div class="modal-content">
             <button type="button" data-modal-close class="close">
                 <svg class="close-icon" width="28" height="28">
-                    <use href="./images/icons.svg#icon-close"></use>
+                    <use href="./images/icons/icons.svg#icon-close"></use>
                 </svg>
             </button> 
             <div class="wrapper">
@@ -30,13 +30,13 @@ export function createMarkupModalProductCard(data) {
                 <button class="add-to-cart-btn btn" type="button">
                     Add to
                     <svg width="18" height="18">
-                        <use href="./images/icons.svg#icon-cart"></use>
+                        <use href="./images/icons/icons.svg#icon-cart"></use>
                     </svg>
                 </button>
             </div>
         </div>
       `;
-        })
-        .join('');
-    return markup;
+    })
+    .join('');
+  return markup;
 }
