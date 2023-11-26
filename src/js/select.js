@@ -4,9 +4,9 @@ import { getCategories } from './createRequestCategory';
 import { markupOptionsCategory } from './markupOptionsCategory';
 import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
 import { getProductsFromServer } from './loadProduct';
-
-const searchElCategories = document.getElementById('searchParams1');
-const form_search = document.querySelector('.home__form-search');
+import { setSerchParams } from './search';
+import { updateLocStor } from './search';
+import { refs } from './refs';
 
 // инициализация библиотеки сортировки
 
@@ -20,13 +20,12 @@ new SlimSelect({
   events: {
     // формирование запроса
     afterChange: newVal => {
-      const serchParams = setSerchParams();
-      saveSerchParamsToLocStg(serchParams);
+      updateLocStor();
     },
   },
 });
 
-async function loadPage() {
+export async function loadPage() {
   // получение масива категорий
   const arrCategories = await getCategories();
 
@@ -34,7 +33,7 @@ async function loadPage() {
   const markupOptions = markupOptionsCategory(arrCategories);
 
   // отрисовка селекта
-  searchElCategories.insertAdjacentHTML('beforeend', markupOptions);
+  refs.searchElCategories.insertAdjacentHTML('beforeend', markupOptions);
 
   // инициализация библиотеки поиска
   new SlimSelect({
@@ -47,38 +46,9 @@ async function loadPage() {
     events: {
       // формирование запроса
       afterChange: newVal => {
-        const serchParams = setSerchParams();
-        saveSerchParamsToLocStg(serchParams);
+        updateLocStor();
+        getProductsFromServer();
       },
     },
   });
-  // сохранение параметров поиска в локальное хранилище при загрузке страницы
-  const serchParams = setSerchParams();
-  saveSerchParamsToLocStg(serchParams);
 }
-
-// формирование запроса по сабмиту
-form_search.addEventListener('submit', submitSearchForm);
-
-function submitSearchForm(event) {
-  event.preventDefault();
-  const serchParams = setSerchParams();
-  saveSerchParamsToLocStg(serchParams);
-  getProductsFromServer();
-}
-
-// формирование параметров поиска
-function setSerchParams() {
-  const getProduct = new GetProduct();
-  let objSearch = {};
-  new FormData(form_search).forEach((value, key) => {
-    if (value) {
-      objSearch[key] = value;
-    }
-  });
-  objSearch.page = getProduct.page;
-  objSearch.limit = getProduct.perPage;
-  return objSearch;
-}
-
-loadPage();

@@ -25,16 +25,16 @@ export class GetProduct {
   }
 
   async getProducts({ keyword, category, searchSort, page, limit }) {
-    // this.keyword = keyword || null;
-    // this.category = category || null;
+    this.keyword = keyword;
+    this.category = category;
 
-    this.byABC = searchSort.slice(6);
+    // this.byABC = searchSort.slice(6);
     this.page = page;
     this.perPage = limit;
     const PARAMS = new URLSearchParams({
-      // keyword: this.keyword,
-      // category: this.category,
-      byABC: this.byABC,
+      keyword: this.keyword,
+      category: this.category,
+      // byABC: this.byABC,
       // byPrice: this.byPrice,
       // byPopularity: this.byPopularity,
       page: this.page,
