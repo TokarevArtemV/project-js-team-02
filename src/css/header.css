@@ -1,169 +1,178 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
 }
 
-.logo-svg {
-    width: 16px;
-    height: 16px;
+.logo-svg-header {
+  width: 16px;
+  height: 16px;
 }
 
 .logo-img {
-    border-radius: 50px;
-    background-color: var(--olive-color);
-    height: 28px;
-    width: 28px;
-    fill: var(--background-color);
+  border-radius: 50px;
+  background-color: var(--olive-color);
+  height: 28px;
+  width: 28px;
+  fill: var(--background-color);
 }
 
 .logo-box {
-    height: 32px;
+  height: 32px;
 }
 
 .logo-text {
-    text-transform: capitalize;
-    color: var(--black-color);
-    font-family: Quincy CF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.36px;
-    margin-left: 8px;
+  text-transform: capitalize;
+  color: var(--black-color);
+  font-family: 'Quincy CF', sans-serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  margin-left: 8px;
+}
 
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .logo-text {
+    font-size: 16px;
+  }
 }
 
 .heder-cart-text {
-    display: none;
+  display: none;
 }
 
 .btn-home {
-    width: 77px;
-    height: 38px;
-    border-radius: 50px;
-    border: none;
-    background-color: var(--olive-color);
-    color: var(--background-color);
-    margin-right: 6px;
+  width: 77px;
+  height: 38px;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--olive-color);
+  color: var(--background-color);
+  margin-right: 6px;
 }
 
 .heder-cart-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50px;
-    background-color: var(--olive-color);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50px;
+  background-color: var(--olive-color);
 }
 
 .heder-cart {
-    fill: var(--background-color);
+  fill: var(--background-color);
 }
 
 .btn-home-text {
-    text-transform: capitalize;
-    font-family: Neue Montreal;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.3;
+  text-transform: capitalize;
+  font-family: 'Neue Montreal', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.cart-number-box {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
+  /* hover */
+  .logo:is(:hover, :focus) .logo-img {
+    background-color: var(--olive-hover-color);
+  }
 
-    /* hover */
-    .logo:is(:hover, :focus) .logo-img {
-        background-color: var(--olive-hover-color);
-    }
+  .logo:is(:hover, :focus) .logo-text {
+    text-shadow: 1px 0.5px 1px #586f1fd3;
+  }
 
-    .logo:is(:hover, :focus) .logo-text {
-        text-shadow: 1px 0.5px 1px #586f1fd3;
-    }
+  .heder-cart-link:is(:hover, :focus) {
+    background-color: var(--olive-hover-color);
+  }
 
-    .heder-cart-link:is(:hover, :focus) {
-        background-color: var(--olive-hover-color);
-    }
+  .btn-home:is(:hover, :focus) {
+    background-color: var(--olive-hover-color);
+  }
 
-    .btn-home:is(:hover, :focus) {
-        background-color: var(--olive-hover-color);
-    }
+  .btn-home:is(:hover, :focus) .btn-home-text {
+    text-shadow: 1px 0.5px 1px #2e2e2ed3;
+  }
 
-    .btn-home:is(:hover, :focus) .btn-home-text {
-        text-shadow: 1px 0.5px 1px #2e2e2ed3;
-    }
+  .cart-number-box {
+    display: contents;
+  }
+  /* hover */
+  .cart-number-box {
+    width: 16px;
+  }
 
-    /* hover */
-    .cart-number-box {
-        width: 16px;
-    }
+  .nav {
+    padding-top: 24px;
+  }
 
-    .nav {
-        padding-top: 24px;
-    }
+  .logo-svg-header {
+    width: 20px;
+    height: 20px;
+  }
 
-    .logo-svg {
-        width: 20px;
-        height: 20px;
-    }
+  .logo-img {
+    height: 32px;
+    width: 32px;
+    transition: background-color var(--default-tranzition);
+  }
 
-    .logo-img {
-        height: 32px;
-        width: 32px;
-        transition: background-color var(--default-tranzition);
-    }
+  .logo-text {
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.48px;
+    transition: text-shadow var(--default-tranzition);
+  }
 
-    .logo-text {
-        font-size: 24px;
-        line-height: 1;
-        letter-spacing: -0.48px;
-        transition: text-shadow var(--default-tranzition);
-    }
+  .heder-cart {
+    width: 18px;
+    height: 18px;
+  }
 
-    .heder-cart-text {
-        display: block;
-        text-transform: uppercase;
-        color: var(--black-color);
-        font-family: Neue Montreal;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.3;
-        text-transform: uppercase;
-    }
+  .heder-cart-text {
+    display: block;
+    text-transform: uppercase;
+    color: var(--black-color);
+    font-family: Neue Montreal;
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
 
-    .btn-home {
-        width: 104px;
-        height: 48px;
-        margin-right: 16px;
-        transition: background-color var(--default-tranzition);
-    }
+  .btn-home {
+    width: 104px;
+    height: 48px;
+    margin-right: 16px;
+    transition: background-color var(--default-tranzition);
+  }
 
-    .heder-cart-link {
-        margin-right: 14px;
-        transition: background-color var(--default-tranzition);
-    }
+  .heder-cart-link {
+    margin-right: 14px;
+    transition: background-color var(--default-tranzition);
+  }
 
-    .btn-home-text {
-        font-size: 18px;
-        line-height: 1.3;
-        transition: text-shadow var(--default-tranzition);
-    }
+  .btn-home-text {
+    font-size: 18px;
+    transition: text-shadow var(--default-tranzition);
+  }
 
-    .basket-header-box {
-        width: 253px;
-    }
+  .basket-header-box {
+    width: 253px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .basket-header-box {
-        width: 253px;
-    }
+  .basket-header-box {
+    width: 253px;
+  }
 
-    .btn-home {
-        margin-right: 24px;
-    }
+  .btn-home {
+    margin-right: 24px;
+  }
 }

@@ -7,7 +7,8 @@
   padding-bottom: 40px;
 }
 .products-wraper {
-  width: 335px;
+  width: 100%;
+  max-width: 335px;
 }
 .hero-products-container {
   display: flex;
@@ -16,8 +17,7 @@
 }
 
 /* Cards */
-.product-card {
-  height: 356px;
+.js-product-card {
   width: 335px;
   padding: 20px;
   background-color: var(--white-color);
@@ -25,8 +25,8 @@
 }
 
 .image-product {
-  width: 100%;
-  height: 100%;
+  max-width: 295px;
+  height: 178px;
   position: relative;
   padding: 19px 77px;
   margin-bottom: 20px;
@@ -60,9 +60,10 @@
 
 .details-product {
   color: var(--black-color);
+  margin-right: 8px;
 }
 
-.price {
+.product-card-price {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -73,7 +74,7 @@
   line-height: 1.11;
 }
 
-.button-shopping {
+.js-button-shopping {
   width: 34px;
   height: 34px;
   padding: 8px;
@@ -87,18 +88,17 @@
   cursor: pointer;
 }
 
-.icon-shopping {
+.icon-shopping-card {
   fill: var(--background-color);
 }
 
 @media screen and (min-width: 768px) {
   .products-wraper {
-    width: 704px;
+    min-width: 704px;
   }
 
-  .product-card {
-    height: 360px;
-    width: calc((100% - 32px) / 2);
+  .js-product-card {
+    flex-basis: calc((100% - 32px) / 2);
   }
 
   .image-product {
@@ -110,12 +110,12 @@
   .price-product {
     line-height: 1.2;
   }
-  .button-shopping:hover,
-  .button-shopping:focus {
+  .js-button-shopping:hover,
+  .js-button-shopping:focus {
     background-color: var(--olive-hover-color);
   }
-  .product-card:hover,
-  .product-card:focus {
+  .js-product-card:hover,
+  .js-product-card:focus {
     box-shadow: 0px 9.1px 16.53437px 0px rgba(0, 0, 0, 0.02),
       0px 41.6px 46.475px 0px rgba(0, 0, 0, 0.04),
       0px 105.3px 124.67812px 0px rgba(0, 0, 0, 0.05),
@@ -135,11 +135,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 925px;
+    max-width: 925px;
   }
-  .product-card {
-    height: 360px;
-    width: calc((100% - (2 * 20px)) / 3);
+  .js-product-card {
+    max-width: 295px;
+    flex-basis: calc((100% - 20px) / 3);
   }
   .image-product {
     padding: 19px 58px;
