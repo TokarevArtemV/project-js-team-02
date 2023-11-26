@@ -2,15 +2,15 @@ import icon from '../../images/icons/icons.svg';
 
 export function createMarkupBasketProductsCard(data) {
   const markup = data
-    .map(({ img, name, category, price, size }) => {
-      return `<div class="product-cart-js">
+    .map(({ img, name, category, price, size, _id }) => {
+      return `<div class="product-cart-js" data-cardId=${_id}>
           <div class="basket-img-box">
             <img src="${img}" alt="${name}" class="product-image" />
           </div>
           <div class="product-details">
             <button class="remove-button">
               <svg class="icon-close" width="18" height="18">
-                <use href="./images/icons/icons.svg#icon-close-sharp"></use>
+                <use href="${icon}#icon-close-sharp"></use>
               </svg>
             </button>
             <h2 class="product-name">${name}</h2>
