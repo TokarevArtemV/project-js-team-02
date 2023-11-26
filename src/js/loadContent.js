@@ -15,7 +15,6 @@ export function onLoadContent(e) {
     } else {
       buttonId = Number(clickedBtn);
     }
-    console.log(buttonId);
     localStorageObj.page = buttonId;
     localStorage.setItem('FILTERS_ITEM', JSON.stringify(localStorageObj));
     getProductsFromServer();
