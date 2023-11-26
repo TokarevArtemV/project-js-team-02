@@ -59,14 +59,14 @@ function onPaginationMarkup(pageIndex, pages) {
   const ribbonArr = onPaginationRibbonItems(pageIndex, pages);
   const leftBtn = `<button id="left-button" type="button" class="pag-btn pag-item">
     <svg class="arrow-icon" width="24" height="24">
-      <use href="../images/icons/icons.svg#icon-caret-small-left"></use>
+      <use href="./images/icons/icons.svg#icon-caret-small-left"></use>
     </svg>
   </button>
   <ul class="pag-wrapper">`;
   const rightBtn = `</ul>
   <button id="right-button" type="button" class="pag-btn pag-item">
     <svg class="arrow-icon" width="24" height="24">
-      <use href="../images/icons/icons.svg#icon-caret-small-right"></use>
+      <use href="./images/icons/icons.svg#icon-caret-small-right"></use>
     </svg>
   </button>`;
   let pageItems;
