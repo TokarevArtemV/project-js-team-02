@@ -267,14 +267,14 @@ input:-webkit-autofill:active {
 
   .footer-policy {
     padding: 10px 0;
-    margin-right: 8px;
+    /* margin-right: 8px; */
     transition: border var(--default-tranzition);
   }
 
   .footer-terms {
     padding: 10px 0;
     transition: border var(--default-tranzition);
-    margin-left: 8px;
+    /* margin-left: 8px; */
   }
 
   .footer-rights {
@@ -368,7 +368,7 @@ input:-webkit-autofill:active {
   fill: var(--black-color);
 } */
 
-#footer-modal-message {
+.footer-modal-message {
   margin-bottom: 15px;
 }
 
@@ -399,7 +399,7 @@ input:-webkit-autofill:active {
     padding: 50px 50px 40px;
   }
 
-  #footer-modal-message {
+  .footer-modal-message {
     color: var(--black-color);
     font-size: 18px;
   }
