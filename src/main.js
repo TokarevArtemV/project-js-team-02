@@ -6,3 +6,4 @@ import './js/popularProducts.js';
 import './js/discountProducts.js';
 import './js/subscription.js';
 import './js/pagination.js';
+import './js/loadContent.js';
