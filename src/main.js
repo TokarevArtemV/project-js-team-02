@@ -7,4 +7,11 @@ import './js/discountProducts.js';
 import { modalProductCart } from './js/modalProductCart';
 import './js/subscription.js';
 
+import { refs } from './js/refs';
+import { onLoadContent } from './js/loadContent';
+// import './js/pagination.js';
+// import './js/loadContent.js';
+
+refs.pagesRibbonEL.addEventListener('click', onLoadContent);
+
 modalProductCart();

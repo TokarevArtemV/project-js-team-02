@@ -1,19 +1,15 @@
-const refs = {
-  pagesRibbonEL: document.querySelector('.pag-ribbon'),
-};
+import { refs } from './refs';
 
 function onPaginationRibbonItems(pageIndex, pages) {
   const pageIndexObj = {
-    leftBtn: 'visually-hidden',
     indexOne: 1,
     indexTwo: '',
     indexThree: '',
     indexFour: '',
     indexFive: pages,
-    rightBtn: 'visually-hidden',
   };
 
-  if (pages === 5) {
+  if (pages <= 5) {
     pageIndexObj.indexTwo = 2;
     pageIndexObj.indexThree = 3;
     pageIndexObj.indexFour = 4;
@@ -56,6 +52,9 @@ function onPaginationRibbonItems(pageIndex, pages) {
 }
 
 function onPaginationMarkup(pageIndex, pages) {
+  if (pages === 1) {
+    refs.pagesRibbonEL.classList.add('visually-hidden');
+  }
   const ribbonArr = onPaginationRibbonItems(pageIndex, pages);
   const leftBtn = `<button id="left-button" type="button" class="pag-btn pag-item">
     <svg class="arrow-icon" width="24" height="24">
@@ -77,8 +76,14 @@ function onPaginationMarkup(pageIndex, pages) {
   }
   let markupArr = [];
   for (let i = 0; i < pageItems; i++) {
+    let buttonId;
+    if (ribbonArr[i] === '...') {
+      buttonId = 'dots' + i;
+    } else {
+      buttonId = ribbonArr[i];
+    }
     markupArr.push(
-      `<li class="list"><button id="${ribbonArr[i]}" type="button" class="pag-item">${ribbonArr[i]}</button></li>`
+      `<li class="list"><button id="${buttonId}" type="button" class="pag-item">${ribbonArr[i]}</button></li>`
     );
   }
   markupArr.unshift(leftBtn);
@@ -87,6 +92,7 @@ function onPaginationMarkup(pageIndex, pages) {
 }
 
 export function onPaginationRender(pageIndex, pages) {
+  refs.pagesRibbonEL.innerHTML = '';
   const markup = onPaginationMarkup(pageIndex, pages);
   refs.pagesRibbonEL.insertAdjacentHTML('afterbegin', markup);
 
@@ -105,11 +111,4 @@ export function onPaginationRender(pageIndex, pages) {
       item.classList.add('pag-active');
     }
   });
-}
-
-refs.pagesRibbonEL.addEventListener('click', onLoadContent);
-
-function onLoadContent(e) {
-  const buttonId = e.target.closest('button').id;
-  console.log(buttonId);
 }

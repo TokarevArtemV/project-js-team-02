@@ -12,6 +12,9 @@ export const refs = {
   discountProdEl: document.querySelector('.discount-products-list'),
   productFormBasket: document.querySelector('.flex-cart-js'),
 
+  //pagination
+  pagesRibbonEL: document.querySelector('.pag-ribbon'),
+
   //Modal
   cards: document.querySelectorAll('.product-card'),
   modal: document.querySelector('[ data-modal ]'),
