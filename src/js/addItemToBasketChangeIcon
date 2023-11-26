@@ -1,12 +1,12 @@
 import { refs } from './refs';
 
-const BUSKET = 'busket';
-const busketArr = JSON.parse(localStorage.getItem(BUSKET)) ?? [];
+const KEY_BUSKET = 'busket';
+const busketArr = JSON.parse(localStorage.getItem(KEY_BUSKET)) ?? [];
 
 function findProduct(productId) {
     return results.find(({ _id }) => _id === productId);
 }
-
+console.log(_id)
 refs.prodElContainer.addEventListener('click', onClick);
 
 function onClick(evt) {
@@ -17,14 +17,14 @@ function onClick(evt) {
         const product = findProduct(Number(_id));
         const inStorage = busketArr.some(({ _id }) => _id === product._id)
         
-        // if (inStorage) {
+        if (inStorage) {
         //     const changeIcon = function (icon) {
         //         icon.classList.replace();
         //     }
-        //     return;
-        // }
+            return;
+        }
 
         busketArr.push(product);
-        lokalStorage.setItem(BUSKET, JSON.stringify(busketArr));
+        lokalStorage.setItem(KEY_BUSKET, JSON.stringify(busketArr));
     }
 }
