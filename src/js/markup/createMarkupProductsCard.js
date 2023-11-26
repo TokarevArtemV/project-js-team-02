@@ -8,12 +8,12 @@ export function createMarkupProducts(data) {
                 <div class="info-product">
                     <h3 class="name-product">${name}</h3>
                     <p class="characteristics-product">
-                        Category:<span class="details-product">${category.replaceAll('_', ' ')}</span> Size:<span
+                        Category: <span class="details-product">${category.replaceAll('_', ' ')}</span> Size: <span
                             class="details-product">${size}</span>
-                        Popularity:<span class="details-product">${popularity}</span>
+                        Popularity: <span class="details-product">${popularity}</span>
                     </p>
                 </div>
-                <div class="price">
+                <div class="product-card-price">
                     <p class="price-product">${price}</p>
                     <button class="js-button-shopping">
                     <svg class="icon-shopping" width="28" height="28">

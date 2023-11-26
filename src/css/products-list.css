@@ -17,7 +17,7 @@
 
 /* Cards */
 .js-product-card {
-  height: 356px;
+  height: 100%;
   max-width: 335px;
   padding: 20px;
   background-color: var(--white-color);
@@ -60,9 +60,10 @@
 
 .details-product {
   color: var(--black-color);
+  margin-right: 8px;
 }
 
-.price {
+.product-card-price {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -97,8 +98,7 @@
   }
 
   .js-product-card {
-    height: 360px;
-    width: calc((100% - 32px) / 2);
+    flex-basis: calc((100% - 32px) / 2);
   }
 
   .image-product {
@@ -138,8 +138,7 @@
     width: 925px;
   }
   .js-product-card {
-    height: 360px;
-    width: calc((100% - (2 * 20px)) / 3);
+    flex-basis: calc((100% - 20px) / 3);
   }
   .image-product {
     padding: 19px 58px;
