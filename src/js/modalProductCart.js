@@ -2,41 +2,47 @@ import { refs } from './refs'
 import { GetProduct } from './products-api/api';
 import { createMarkupModalProductCard } from './markup/createMarkupModalProductCard';
 import { appendMarkup } from './markup/appendMarkup';
-import { getProductsFromServer } from './loadProduct';
-
-const getModalProduct = new GetProduct();
-
-// console.log(getModalProduct.getProductId(productId));
 
 
-
-function openModal(){
-    refs.modal.style.display = 'block';
-}
-
-function closeModal(){
-    refs.modal.style.display = 'none';
-}
-
-refs.modal.addEventListener("click", closeModal);
-
-refs.productCardsContainer.addEventListener("click", (evt) => {
-    const idCard = evt.target.closest(".product-card");
-    const dataCardID = idCard.dataset.cardid;
-
-
-
-    if(idCard){
-        openModal();
+export function modalProductCart(){
+    function openModal(){
+        refs.modal.style.display = 'block';
     }
-    console.log(idCard);
-
-    async function getProductId() {
-        const objModal = await getModalProduct.getProductId(dataCardID);
-        appendMarkup(refs.modal, createMarkupModalProductCard(objModal));
+    
+    function closeModal(){
+        refs.modal.style.display = 'none';
     }
-
-    console.log(dataCardID);
-    getProductId();
-});
-
+    
+    refs.productCardsContainer.addEventListener("click", (evt) => {
+        const idCard = evt.target.closest(".product-card");
+        const dataCardID = idCard.dataset.cardid;
+    
+    
+    
+        if(idCard){
+            openModal();
+        }
+        const getModalProduct = new GetProduct();
+    
+        async function getProductId() {
+            const objModal = await getModalProduct.getProductId(dataCardID);
+            appendMarkup(refs.modal, createMarkupModalProductCard(objModal));
+        }
+    
+        getProductId().then(() => {
+            if (refs.modal) {
+                refs.modal.addEventListener("click", function (event) {
+        
+                    if (event.target === refs.modal) {
+                        closeModal();
+                    }
+        
+                    const closeIcon = event.target.closest('.close-icon');
+                    if (closeIcon) {
+                        closeModal();
+                    }
+                });
+            }
+        });        
+    }); 
+}

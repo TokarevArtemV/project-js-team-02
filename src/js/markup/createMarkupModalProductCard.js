@@ -3,7 +3,7 @@ import icon from '../../images/icons/icons.svg';
 export function createMarkupModalProductCard(data) {
     const markup =  
              `<div class="modal-content">
-            <button type="button" data-modal-close class="close">
+            <button type="button" class="modal-close-btn">
                 <svg class="close-icon" width="28" height="28">
                     <use href="${icon}#icon-close-sharp"></use>
                 </svg>

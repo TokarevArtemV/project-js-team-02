@@ -14,5 +14,4 @@ export const refs = {
   //Modal
   cards: document.querySelectorAll('.product-card'),
   modal: document.querySelector('[ data-modal ]'),
-  modalCloseBtn: document.querySelector('[ data-modal-close ]'),
 };
