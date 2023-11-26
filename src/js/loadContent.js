@@ -1,7 +1,6 @@
 import { getProductsFromServer } from './loadProduct';
-import { refs } from './refs';
 
-refs.pagesRibbonEL.addEventListener('click', onLoadContent);
+// refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 
 export function onLoadContent(e) {
   try {
