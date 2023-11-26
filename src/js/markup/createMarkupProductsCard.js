@@ -1,7 +1,7 @@
 export function createMarkupProducts(data) {
     const markup = data
-        .map(({ img, name, category, size, popularity, price }) => {
-            return `<div class="product-card">
+        .map(({ img, name, category, size, popularity, price, _id }) => {
+            return `<li data-id="${_id}" class="js-product-card">
                 <div class="image-product">
                     <img class="image" src="${img}" alt="${name}" />
                 </div>
@@ -15,13 +15,13 @@ export function createMarkupProducts(data) {
                 </div>
                 <div class="price">
                     <p class="price-product">${price}</p>
-                    <button class="button-shopping">
+                    <button class="js-button-shopping">
                     <svg class="icon-shopping" width="28" height="28">
                         <use href="./images/icons/icons.svg#icon-shopping-cart"></use>
                     </svg>
                     </button>
                 </div>
-            </div>`;
+            </li>`;
         })
         .join('');
     return markup;
