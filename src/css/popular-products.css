@@ -1,4 +1,9 @@
+.popular-products-wraper {
+  width: 275px;
+}
+
 .popular-products-container {
+  width: 275px;
   padding-bottom: 80px;
 }
 
@@ -21,7 +26,7 @@
   position: relative;
   display: flex;
   padding: 12px 12px;
-  width: 335px;
+  width: 275px;
   height: 98px;
   border-radius: 10px;
   background-color: var(--white-color);
