@@ -60,7 +60,13 @@
 
 }
 
+.cart-number-box {
+    display: none;
+}
+
 .heder-cart {
+    width: 14px;
+    height: 14px;
     fill: var(--background-color);
 }
 
@@ -97,6 +103,10 @@
     }
 
     /* hover */
+    .cart-number-box {
+        display: flex;
+    }
+
     .cart-number-box {
         width: 16px;
     }
@@ -145,6 +155,11 @@
     .heder-cart-link {
         margin-right: 14px;
         transition: background-color var(--default-tranzition);
+    }
+
+    .heder-cart {
+        width: 18px;
+        height: 18px;
     }
 
     .btn-home-text {
