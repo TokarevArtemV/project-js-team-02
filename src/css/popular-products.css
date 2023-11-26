@@ -7,13 +7,13 @@
   padding-bottom: 80px;
 }
 
-.products-title {
+.products-title.popular{
   color: var(--black-color);
   font-family: Neue Montreal;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.16;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .popular-products-list {
@@ -98,6 +98,17 @@
   fill: var(--background-color);
 }
 
+
+@media screen and (max-width: 375px) {
+  .popular-products-item {
+    max-width: 100%;
+  }
+
+  .card-image{
+    max-width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .products-title {
     font-size: 28px;
@@ -107,7 +118,24 @@
     font-size: 20px;
     line-height: 1.2;
   }
+
+    .popular-products-list {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    
+     .popular-products-item{
+      flex-basis: calc((100% - 13px) / 2);
+    }
 }
 
 @media screen and (min-width: 1440px) {
+  .popular-products-list{
+    flex-direction: column;
+
+  }
+
+    .popular-products-item{
+      width: 275px;
+    }
 }
