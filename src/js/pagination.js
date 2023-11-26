@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import icon from '../../images/icons/icons.svg';
+import icon from '../images/icons/icons.svg';
 
 function onPaginationRibbonItems(pageIndex, pages) {
   const pageIndexObj = {
