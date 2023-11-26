@@ -1,8 +1,7 @@
 .discount-products-container {
-
 }
 
-.products-title.discount{
+.products-title.discount {
   color: var(--black-color);
   font-family: Neue Montreal;
   font-size: 24px;
@@ -12,8 +11,6 @@
 }
 
 .discount-products-list {
-  
-  
 }
 
 .discount-products-item {
@@ -52,30 +49,25 @@
 }
 
 .price {
- margin-right: 38px;
+  margin-right: 38px;
 }
 
-
-
-.discount-info-box{
+.discount-info-box {
   position: relative;
   display: flex;
   justify-content: space-between;
-  
-
 }
 .discount-card-info {
-  
-  display: flex;  
- justify-content: flex-end;
- align-items: self-start;
-} 
+  display: flex;
+  justify-content: flex-end;
+  align-items: self-start;
+}
 
 .button-shopping-discount {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateY(-15%) translateX(10%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-15%) translateX(10%);
   width: 34px;
   height: 34px;
   padding: 8px;
@@ -96,18 +88,20 @@
   fill: var(--background-color);
 }
 
-
 @media screen and (max-width: 375px) {
-  .discount-products-item{
+  .discount-products-item {
     max-width: 100%;
-  } 
+  }
 
-    .card-image-discount{
-      max-width: 100%;
-    }
+  .card-image-discount {
+    max-width: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .discount-products-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
   .products-title {
     font-size: 28px;
     line-height: 1.14;
@@ -121,21 +115,19 @@
   .discount-products-list {
     display: flex;
     gap: 32px;
-  
   }
 }
 
 @media screen and (min-width: 1440px) {
-
-  .card-image-discount{
+  .card-image-discount {
     width: 243px;
   }
-  .discount-products-item{
+  .discount-products-item {
     width: 275px;
   }
 
-     .discount-products-list{
-      flex-direction: column;
-      gap: 20px;
-     }
+  .discount-products-list {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

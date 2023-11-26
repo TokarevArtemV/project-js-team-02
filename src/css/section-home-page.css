@@ -1,19 +1,17 @@
-.products-container{
-    padding-bottom: 80px;
+.section-home-page {
+  padding-bottom: 80px;
 }
 
-
-
-@media screen and (min-width: 768px){
-    .products-container{
-        padding-bottom: 100px;
-    }
+@media screen and (min-width: 768px) {
+  .section-home-page {
+    padding-bottom: 100px;
+  }
 }
 
-
-@media screen and (min-width: 1440px){
-    .products-container{
-        display: grid;
-        grid-template-columns: 75% 25%;
-    }
+@media screen and (min-width: 1440px) {
+  .section-home-page {
+    padding-bottom: 60px;
+    /* display: grid;
+    grid-template-columns: 75% 25%; */
+  }
 }
