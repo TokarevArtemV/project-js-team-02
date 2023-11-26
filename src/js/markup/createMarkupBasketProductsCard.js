@@ -2,9 +2,8 @@ import icon from '../../images/icons/icons.svg';
 
 export function createMarkupBasketProductsCard(data) {
   const markup = data
-    .map(({ img, name, category, price }) => {
-      return `<div class="flex-cart">
-<div class="product-cart">
+    .map(({ img, name, category, price, size }) => {
+      return `<div class="product-cart">
   
   <img src="${img}" alt="${name}" class="product-image" />
   

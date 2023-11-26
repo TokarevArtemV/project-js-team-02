@@ -10,4 +10,5 @@ export const refs = {
   //
   popularProdEl: document.querySelector('.popular-products-list'),
   discountProdEl: document.querySelector('.discount-products-list'),
+  productFormBasket: document.querySelector('.flex-cart-js'),
 };
