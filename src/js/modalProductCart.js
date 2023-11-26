@@ -15,6 +15,7 @@ export function modalProductCart() {
   refs.productCardsContainer.addEventListener('click', evt => {
     if (
       evt.target.classList.contains('js-button-shopping') ||
+      evt.target.classList.contains('icon-shopping-card') ||
       evt.target.classList.contains('icon-shopping-card')
     )
       return;
