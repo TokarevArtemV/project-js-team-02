@@ -10,6 +10,6 @@ export function markupOptionsCategory(arrCategories) {
       .map(elem => {
         return `<option value=${elem.replaceAll(' ', '_')}>${elem}</option>`;
       })
-      .join('') + `<option value="null">Show All</option>`
+      .join('') + `<option value="">Show All</option>`
   );
 }
