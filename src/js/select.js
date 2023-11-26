@@ -1,14 +1,14 @@
 import SlimSelect from 'slim-select';
 import { GetProduct } from './products-api/api';
 import { getCategories } from './createRequestCategory';
-import { markupOptionsCategory } from './markupOptionsCategory';
+import { markupOptionsCategory } from './markup/markupOptionsCategory';
 import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
 import { getProductsFromServer } from './loadProduct';
 
 const searchElCategories = document.getElementById('searchParams1');
 const form_search = document.querySelector('.home__form-search');
 
-// инициализация библиотеки сортировки
+// ініціалізація бібліотеки сортування
 
 new SlimSelect({
   select: '.home_categorias-sort',
@@ -18,7 +18,7 @@ new SlimSelect({
     searchHighlight: true,
   },
   events: {
-    // формирование запроса
+    // формування запроса
     afterChange: newVal => {
       const serchParams = setSerchParams();
       saveSerchParamsToLocStg(serchParams);
@@ -27,13 +27,13 @@ new SlimSelect({
 });
 
 async function loadPage() {
-  // получение масива категорий
+  // отримання масива категорій
   const arrCategories = await getCategories();
 
-  // создание разметки селекта
+  // створювання розмітки селекта
   const markupOptions = markupOptionsCategory(arrCategories);
 
-  // отрисовка селекта
+  // малювання розмітки селекта
   searchElCategories.insertAdjacentHTML('beforeend', markupOptions);
 
   // инициализация библиотеки поиска

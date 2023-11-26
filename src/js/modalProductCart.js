@@ -13,6 +13,12 @@ export function modalProductCart() {
   }
 
   refs.productCardsContainer.addEventListener('click', evt => {
+    if (
+      evt.target.classList.contains('js-button-shopping') ||
+      evt.target.classList.contains('icon-shopping-card')
+    )
+      return;
+
     const idCard = evt.target.closest('.js-product-card');
     const dataCardID = idCard.dataset.id;
 
