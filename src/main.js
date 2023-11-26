@@ -7,11 +7,15 @@ import './js/discountProducts.js';
 import { modalProductCart } from './js/modalProductCart';
 import './js/subscription.js';
 
+// зміна іконки корзини
+import './js/addItemToBasketChangeIcon.js';
+// зміна іконки корзини
+
+// пагінація
 import { refs } from './js/refs';
 import { onLoadContent } from './js/loadContent';
-// import './js/pagination.js';
-// import './js/loadContent.js';
 
 refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 
 modalProductCart();
+// пагінація

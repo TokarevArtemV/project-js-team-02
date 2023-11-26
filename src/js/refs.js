@@ -10,6 +10,12 @@ export const refs = {
   //
   popularProdEl: document.querySelector('.popular-products-list'),
   discountProdEl: document.querySelector('.discount-products-list'),
+  
+ // зміна іконки корзини
+  prodEl: document.querySelector('.js-product-card'),
+  buttonShopping: document.querySelector('.js-button-shopping'),
+// зміна іконки корзини
+  
   productFormBasket: document.querySelector('.flex-cart-js'),
 
   //pagination
@@ -18,4 +24,5 @@ export const refs = {
   //Modal
   cards: document.querySelectorAll('.product-card'),
   modal: document.querySelector('[ data-modal ]'),
+
 };
