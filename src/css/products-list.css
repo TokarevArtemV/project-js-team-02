@@ -7,7 +7,8 @@
   padding-bottom: 40px;
 }
 .products-wraper {
-  width: 275px;
+  width: 100%;
+  max-width: 335px;
 }
 .hero-products-container {
   display: flex;
@@ -17,7 +18,7 @@
 
 /* Cards */
 .js-product-card {
-  max-width: 335px;
+  width: 335px;
   padding: 20px;
   background-color: var(--white-color);
   border-radius: 20px;
@@ -93,7 +94,7 @@
 
 @media screen and (min-width: 768px) {
   .products-wraper {
-    width: 704px;
+    min-width: 704px;
   }
 
   .js-product-card {
@@ -134,9 +135,10 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 925px;
+    max-width: 925px;
   }
   .js-product-card {
+    max-width: 295px;
     flex-basis: calc((100% - 20px) / 3);
   }
   .image-product {
