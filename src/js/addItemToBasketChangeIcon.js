@@ -32,6 +32,6 @@ function onClick(evt) {
 function findProduct(element) {
   const productId = element.closest('.js-product-card');
   const cardId = productId.dataset.id;
-  return results.find(({ _id }) => _id === productId);
+  // return results.find(({ _id }) => _id === productId);
 }
 // console.log(_id);
