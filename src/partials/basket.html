@@ -52,14 +52,21 @@
             Sum:<span class="sum-span">${sum}</span>
           </p>
         </div>
-        <div class="email-and-checkout">
+
+        <form class="cart-form email-and-checkout">
           <input
             type="email"
-            placeholder="Mail: Enter your email"
-            class="email-input"
+            name="email"
+            class="email-input reset-autofill-cart js-cart-email"
+            placeholder="Mail:&nbsp;&nbsp;Enter your email"
+            title="Invalid email address"
+            aria-label="Email"
+            required
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           />
-          <button class="checkout-button">Checkout</button>
-        </div>
+
+          <button class="checkout-button js-submit-btn-cart">Checkout</button>
+        </form>
       </div>
     </div>
 

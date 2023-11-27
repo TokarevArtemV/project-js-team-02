@@ -22,6 +22,10 @@ export const refs = {
 
   productFormBasket: document.querySelector('.flex-cart-js'),
 
+  //cart valiidation
+  inputCartEl: document.querySelector('.js-cart-email'),
+  submitBtnCartEl: document.querySelector('.js-submit-btn-cart'),
+
   //pagination
   pagesRibbonEL: document.querySelector('.pag-ribbon'),
 
