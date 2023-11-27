@@ -108,7 +108,7 @@
     line-height: 1.1;
 }
 
-.add-to-cart-btn{
+#modal-btn{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -154,6 +154,10 @@
     cursor: pointer;
     z-index: 9;
     font-size: 16px;
+}
+
+.remove-btn{
+
 }
 
 

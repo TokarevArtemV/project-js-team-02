@@ -28,7 +28,7 @@ export function createMarkupModalProductCard(data) {
             
             <div class="price-wrapper modal-content-wrapper">
                 <p class="modal-price">${data.price}</p>
-                <button class="add-to-cart-btn btn" type="button">
+                <button class="add-to-cart-btn btn" id="modal-btn" type="button">
                     Add to
                     <svg class="modal-cart-icon" width="18" height="18">
                         <use href="${icon}#icon-shopping-cart"></use>
