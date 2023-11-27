@@ -1,9 +1,16 @@
-//obj = мастив з продуктами
-//countNumberPlace = місце розмітки в ДОМ. "number"
-
-export function cartCount(obj, countNumberPlace) {
-    obj.reduce((acc, item, idx, arr) => {
-        acc = arr.length
-        return countNumberPlace.innerHTML = parseInt(acc)
-    }, 0)
-};
+function countCartProducts() {
+  const allCartElArr = document.querySelectorAll('.js-cart-number');
+  console.log(allCartElArr);
+  try {
+    const cartProducts = JSON.parse(localStorage.getItem('BASKET'));
+    console.log(cartProducts);
+    //
+    const totalProductsCount = cartProducts.reduce((acc, product) => {
+      return acc + product.count;
+    }, 0);
+    allCartElArr.forEach(el => (el.innerHTML = `${totalProductsCount}`));
+  } catch (error) {
+    console.log(error);
+  }
+}
+countCartProducts();
