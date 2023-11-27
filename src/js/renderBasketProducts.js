@@ -3,10 +3,12 @@ import { appendMarkup } from './markup/appendMarkup';
 import { createMarkupBasketProductsCard } from './markup/createMarkupBasketProductsCard';
 import { refs } from './refs';
 
+import { appendMarkupAfterbeginWithoutReset } from './markup/appendMarkup';
+
 export async function renderBasketProducts() {
   const markupBasketProducts = await getProductFormBasket();
 
-  appendMarkup(
+  appendMarkupAfterbeginWithoutReset(
     refs.productFormBasket,
     createMarkupBasketProductsCard(markupBasketProducts)
   );

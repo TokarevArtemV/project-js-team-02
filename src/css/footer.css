@@ -1,9 +1,10 @@
 /* -------------Скинути стилі автозаповнення полів */
-input:-webkit-autofill::first-line,
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+
+.reset-autofill:-webkit-autofill::first-line,
+.reset-autofill:-webkit-autofill,
+.reset-autofill:-webkit-autofill:hover,
+.reset-autofill:-webkit-autofill:focus,
+.reset-autofill:-webkit-autofill:active {
   border: 1px solid var(--background-color);
   -webkit-text-fill-color: var(--background-color);
   -webkit-box-shadow: 0 0 0px 30px transparent inset;
