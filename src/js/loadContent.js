@@ -15,6 +15,9 @@ export function onLoadContent(e) {
     } else {
       buttonId = Number(clickedBtn);
     }
+    if (Number(clickedBtn) === currentPage) {
+      return;
+    }
     localStorageObj.page = buttonId;
     localStorage.setItem('FILTERS_ITEM', JSON.stringify(localStorageObj));
     getProductsFromServer();
