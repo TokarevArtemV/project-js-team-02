@@ -73,3 +73,7 @@ button {
     padding-right: 15px;
   }
 }
+
+.common-card {
+  cursor: pointer;
+}

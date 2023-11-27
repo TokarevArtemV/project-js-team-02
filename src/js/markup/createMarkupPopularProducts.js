@@ -4,7 +4,7 @@ export function createMarkupPopularProducts(data) {
   const markup = data
     .map(({ img, name, category, size, popularity, _id, is10PercentOff }) => {
       if (is10PercentOff) {
-        return `<li class="popular-products-item" data-cardId=${_id}>
+        return `<li class="popular-products-item common-card" data-cardId=${_id}>
                 <svg class="icon-popular-discount" width="30" height="30">
                     <use href="${icon}#icon-discount"></use>
                 </svg>
@@ -30,7 +30,7 @@ export function createMarkupPopularProducts(data) {
                 </button>
               </li>`;
       }
-      return `<li class="popular-products-item" data-cardId=${_id}>
+      return `<li class="popular-products-item common-card" data-cardId=${_id}>
                 <div class="card-image">
                   <img src="${img}" alt="${name}" />
                 </div>
