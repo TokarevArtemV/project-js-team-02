@@ -13,7 +13,7 @@ export function createMarkupPopularProducts(data) {
                 </div>
                 <div class="card-info">
                   <h3 class="products-card-title">${name}</h3>
-                  <p class="popular-cards-text category">
+                  <p class="popular-cards-text">
                     Category: <span>${category.replaceAll('_', ' ')}</span>
                   </p>
                   <div class="text-box">
@@ -36,7 +36,7 @@ export function createMarkupPopularProducts(data) {
                 </div>
                 <div class="card-info">
                   <h3 class="products-card-title">${name}</h3>
-                  <p class="popular-cards-text category">
+                  <p class="popular-cards-text">
                     Category: <span>${category.replaceAll('_', ' ')}</span>
                   </p>
                   <div class="text-box">
