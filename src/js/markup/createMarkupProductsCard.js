@@ -32,7 +32,7 @@ export function createMarkupProducts(data) {
           : 'icon-shopping-cart';
 
         if (is10PercentOff) {
-          return `<li data-id="${_id}" class="product-card js-product-card">
+          return `<li data-id="${_id}" class="product-card js-product-card common-card">
                 <div class="image-product">
                 <svg class="icon-discount" width="60" height="60">
                     <use href="${icon}#icon-discount"></use>
@@ -60,7 +60,7 @@ export function createMarkupProducts(data) {
                 </div>
             </li>`;
         } else {
-          return `<li data-id="${_id}" class="product-card js-product-card">
+          return `<li data-id="${_id}" class="product-card js-product-card common-card">
                 <div class="image-product">
                     <img class="image" src="${img}" alt="${name}" />
                 </div>
