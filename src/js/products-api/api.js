@@ -2,7 +2,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://food-boutique.b.goit.study/api';
 
 export class GetProduct {
-  constructor() {
+  constructor(perPage) {
     this.keyword = '';
     this.category = '';
     this.byABC = false;
@@ -10,7 +10,7 @@ export class GetProduct {
     this.byPopularity = false;
     this.page = 1;
     this.totalPages = 1;
-    this.perPage = 6;
+    this.perPage = perPage;
   }
 
   async getCategories() {
