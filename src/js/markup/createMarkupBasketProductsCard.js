@@ -16,7 +16,10 @@ export function createMarkupBasketProductsCard(data) {
             <h2 class="product-name">${name}</h2>
             <div class="cart-product-box">
               <p class="product-basket-text">
-                Category: <span class="category-slyle">${category}</span>
+                Category: <span class="category-slyle">${category.replaceAll(
+                  '_',
+                  ' '
+                )}</span>
               </p>
               <p class="product-basket-text">
                 Size: <span class="size-slyle">${size}</span>

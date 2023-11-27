@@ -25,6 +25,8 @@ export const refs = {
   //cart valiidation
   inputCartEl: document.querySelector('.js-cart-email'),
   submitBtnCartEl: document.querySelector('.js-submit-btn-cart'),
+  //cart count sum
+  sumCartEl: document.querySelector('.sum-span'),
 
   //pagination
   pagesRibbonEL: document.querySelector('.pag-ribbon'),
