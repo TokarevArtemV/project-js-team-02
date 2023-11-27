@@ -124,6 +124,7 @@ div.ss-content.ss-open-below {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 14px 20px;
+  margin-top: 8px !important;
   /* border: none; */
 }
 div.ss-content .ss-list .ss-option {
@@ -176,10 +177,11 @@ div.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
   .home_search-input {
     font-size: 18px;
     width: 269px;
+    line-height: 1.33em;
   }
   .home_search-input::placeholder {
     font-size: 18px;
-    line-height: 13.3em;
+    line-height: 1.33em;
   }
   .home_select-categories {
     width: 200px;
