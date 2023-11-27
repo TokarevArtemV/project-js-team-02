@@ -9,6 +9,11 @@
   font-family: 'Neue Montreal', sans-serif !important;
 }
 
+.section-empty-basket {
+  padding-top: 72px;
+  padding-bottom: 80px;
+}
+
 #cartTitle {
   font-size: 24px;
   font-weight: 500;
@@ -18,9 +23,9 @@
 .icon-and-cart {
   display: flex;
   align-items: center;
-  margin-top: 89px;
+  /* margin-top: 89px; */
   gap: 14px;
-  margin-bottom: 22px;
+  /* margin-bottom: 22px; */
 }
 
 .cart-icon {
@@ -30,7 +35,7 @@
 
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
   border-radius: 30px;
   cursor: pointer;
   background-color: #6d8434;
@@ -42,8 +47,8 @@
 }
 
 .cart-icon-img {
-  width: 18px;
-  height: 18px;
+  /* width: 18px;
+  height: 18px; */
   fill: var(--background-color);
 }
 
@@ -56,6 +61,7 @@
 .cart-content {
   text-align: center;
   margin-top: 50px;
+
   /* IMPORTANT!!! */
   visibility: hidden;
 }
@@ -109,7 +115,7 @@
   font-size: 18px;
   line-height: 1.11;
   font-weight: 500;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .cart-product-box {
@@ -120,8 +126,10 @@
 }
 
 .product-basket-text {
-  color: rgba(1, 1, 1, 0.3);
+  /* color: rgba(1, 1, 1, 0.3); */
+  color: rgba(1, 1, 1, 0.2);
   font-size: 12px;
+
   line-height: 1.16;
 }
 
@@ -129,15 +137,12 @@
   color: var(--black-color);
 }
 
-
 .size {
   width: 80px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
 
 .product-price {
   color: var(--black-color);
@@ -152,7 +157,7 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
-  line-height: 1.3;
+  line-height: 1.28;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -161,6 +166,7 @@
 }
 
 .button-delete-all-box {
+  margin-top: 22px;
   display: flex;
   justify-content: flex-end;
 }
@@ -188,6 +194,7 @@
 .order-title {
   font-size: 24px;
   line-height: 1.16;
+  font-weight: 500;
 }
 
 .order-summary {
@@ -198,19 +205,21 @@
   border-radius: 8px;
   background: rgba(109, 132, 52, 0.05);
   max-width: 100%;
+
   height: 60px;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: last baseline;
   display: flex;
-  padding: 22px 28px 14px;
+
+  padding: 26px 18px 14px 18px;
   margin-top: 40px;
 }
 
 .email-and-checkout {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding-top: 40px;
+  gap: 14px;
+  margin-top: 30px;
 }
 
 .sum-style {
@@ -225,14 +234,14 @@
 }
 
 .email-input {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 14px;
   line-height: 1.3;
   border-radius: 30px;
   border: 1px solid rgba(1, 1, 1, 0.3);
   background-color: transparent;
   max-width: 335px;
-  height: 42px;
+  /* height: 42px; */
   width: 100%;
   outline: none;
   transition: border var(--default-tranzition);
@@ -243,11 +252,13 @@
 }
 
 .checkout-button {
+  padding: 12px 0;
   display: inline-flex;
-  padding: 15px 65px;
+  font-size: 20px;
+  /* padding: 15px 65px; */
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
   border-radius: 30px;
   background: #6d8434;
   color: #fff;
@@ -256,7 +267,7 @@
   width: 335px;
   font-size: 14px;
   line-height: 1.3;
-  height: 42px;
+  /* height: 42px; */
 }
 
 .checkout-button:hover {
@@ -298,33 +309,42 @@
     max-height: 100%;
   }
 
-  
-
   .remove-button {
     right: 0;
   }
 
-  .category{
+  .category {
     width: 105px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-    .size{
-      width: 80px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-  
+  .size {
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
-
+/* ----------------------------------------------------------- */
 @media screen and (min-width: 768px) {
+  .section-empty-basket {
+    padding-top: 107px;
+    padding-bottom: 100px;
+  }
+
+  #cartTitle {
+    font-size: 32px;
+    line-height: 1;
+  }
   .cart-icon {
     width: 42px;
     height: 42px;
+  }
+
+  .cart-form {
+    width: 590px;
   }
 
   .product-cart-js::after {
@@ -351,18 +371,24 @@
   }
 
   .email-and-checkout {
+    margin-top: 40px;
     flex-direction: row;
-    /* justify-content: space-between; */
+    justify-content: space-between;
   }
 
   .email-input {
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-size: 18px;
-    width: 335px;
+    width: 359px;
+    line-height: 1.33;
+    height: auto;
   }
 
   .checkout-button {
     width: 215px;
     font-size: 20px;
+    padding: 15px 0;
   }
 
   .delete-all-button {
@@ -374,6 +400,7 @@
     line-height: 1.2;
   }
   .button-delete-all-box {
+    margin-top: 29px;
     width: 672px;
   }
 
@@ -382,7 +409,8 @@
   }
 
   .product-basket-text span {
-    font-size: 14px;
+    font-size: 32px;
+    line-height: 1;
   }
 
   .product-price {
@@ -390,7 +418,7 @@
     line-height: 1.2;
   }
 
-  .size{
+  .size {
     width: auto;
   }
 }
