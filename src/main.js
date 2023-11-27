@@ -27,3 +27,6 @@ import { onLoadContent } from './js/loadContent';
 refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 // пагінація
 modalProductCart();
+
+//cart count
+import './js/cartCount.js';
