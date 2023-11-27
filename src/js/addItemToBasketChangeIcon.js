@@ -3,12 +3,16 @@ import { refs } from './refs';
 const KEY_BUSKET = 'BUSKET';
 const busketArr = JSON.parse(localStorage.getItem(KEY_BUSKET)) ?? [];
 
-// refs.cards.addEventListener('click', onClick);
+refs.productCardsContainer.addEventListener('click', onClick);
 
 function onClick(evt) {
-  evt.preventDafault();
-  console.log('re');
-  if (evt.target.classList.contains('.js-button-shopping')) {
+  evt.preventDefault();
+
+  if (
+    evt.target.classList.contains('js-button-shopping') ||
+    evt.target.classList.contains('icon-shopping-card') ||
+    evt.target.nodeName === 'use'
+  ) {
     // debugger;
     const product = findProduct(evt.target);
     const inStorage = busketArr.some(({ _id }) => _id === product._id);
@@ -26,7 +30,8 @@ function onClick(evt) {
 }
 
 function findProduct(element) {
-  const productId = Number(element.closest('.js-product-card').dataset.id);
+  const productId = element.closest('.js-product-card');
+  const cardId = productId.dataset.id;
   return results.find(({ _id }) => _id === productId);
 }
 // console.log(_id);
