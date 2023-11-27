@@ -39,7 +39,6 @@ export function modalProductCart() {
           if (event.target === refs.modal) {
             closeModal();
           }
-
           const closeIcon = event.target.closest('.close-icon');
           if (closeIcon) {
             closeModal();
@@ -49,3 +48,42 @@ export function modalProductCart() {
     });
   });
 }
+
+/* 
+function openModal() {
+  refs.modal.style.display = 'block';
+}
+
+function closeModal() {
+  refs.modal.style.display = 'none';
+}
+
+export function modalProductCart() {
+  refs.productCardsContainer.addEventListener('click', modalCartLoad);
+
+  function modalCartLoad(e) {
+    if (
+      e.target.classList.contains('js-button-shopping') ||
+      e.target.classList.contains('icon-shopping-card') ||
+      e.target.nodeName === 'use'
+    )
+      return;
+    const idCard = e.target.closest('.js-product-card');
+    const dataCardID = idCard.dataset.id;
+
+    if (idCard) {
+      openModal();
+    }
+    const getModalProduct = new GetProduct();
+
+    async function cartMarkup() {
+      const objModal = await getModalProduct.getProductId(dataCardID);
+      appendMarkup(refs.modal, createMarkupModalProductCard(objModal));
+      const cartModalBtn = document.querySelector('.js-modal-btn');
+      console.log(cartModalBtn);
+      return cartModalBtn;
+    }
+
+    cartMarkup();
+  }
+} */

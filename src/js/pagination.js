@@ -55,6 +55,7 @@ function onPaginationRibbonItems(pageIndex, pages) {
 function onPaginationMarkup(pageIndex, pages) {
   if (pages === 1) {
     refs.pagesRibbonEL.classList.add('visually-hidden');
+    return;
   }
   const ribbonArr = onPaginationRibbonItems(pageIndex, pages);
   const leftBtn = `<button id="left-button" type="button" class="pag-btn pag-item">

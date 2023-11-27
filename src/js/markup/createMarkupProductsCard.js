@@ -12,7 +12,7 @@ function isProduct(product, arrProducts) {
 
 export function createMarkupProducts(data) {
   const arrProducts = productsInBasket();
-  if (arrProducts.length === 0) return;
+  //if (arrProducts.length === 0) return;
 
   const markup = data
     .map(
