@@ -8,6 +8,7 @@ import { refs } from './js/refs';
 import { loadPage } from './js/select.js';
 import { getProductsFromServer } from './js/loadProduct.js';
 import { getProductSearch } from './js/search.js';
+import './js/scroll.js';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();

@@ -3,18 +3,19 @@ import { GetProduct } from './products-api/api';
 import { appendMarkup } from './markup/appendMarkup';
 import { refs } from './refs';
 
-const basket = [
-  { _id: '640c2dd963a319ea671e383b', count: 1 },
-  { _id: '640c2dd963a319ea671e385e', count: 3 },
-  { _id: '640c2dd963a319ea671e383b', count: 2 },
-  { _id: '640c2dd963a319ea671e385e', count: 3 },
-  { _id: '640c2dd963a319ea671e385e', count: 3 },
-  { _id: '640c2dd963a319ea671e383b', count: 1 },
-  { _id: '640c2dd963a319ea671e383b', count: 1 },
-];
-localStorage.setItem('BASKET', JSON.stringify(basket));
+// const basket = [
+//   { _id: '640c2dd963a319ea671e383b', count: 1 },
+//   { _id: '640c2dd963a319ea671e376e', count: 3 },
+//   { _id: '640c2dd963a319ea671e3860', count: 4 },
+//   { _id: '640c2dd963a319ea671e385e', count: 3 },
+//   { _id: '640c2dd963a319ea671e376f', count: 2 },
+//   { _id: '640c2dd963a319ea671e3770', count: 1 },
+//   { _id: '640c2dd963a319ea671e3860', count: 1 },
+// ];
+// localStorage.setItem('BASKET', JSON.stringify(basket));
 
 modalProductCard();
+
 export async function modalProductCard() {
   const getProduct = new GetProduct();
   const datafromLocStor = JSON.parse(localStorage.getItem('BASKET'));
