@@ -1,30 +1,13 @@
 import { GetProduct } from './products-api/api';
-import throttle from 'lodash.throttle';
 import { refs } from './refs';
-
-// const refs = {
-//   footerSubmitBtnEl: document.querySelector('.footer-form-btn'),
-//   footerInputEl: document.querySelector('.footer-input'),
-//   footerBackdropEl: document.querySelector('[data-modal]'),
-//   footerModalEl: document.querySelector('.footer-modal'),
-//   footerModalBtnCloseEl: document.querySelector('[ data-modal-close]'),
-//   footerFormEl: document.querySelector('.footer-form'),
-// };
+import { validateInput } from './validateInput';
 
 refs.footerSubmitBtnEl.addEventListener('click', onSubmit);
-refs.footerInputEl.addEventListener('input', throttle(onInput, 700)); //throttle библиотека ?
 
 refs.footerSubmitBtnEl.disabled = true;
 
 // ------------------------------валідація форми
-function onInput() {
-  const isValid = this.validity.valid;
-  console.log(isValid);
-  refs.footerSubmitBtnEl.disabled = true;
-  if (isValid) {
-    refs.footerSubmitBtnEl.disabled = false;
-  }
-}
+validateInput(refs.footerInputEl, refs.footerSubmitBtnEl);
 
 // -----------------------------сабміт форми
 async function onSubmit(e) {

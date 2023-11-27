@@ -30,7 +30,7 @@ export function createMarkupModalProductCard(data) {
                 </div>
                 
                 <div class="price-wrapper modal-content-wrapper">
-                    <p class="modal-price">${data.price}</p>
+                    <p class="modal-price">$${data.price}</p>
                     <button class="add-to-cart-btn btn" type="button">
                         Add to
                         <svg class="modal-cart-icon" width="18" height="18">
@@ -55,7 +55,7 @@ export function createMarkupModalProductCard(data) {
                     <h3 class="modal-name">${data.name}</h3>
                     <ul class="modal-list list">
                         <div class="group-item">
-                            <li>Category: <span class="category modal-item">${data.category}</span></li>
+                            <li>Category: <span class="category modal-item">${data.category.replaceAll('_', ' ')}</span></li>
                             <li>Size: <span class="size modal-item">${data.size}</span></li>
                         </div>
                         <li>Popularity: <span class="popularity modal-item">${data.popularity}</span></li>
@@ -65,7 +65,7 @@ export function createMarkupModalProductCard(data) {
             </div>
             
             <div class="price-wrapper modal-content-wrapper">
-                <p class="modal-price">${data.price}</p>
+                <p class="modal-price">$${data.price}</p>
                 <button class="add-to-cart-btn btn" type="button">
                     Add to
                     <svg class="modal-cart-icon" width="18" height="18">

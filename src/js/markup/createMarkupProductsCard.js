@@ -12,7 +12,6 @@ function isProduct(product, arrProducts) {
 
 export function createMarkupProducts(data) {
   const arrProducts = productsInBasket();
-  //if (arrProducts.length === 0) return;
 
   const markup = data
     .map(
@@ -51,7 +50,7 @@ export function createMarkupProducts(data) {
                     </p>
                 </div>
                 <div class="product-card-price">
-                    <p class="price-product">${price}</p>
+                    <p class="price-product">$${price}</p>
                     <button class="js-button-shopping ${disable}" >
                     <svg class="icon-shopping-card" width="28" height="28">
                         <use href="${icon}#${iconBasket}"></use>
@@ -76,7 +75,7 @@ export function createMarkupProducts(data) {
                     </p>
                 </div>
                 <div class="product-card-price">
-                    <p class="price-product">${price}</p>
+                    <p class="price-product">$${price}</p>
                     <button class="js-button-shopping ${disable}">
                     <svg class="icon-shopping-card" width="28" height="28">
                         <use href="${icon}#${iconBasket}"></use>
