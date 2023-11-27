@@ -1,6 +1,7 @@
 .popular-products-container {
   width: 335px;
   padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 .products-title.popular {
@@ -121,6 +122,7 @@
   .popular-products-container {
     width: 100%;
     padding-bottom: 64px;
+    padding-top: 100px;
   }
 
   .products-title {
