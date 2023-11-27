@@ -13,7 +13,7 @@ export function createMarkupDiscountProducts(data) {
           <div class="discount-info-box">
           <p class="discount-card-text">${name}</p>
           <div class="discount-card-info">
-            <p class="discount-card-text price">${price}</p>
+            <p class="discount-card-text price">$${price}</p>
             <button class="button-shopping-discount">
               <svg class="icon-shopping-discount" width="18" height="18">
                 <use href="${icon}#icon-shopping-cart"></use>
