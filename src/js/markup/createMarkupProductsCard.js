@@ -26,6 +26,7 @@ export function createMarkupProducts(data) {
         _id,
         is10PercentOff,
       }) => {
+        const disable = isProduct(_id, arrProducts) ? 'button-disabled' : '';
         const iconBasket = isProduct(_id, arrProducts)
           ? 'icon-checkbox'
           : 'icon-shopping-cart';
@@ -51,7 +52,7 @@ export function createMarkupProducts(data) {
                 </div>
                 <div class="product-card-price">
                     <p class="price-product">${price}</p>
-                    <button class="js-button-shopping">
+                    <button class="js-button-shopping ${disable}" >
                     <svg class="icon-shopping-card" width="28" height="28">
                         <use href="${icon}#${iconBasket}"></use>
                     </svg>
@@ -76,7 +77,7 @@ export function createMarkupProducts(data) {
                 </div>
                 <div class="product-card-price">
                     <p class="price-product">${price}</p>
-                    <button class="js-button-shopping">
+                    <button class="js-button-shopping ${disable}">
                     <svg class="icon-shopping-card" width="28" height="28">
                         <use href="${icon}#${iconBasket}"></use>
                     </svg>
