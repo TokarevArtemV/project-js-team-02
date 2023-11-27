@@ -1,6 +1,19 @@
 import icon from '../../images/icons/icons.svg';
+import { productsInBasket } from '../getProductFormBasket';
+
+function isProduct(product, arrProducts) {
+  for (const key in arrProducts) {
+    if (Object.hasOwnProperty.call(arrProducts, key)) {
+      const element = arrProducts[key];
+      return Object.values(element).includes(product);
+    }
+  }
+}
 
 export function createMarkupProducts(data) {
+  const arrProducts = productsInBasket();
+  if (arrProducts.length === 0) return;
+
   const markup = data
     .map(
       ({
@@ -13,12 +26,16 @@ export function createMarkupProducts(data) {
         _id,
         is10PercentOff,
       }) => {
+        const iconBasket = isProduct(_id, arrProducts)
+          ? 'icon-checkbox'
+          : 'icon-shopping-cart';
+
         if (is10PercentOff) {
           return `<li data-id="${_id}" class="product-card js-product-card">
                 <div class="image-product">
                 <svg class="icon-discount" width="60" height="60">
-              <use href="${icon}#icon-discount"></use>
-            </svg>
+                    <use href="${icon}#icon-discount"></use>
+                </svg>
                     <img class="image" src="${img}" alt="${name}" />
                 </div>
                 <div class="info-product">
@@ -36,7 +53,7 @@ export function createMarkupProducts(data) {
                     <p class="price-product">${price}</p>
                     <button class="js-button-shopping">
                     <svg class="icon-shopping-card" width="28" height="28">
-                        <use href="${icon}#icon-shopping-cart"></use>
+                        <use href="${icon}#${iconBasket}"></use>
                     </svg>
                     </button>
                 </div>
@@ -61,7 +78,7 @@ export function createMarkupProducts(data) {
                     <p class="price-product">${price}</p>
                     <button class="js-button-shopping">
                     <svg class="icon-shopping-card" width="28" height="28">
-                        <use href="${icon}#icon-shopping-cart"></use>
+                        <use href="${icon}#${iconBasket}"></use>
                     </svg>
                     </button>
                 </div>

@@ -1,4 +1,7 @@
 import './header';
-import { modalProductCard } from './getProductFormBasket';
+import './scroll';
+import { renderBasketProducts } from './renderBasketProducts';
 
-modalProductCard();
+// відмалювання товарів в корзині
+renderBasketProducts();
+// відмалювання товарів в корзині

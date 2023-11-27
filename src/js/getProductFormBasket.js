@@ -1,7 +1,4 @@
-import { createMarkupBasketProductsCard } from './markup/createMarkupBasketProductsCard';
 import { GetProduct } from './products-api/api';
-import { appendMarkup } from './markup/appendMarkup';
-import { refs } from './refs';
 
 // const basket = [
 //   { _id: '640c2dd963a319ea671e383b', count: 1 },
@@ -14,9 +11,7 @@ import { refs } from './refs';
 // ];
 // localStorage.setItem('BASKET', JSON.stringify(basket));
 
-modalProductCard();
-
-export async function modalProductCard() {
+export async function getProductFormBasket() {
   const getProduct = new GetProduct();
   const datafromLocStor = JSON.parse(localStorage.getItem('BASKET'));
   const getInfoCard = await Promise.all(
@@ -25,8 +20,13 @@ export async function modalProductCard() {
       return data;
     })
   );
-  appendMarkup(
-    refs.productFormBasket,
-    createMarkupBasketProductsCard(getInfoCard)
-  );
+  return getInfoCard;
+}
+
+export function productsInBasket() {
+  try {
+    return JSON.parse(localStorage.getItem('BASKET'));
+  } catch (error) {
+    error.message;
+  }
 }
