@@ -4,6 +4,10 @@ import { renderBasketProducts } from './renderBasketProducts';
 import { validateInput } from './validateInput';
 import { refs } from './refs';
 import { countCartProducts } from './cartCount';
+
+import './deleteBasketProductCard';
+import { deleteBasketProductCards } from './deleteBasketProductCard';
+import throttle from 'lodash.throttle';
 import { deleteAllProducts } from './deleteAll';
 
 
@@ -15,16 +19,13 @@ countCartProducts();
 
 //валідація форми
 validateInput(refs.inputCartEl, refs.submitBtnCartEl);
+
+//закриття продуктових карток натисканням на кнопку
+refs.productFormBasket.addEventListener(
+  'click',
+  throttle(deleteBasketProductCards, 1000)
+);
+
 //слухач на кнопку видалити 
 refs.deleteAllButton.addEventListener('click', deleteAllProducts);
 
-// const basket = [
-//   { _id: '640c2dd963a319ea671e383b', count: 1 },
-//   { _id: '640c2dd963a319ea671e376e', count: 3 },
-//   { _id: '640c2dd963a319ea671e3860', count: 4 },
-//   { _id: '640c2dd963a319ea671e385e', count: 3 },
-//   { _id: '640c2dd963a319ea671e376f', count: 2 },
-//   { _id: '640c2dd963a319ea671e3770', count: 1 },
-//   { _id: '640c2dd963a319ea671e3860', count: 1 },
-// ];
-// localStorage.setItem('BASKET', JSON.stringify(basket));
