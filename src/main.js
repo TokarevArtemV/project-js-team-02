@@ -7,31 +7,28 @@ import './js/cartCount.js';
 import './js/subscription.js';
 import { refs } from './js/refs';
 import { loadPage } from './js/select.js';
-import { getProductsFromServer } from './js/loadProduct.js';
 import { getProductSearch } from './js/search.js';
 import { modalProductCart } from './js/modalProductCart';
 import { countCartProducts } from './js/cartCount.js';
+import { updateLocStor } from './js/search.js';
+import { onLoadContent } from './js/loadContent';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
-// відмалювання продуктів при старті сторінки і запис параметрів в лок. схов.
-getProductsFromServer();
+//  оновлення запису в локальном сховищі
+updateLocStor();
 
 //пошук по кнопці батон
 refs.searchForm.addEventListener('submit', getProductSearch);
 
 // зміна іконки корзини
-import './js/addItemToBasketChangeIcon.js';
-// зміна іконки корзини
+// import './js/addItemToBasketChangeIcon.js';
 
 // пагінація
-import { onLoadContent } from './js/loadContent';
-
 refs.pagesRibbonEL.addEventListener('click', onLoadContent);
-// пагінація
+
+// слухачь на картки товарів для модального вікна
 modalProductCart();
 
-//cart count
-
-// кількість товарів в корзині
+// підрахунок кількості товарів в корзині
 countCartProducts();

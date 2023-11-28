@@ -1,8 +1,7 @@
 import { GetProduct } from './products-api/api';
 
-const getProduct = new GetProduct();
-
 export async function getCategories() {
+  const getProduct = new GetProduct();
   const arrCategories = await getProduct.getCategories();
   return arrCategories;
 }
