@@ -3,10 +3,13 @@ import './scroll';
 import { renderBasketProducts } from './renderBasketProducts';
 import { validateInput } from './validateInput';
 import { refs } from './refs';
+import { countCartProducts } from './cartCount';
 
 // відмалювання товарів в корзині
 renderBasketProducts();
-// відмалювання товарів в корзині
+
+// кількість товарів в корзині
+countCartProducts();
 
 //валідація форми
 validateInput(refs.inputCartEl, refs.submitBtnCartEl);

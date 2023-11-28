@@ -2,13 +2,15 @@ import '../node_modules/slim-select/dist/slimselect.css';
 import './js/header.js';
 import './js/popularProducts.js';
 import './js/discountProducts.js';
-import { modalProductCart } from './js/modalProductCart';
+import './js/scroll.js';
+import './js/cartCount.js';
 import './js/subscription.js';
 import { refs } from './js/refs';
 import { loadPage } from './js/select.js';
 import { getProductsFromServer } from './js/loadProduct.js';
 import { getProductSearch } from './js/search.js';
-import './js/scroll.js';
+import { modalProductCart } from './js/modalProductCart';
+import { countCartProducts } from './js/cartCount.js';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
@@ -30,4 +32,6 @@ refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 modalProductCart();
 
 //cart count
-import './js/cartCount.js';
+
+// кількість товарів в корзині
+countCartProducts();

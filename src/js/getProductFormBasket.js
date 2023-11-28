@@ -26,14 +26,15 @@ export async function getProductFormBasket() {
     })
   );
   if (refs.sumCartEl) {
-    refs.sumCartEl.innerHTML = '$' + `${totalCount.toFixed(2)}`;
+    const countNum = totalCount.toFixed(2).toString().replace('.', ',');
+    refs.sumCartEl.innerHTML = '$' + countNum;
   }
   return getInfoCard;
 }
 
 export function productsInBasket() {
   try {
-    return JSON.parse(localStorage.getItem('BASKET'));
+    return JSON.parse(localStorage.getItem('BASKET') || []);
   } catch (error) {
     error.message;
   }

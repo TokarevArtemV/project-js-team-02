@@ -1,4 +1,4 @@
-function countCartProducts() {
+export function countCartProducts() {
   const allCartElArr = document.querySelectorAll('.js-cart-number');
 
   try {
@@ -8,8 +8,5 @@ function countCartProducts() {
       return acc + product.count;
     }, 0);
     allCartElArr.forEach(el => (el.innerHTML = `${totalProductsCount}`));
-  } catch (error) {
-    console.log(error.message);
-  }
+  } catch (error) {}
 }
-countCartProducts();
