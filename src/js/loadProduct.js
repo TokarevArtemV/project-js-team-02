@@ -10,11 +10,16 @@ export async function getProductsFromServer() {
     const getProduct = new GetProduct();
 
     const searchParams = await getSerchParamsFromLocStg();
+
     const arrProducts = await getProduct.getProducts(searchParams);
-    if (arrProducts.results.length) {
+
+    if (!arrProducts.results.length) {
+      console.log(arrProducts.results);
       //якщо нічого не знайшло
       //......
+      return;
     }
+
     const markupProductCards = createMarkupProducts(arrProducts.results);
 
     onPaginationRender(getProduct.currentPage, getProduct.totalPages);
