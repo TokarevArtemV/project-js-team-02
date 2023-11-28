@@ -34,4 +34,6 @@ export const refs = {
   //Modal
   cards: document.querySelectorAll('.js-product-card'),
   modal: document.querySelector('[ data-modal ]'),
+  // Loader
+  modalWindowEl: document.querySelector('.hystmodal'),
 };

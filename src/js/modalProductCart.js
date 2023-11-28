@@ -2,6 +2,7 @@ import { refs } from './refs';
 import { GetProduct } from './products-api/api';
 import { createMarkupModalProductCard } from './markup/createMarkupModalProductCard';
 import { appendMarkup } from './markup/appendMarkup';
+import { loadOn, loadOff } from './loadStateForLoader';
 
 export function modalProductCart() {
   function openModal() {
@@ -23,29 +24,29 @@ export function modalProductCart() {
     const idCard = evt.target.closest('.js-product-card');
     const dataCardID = idCard.dataset.id;
 
-    if (idCard) {
-      openModal();
-    }
+    loadOn();
+
     const getModalProduct = new GetProduct();
+
+    getProductId();
 
     async function getProductId() {
       const objModal = await getModalProduct.getProductId(dataCardID);
       appendMarkup(refs.modal, createMarkupModalProductCard(objModal));
-    }
+      document.querySelector('.js-modal-picture-onLoad').onload = () => {
+        openModal();
+        loadOff();
+      };
 
-    getProductId().then(() => {
-      if (refs.modal) {
-        refs.modal.addEventListener('click', function (event) {
-          if (event.target === refs.modal) {
-            closeModal();
-          }
-          const closeIcon = event.target.closest('.close-icon');
-          if (closeIcon) {
-            closeModal();
-          }
-        });
-      }
-    });
+      refs.modal.addEventListener('click', function (event) {
+        if (
+          event.target === refs.modal ||
+          event.target.closest('.close-icon')
+        ) {
+          closeModal();
+        }
+      });
+    }
   });
 }
 
