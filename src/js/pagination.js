@@ -53,10 +53,6 @@ function onPaginationRibbonItems(pageIndex, pages) {
 }
 
 function onPaginationMarkup(pageIndex, pages) {
-  if (pages === 1) {
-    refs.pagesRibbonEL.classList.add('visually-hidden');
-    return;
-  }
   const ribbonArr = onPaginationRibbonItems(pageIndex, pages);
   const leftBtn = `<button id="left-button" type="button" class="pag-btn pag-item">
     <svg class="arrow-icon" width="24" height="24">
@@ -90,12 +86,18 @@ function onPaginationMarkup(pageIndex, pages) {
   }
   markupArr.unshift(leftBtn);
   markupArr.push(rightBtn);
+
   return markupArr.join('');
 }
 
 export function onPaginationRender(pageIndex, pages) {
   refs.pagesRibbonEL.innerHTML = '';
+  if (pages === 1) {
+    refs.pagesRibbonEL.classList.add('visually-hidden');
+    return;
+  }
   const markup = onPaginationMarkup(pageIndex, pages);
+
   refs.pagesRibbonEL.insertAdjacentHTML('afterbegin', markup);
 
   if (pageIndex === 1) {
