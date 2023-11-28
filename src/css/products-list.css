@@ -150,4 +150,74 @@
   .price-product {
     font-size: 20px;
   }
+
+    .home_product-card-container{
+      padding-bottom: 0;
+    }
+}
+
+
+
+/*! стилі для тексту,коли товар не знайдено */
+.js-empty-product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 100px;
+  padding-top: 60px
+}
+
+
+.text-nothing-found {
+  color: var(--black-color);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  width: 261px;
+}
+
+.text-nothing-found span {
+  color: var(--olive-color);
+}
+
+.text-try {
+  color: rgba(1, 1, 1, 0.70);
+  text-align: center;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  line-height: 1.29;
+  width: 279px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .text-nothing-found {
+    font-size: 20px;
+    line-height: 1.2;
+    width: 367px;
+  }
+
+  .text-try {
+    font-size: 18px;
+    line-height: 1.33;
+    width: 371px;
+  }
+
+  .js-empty-product-card {
+    padding-top: 110px;
+    padding-bottom: 236px;
+  }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+  .js-empty-product-card {
+    padding-top: 140px;
+    padding-bottom: 0;
+  }
 }
