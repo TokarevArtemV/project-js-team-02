@@ -1,6 +1,7 @@
 .popular-products-container {
   width: 335px;
   padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 .products-title.popular {
@@ -75,7 +76,8 @@
   height: 20px;
   padding: 4px;
   border-radius: 50%;
-  background-color: #e8e8e2;
+  color: var(--olive-color);
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,10 +89,15 @@
 }
 .button-shopping:hover,
 .button-shopping:focus {
+  color: var(--background-color);
   background-color: var(--olive-color);
+  
 }
-.icon-shopping:hover,
-.icon-shopping:focus {
+.button-shopping:hover .icon-shopping {
+  fill: var(--background-color);
+}
+
+.button-shopping:focus .icon-shopping {
   fill: var(--background-color);
 }
 
@@ -121,6 +128,7 @@
   .popular-products-container {
     width: 100%;
     padding-bottom: 64px;
+    padding-top: 100px;
   }
 
   .products-title {
@@ -153,6 +161,13 @@
 @media screen and (min-width: 1440px) {
   .popular-products-wraper {
     width: auto;
+    padding-bottom: 40px;
+  }
+
+  .popular-products-container{
+    padding-top: 0;
+    padding-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   .popular-products-list {
     flex-direction: column;

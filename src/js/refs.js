@@ -22,6 +22,11 @@ export const refs = {
 
   productFormBasket: document.querySelector('.flex-cart-js'),
 
+  //видалення всіх товарів з корзини
+  deleteAllButton: document.querySelector('.delete-all-button'),
+  cartContent: document.querySelector('.cart-content'),
+  cartNumber: document.querySelector('.js-cart-number'),
+
   //cart valiidation
   inputCartEl: document.querySelector('.js-cart-email'),
   submitBtnCartEl: document.querySelector('.js-submit-btn-cart'),

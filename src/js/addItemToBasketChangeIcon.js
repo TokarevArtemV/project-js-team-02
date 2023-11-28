@@ -1,7 +1,9 @@
+import icon from '../images/icons/icons.svg';
+
 import { refs } from './refs';
 
-const KEY_BUSKET = 'BUSKET';
-const busketArr = JSON.parse(localStorage.getItem(KEY_BUSKET)) ?? [];
+const KEY_BASKET = 'BASKET';
+const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
 
 refs.productCardsContainer.addEventListener('click', onClick);
 
@@ -13,25 +15,35 @@ function onClick(evt) {
     evt.target.classList.contains('icon-shopping-card') ||
     evt.target.nodeName === 'use'
   ) {
-    // debugger;
-    const product = findProduct(evt.target);
-    const inStorage = busketArr.some(({ _id }) => _id === product._id);
+    const product = createProductObj(evt.target);
+
+    const inStorage = basketArr.some(({ _id }) => _id === product._id);
 
     if (inStorage) {
-      //     const changeIcon = function (icon) {
-      //         icon.classList.replace();
-      //     }
       return;
-    }
+    } 
 
-    busketArr.push(product);
-    localStorage.setItem(KEY_BUSKET, JSON.stringify(busketArr));
+    basketArr.push(product);
+
+    localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr));
+    
+    let use = evt.target;
+    
+    if (evt.target.nodeName.toLowerCase() === 'button' || evt.target.nodeName.toLowerCase() === 'svg') {
+      use = evt.target.querySelector('use');
+    }
+    use.setAttribute('href', `${icon}#icon-checkbox`);
+    use.closest('.js-button-shopping').classList.add('button-disabled');
   }
 }
 
-function findProduct(element) {
+let count = 1;
+
+function createProductObj(element) {
   const productId = element.closest('.js-product-card');
-  const cardId = productId.dataset.id;
-  // return results.find(({ _id }) => _id === productId);
+  let cardId = productId.dataset.id;
+  let product = {'_id': cardId, 'count': count};
+
+  return product;
+
 }
-// console.log(_id);
