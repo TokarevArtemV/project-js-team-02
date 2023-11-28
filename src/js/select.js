@@ -44,7 +44,6 @@ export async function loadPage() {
       // формирование запроса
       afterChange: newVal => {
         updateLocStor();
-        getProductsFromServer();
       },
     },
   });

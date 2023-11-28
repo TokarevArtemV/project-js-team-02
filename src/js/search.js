@@ -7,7 +7,6 @@ import { refs } from './refs';
 export async function getProductSearch(evt) {
   evt.preventDefault();
   updateLocStor();
-  getProductsFromServer();
 }
 
 // формування параметрів для збереження в локальне сховище
@@ -15,7 +14,7 @@ export function setSerchParams() {
   const getProduct = new GetProduct(changingPerPage());
   let objSearch = {};
   new FormData(refs.searchForm).forEach((value, key) => {
-    objSearch[key] = value;
+    objSearch[key] = value.replaceAll('&', '%26');
   });
   objSearch.page = getProduct.page;
   objSearch.limit = getProduct.perPage;
@@ -24,8 +23,9 @@ export function setSerchParams() {
 
 // оновлення данних в локальному сховищі
 export function updateLocStor() {
-  const serchParams = setSerchParams();
-  saveSerchParamsToLocStg(serchParams);
+  const searchParams = setSerchParams();
+  saveSerchParamsToLocStg(searchParams);
+  getProductsFromServer(searchParams);
 }
 
 //зміна кількості карток продукту в залежності від розміру екрана

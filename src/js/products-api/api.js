@@ -3,14 +3,14 @@ axios.defaults.baseURL = 'https://food-boutique.b.goit.study/api';
 
 export class GetProduct {
   constructor(perPage) {
+    this.searchParams = {};
     this.keyword = '';
     this.category = '';
-    this.byABC = false;
-    this.byPrice = false;
-    this.byPopularity = false;
     this.page = 1;
-    this.totalPages = 1;
+    this.sort = '';
     this.perPage = perPage;
+    this.currentPage = 1;
+    this.totalPages = 1;
   }
 
   async getCategories() {
@@ -24,27 +24,20 @@ export class GetProduct {
     }
   }
 
-  async getProducts({ keyword, category, searchSort, page, limit }) {
-    this.keyword = keyword;
-    this.category = category;
+  async getProducts({ keyword, category, sort, page, limit }) {
+    this.keyword = keyword ? `keyword=${keyword}&` : '';
+    this.category = category ? `category=${category}&` : '';
+    this.sort = sort ? `${sort}&` : '';
+    this.page = page ? `page=${page}&` : '';
+    this.perPage = limit ? `limit=${limit}` : '';
 
-    this.byABC = searchSort.slice(6);
-    this.page = page;
-    this.perPage = limit;
-    const PARAMS = new URLSearchParams({
-      keyword: this.keyword,
-      category: this.category,
-      // byABC: this.byABC,
-      // byPrice: this.byPrice,
-      // byPopularity: this.byPopularity,
-      page: this.page,
-      limit: this.perPage,
-    });
+    const PARAMS = `${this.keyword}${this.category}${this.sort}${this.page}${this.perPage}`;
 
     try {
       const url = '/products' + '?' + PARAMS;
       const response = await axios.get(url);
       if (response.status === 200) {
+        this.currentPage = response.data.page;
         this.totalPages = response.data.totalPages;
         return response.data;
       }

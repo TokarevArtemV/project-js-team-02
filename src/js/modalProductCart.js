@@ -5,14 +5,6 @@ import { appendMarkup } from './markup/appendMarkup';
 import { loadOn, loadOff } from './loadStateForLoader';
 
 export function modalProductCart() {
-  function openModal() {
-    refs.modal.style.display = 'block';
-  }
-
-  function closeModal() {
-    refs.modal.style.display = 'none';
-  }
-
   refs.productCardsContainer.addEventListener('click', evt => {
     if (
       evt.target.classList.contains('js-button-shopping') ||
@@ -26,11 +18,10 @@ export function modalProductCart() {
 
     loadOn();
 
-    const getModalProduct = new GetProduct();
-
     getProductId();
 
     async function getProductId() {
+      const getModalProduct = new GetProduct();
       const objModal = await getModalProduct.getProductId(dataCardID);
       appendMarkup(refs.modal, createMarkupModalProductCard(objModal));
       document.querySelector('.js-modal-picture-onLoad').onload = () => {
@@ -48,6 +39,14 @@ export function modalProductCart() {
       });
     }
   });
+
+  function openModal() {
+    refs.modal.style.display = 'block';
+  }
+
+  function closeModal() {
+    refs.modal.style.display = 'none';
+  }
 }
 
 /* 

@@ -6,14 +6,18 @@ import { refs } from './refs';
 import { onPaginationRender } from './pagination';
 
 export async function getProductsFromServer() {
-  const getProduct = new GetProduct();
-
   try {
+    const getProduct = new GetProduct();
+
     const searchParams = await getSerchParamsFromLocStg();
     const arrProducts = await getProduct.getProducts(searchParams);
+    if (arrProducts.results.length) {
+      //якщо нічого не знайшло
+      //......
+    }
     const markupProductCards = createMarkupProducts(arrProducts.results);
 
-    onPaginationRender(getProduct.page, getProduct.totalPages);
+    onPaginationRender(getProduct.currentPage, getProduct.totalPages);
 
     appendMarkup(refs.productCardsContainer, markupProductCards);
   } catch (error) {
