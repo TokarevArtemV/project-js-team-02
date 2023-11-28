@@ -4,6 +4,7 @@ import { renderBasketProducts } from './renderBasketProducts';
 import { validateInput } from './validateInput';
 import { refs } from './refs';
 import { countCartProducts } from './cartCount';
+import { cartItemCounter } from './cartItemCounter';
 
 import './deleteBasketProductCard';
 import { deleteBasketProductCards } from './deleteBasketProductCard';
@@ -20,6 +21,10 @@ countCartProducts();
 //валідація форми
 validateInput(refs.inputCartEl, refs.submitBtnCartEl);
 
+
+//лічильник
+cartItemCounter();
+
 //закриття продуктових карток натисканням на кнопку
 refs.productFormBasket.addEventListener(
   'click',
@@ -28,4 +33,5 @@ refs.productFormBasket.addEventListener(
 
 //слухач на кнопку видалити 
 refs.deleteAllButton.addEventListener('click', deleteAllProducts);
+
 
