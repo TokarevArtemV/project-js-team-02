@@ -2,6 +2,7 @@ import { GetProduct } from './products-api/api';
 import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
 import { getProductsFromServer } from './loadProduct';
 import { refs } from './refs';
+import { loadOn } from './loadStateForLoader';
 
 // формування запиту по сабміту
 export async function getProductSearch(evt) {
@@ -23,6 +24,7 @@ export function setSerchParams() {
 
 // оновлення данних в локальному сховищі
 export function updateLocStor() {
+  loadOn();
   const searchParams = setSerchParams();
   saveSerchParamsToLocStg(searchParams);
   getProductsFromServer(searchParams);

@@ -1,5 +1,4 @@
 import { getProductFormBasket } from './getProductFormBasket';
-import { appendMarkup } from './markup/appendMarkup';
 import { createMarkupBasketProductsCard } from './markup/createMarkupBasketProductsCard';
 import { refs } from './refs';
 

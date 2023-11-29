@@ -4,6 +4,7 @@ import { appendMarkup } from './markup/appendMarkup';
 import { createMarkupProducts } from './markup/createMarkupProductsCard';
 import { refs } from './refs';
 import { onPaginationRender } from './pagination';
+import { loadOff } from './loadStateForLoader';
 
 export async function getProductsFromServer() {
   try {
@@ -14,7 +15,7 @@ export async function getProductsFromServer() {
     const arrProducts = await getProduct.getProducts(searchParams);
 
     if (!arrProducts.results.length) {
-      console.log(arrProducts.results);
+      loadOff();
       //якщо нічого не знайшло
       refs.productCardsContainer.innerHTML = '';
       refs.productCardsContainer.innerHTML =
