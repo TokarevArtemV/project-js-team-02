@@ -109,7 +109,8 @@
   line-height: 1.1;
 }
 
-.add-to-cart-btn {
+.add-to-cart-btn,
+.remove-from-cart-btn {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -135,7 +136,9 @@
 }
 
 .add-to-cart-btn:hover,
-.add-to-cart-btn:focus {
+.add-to-cart-btn:focus,
+.remove-from-cart-btn:hover,
+.remove-from-cart-btn:focus {
   background-color: var(--olive-hover-color);
   transition: background-color var(--default-tranzition);
 }

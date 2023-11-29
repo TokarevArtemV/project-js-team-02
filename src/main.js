@@ -14,6 +14,7 @@ import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
 import { addProductInBasket } from './js/addItemToBasketChangeIcon';
 
+
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
 //  оновлення запису в локальном сховищі
