@@ -20,12 +20,18 @@ export function addProductInBasket(evt) {
     saveProductsToBasket(basketArr);
 
     const productCard = evt.target.closest('.js-product-card');
-    const useEl = document.querySelector(
-      '.icon-shopping-card'
-    ).firstElementChild;
 
-    useEl.setAttribute('href', `${icon}#icon-checkbox`);
-    console.log(useEl);
+    let use = evt.target;
+
+    if (
+      evt.target.nodeName.toLowerCase() === 'button' ||
+      evt.target.nodeName.toLowerCase() === 'svg'
+    ) {
+      use = evt.target.querySelector('use');
+    }
+    use.setAttribute('href', `${icon}#icon-checkbox`);
+    use.closest('.js-button-shopping').classList.add('button-disabled');
+
     productCard.classList.add('js-button-disabled');
     countCartProducts();
   }

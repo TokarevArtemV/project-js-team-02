@@ -71,12 +71,20 @@ export function modalProductCart() {
 
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
+      // оновлення контейнеру з товарами
+      // const liEl = document.querySelector(`[data-id=${cardId}]`);
+      // console.log(liEl);
+      updateLocStor();
     }
     if (e.target === removefromCartBtnEl) {
       const updateStorageArr = basketArr.filter(item => item._id != dataCardID);
       localStorage.setItem(KEY_BASKET, JSON.stringify(updateStorageArr));
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
+      // оновлення контейнеру з товарами
+      // const liEl = document.querySelector(`[data-id=${cardId}]`);
+      // console.log(liEl);
+      updateLocStor();
     }
   }
 
