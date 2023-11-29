@@ -3,6 +3,7 @@ import { GetProduct } from './products-api/api';
 import { createMarkupModalProductCard } from './markup/createMarkupModalProductCard';
 import { appendMarkup } from './markup/appendMarkup';
 import { loadOn, loadOff } from './loadStateForLoader';
+import { updateLocStor } from './search';
 
 const KEY_BASKET = 'BASKET';
 
@@ -14,13 +15,9 @@ function checkBasket() {
 export function modalProductCart() {
   let dataCardID;
   refs.productCardsContainer.addEventListener('click', evt => {
-    if (
-      evt.target.classList.contains('js-button-shopping') ||
-      evt.target.classList.contains('icon-shopping-card') ||
-      evt.target.nodeName === 'use'
-    ) {
-      return;
-    }
+    if (!!evt.target.classList.contains('home_product-card-container')) return;
+    if (!!evt.target.closest('.js-button-shopping')) return;
+
     const idCard = evt.target.closest('.js-product-card');
     dataCardID = idCard.dataset.id;
 
@@ -71,6 +68,7 @@ export function modalProductCart() {
       let product = { _id: cardId, count: count };
       basketArr.push(product);
       localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr));
+
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
     }

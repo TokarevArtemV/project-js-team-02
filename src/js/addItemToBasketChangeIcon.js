@@ -6,21 +6,29 @@ import { countCartProducts } from './cartCount';
 export function addProductInBasket(evt) {
   evt.preventDefault();
 
-  const basketArr = productsInBasket() || [];
+  if (
+    evt.target.closest('.js-button-shopping') &&
+    !evt.target
+      .closest('.js-product-card')
+      .classList.contains('js-button-disabled')
+  ) {
+    const basketArr = productsInBasket() || [];
+    const product = createProductObj(evt.target);
 
-  if (!evt.target.closest('.js-button-shopping')) return;
+    basketArr.push(product);
 
-  const product = createProductObj(evt.target);
+    saveProductsToBasket(basketArr);
 
-  basketArr.push(product);
+    const productCard = evt.target.closest('.js-product-card');
+    const useEl = document.querySelector(
+      '.icon-shopping-card'
+    ).firstElementChild;
 
-  saveProductsToBasket(basketArr);
-
-  let productCard = evt.target.closest('.js-button-shopping');
-  const useEl = productCard.lastElementChild.lastElementChild;
-  useEl.setAttribute('href', `${icon}#icon-checkbox`);
-  productCard.classList.add('js-button-disabled');
-  countCartProducts();
+    useEl.setAttribute('href', `${icon}#icon-checkbox`);
+    console.log(useEl);
+    productCard.classList.add('js-button-disabled');
+    countCartProducts();
+  }
 }
 
 function createProductObj(element) {
