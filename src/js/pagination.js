@@ -92,6 +92,8 @@ function onPaginationMarkup(pageIndex, pages) {
 
 export function onPaginationRender(pageIndex, pages) {
   refs.pagesRibbonEL.innerHTML = '';
+  refs.pagesRibbonEL.classList.remove('visually-hidden');
+
   if (pages === 1) {
     refs.pagesRibbonEL.classList.add('visually-hidden');
     return;

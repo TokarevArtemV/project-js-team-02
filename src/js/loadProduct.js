@@ -23,8 +23,10 @@ export async function getProductsFromServer() {
       refs.productCardsContainer.classList.add(
         'js-empty-product-cards-container'
       );
+      refs.pagesRibbonEL.classList.add('visually-hidden');
       return;
     }
+
     refs.productCardsContainer.classList.remove(
       'js-empty-product-cards-container'
     );
