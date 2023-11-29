@@ -1,6 +1,7 @@
 import icon from '../images/icons/icons.svg';
 import { productsInBasket } from './getProductFormBasket';
 import { saveProductsToBasket } from './saveSerchParamsToLocStg';
+import { countCartProducts } from './cartCount';
 
 export function addProductInBasket(evt) {
   evt.preventDefault();
@@ -18,8 +19,8 @@ export function addProductInBasket(evt) {
   let productCard = evt.target.closest('.js-button-shopping');
   const useEl = productCard.lastElementChild.lastElementChild;
   useEl.setAttribute('href', `${icon}#icon-checkbox`);
-
   productCard.classList.add('js-button-disabled');
+  countCartProducts();
 }
 
 function createProductObj(element) {
