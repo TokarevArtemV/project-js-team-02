@@ -5,7 +5,7 @@ import { saveProductsToBasket } from './saveSerchParamsToLocStg';
 export function addProductInBasket(evt) {
   evt.preventDefault();
 
-  const basketArr = productsInBasket();
+  const basketArr = productsInBasket() || [];
 
   if (!evt.target.closest('.js-button-shopping')) return;
 
