@@ -1,3 +1,5 @@
+import { loadOff } from './loadStateForLoader';
+
 export function countCartProducts() {
   const allCartElArr = document.querySelectorAll('.js-cart-number');
 
@@ -8,5 +10,7 @@ export function countCartProducts() {
       return acc + product.count;
     }, 0);
     allCartElArr.forEach(el => (el.innerHTML = `${totalProductsCount}`));
-  } catch (error) {}
+  } catch (error) {
+    loadOff();
+  }
 }

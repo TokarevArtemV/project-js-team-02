@@ -1,9 +1,10 @@
 import { getProductsFromServer } from './loadProduct';
-
+import { loadOn, loadOff } from './loadStateForLoader';
 // refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 
 export function onLoadContent(e) {
   try {
+    loadOn();
     const localStorageObj = JSON.parse(localStorage.getItem('FILTERS_ITEM'));
     const currentPage = localStorageObj.page;
     const clickedBtn = e.target.closest('.pag-item').id;
@@ -22,6 +23,7 @@ export function onLoadContent(e) {
     localStorage.setItem('FILTERS_ITEM', JSON.stringify(localStorageObj));
     getProductsFromServer();
   } catch (error) {
+    loadOff();
     return;
   }
 }

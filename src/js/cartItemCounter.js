@@ -1,4 +1,5 @@
 import { getProductFormBasket } from './getProductFormBasket';
+import { loadOff } from './loadStateForLoader';
 
 //-----------------------------лічильник одиниць прродуктів
 export async function cartItemCounter() {
@@ -31,6 +32,6 @@ export async function cartItemCounter() {
       console.log(counter);
     }
   } catch (error) {
-    console.log(error);
+    loadOff();
   }
 }
