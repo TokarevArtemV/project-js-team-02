@@ -157,9 +157,6 @@
 }
 
 /*! стилі для тексту,коли товар не знайдено */
-.js-empty-product-cards-container {
-  margin: 0 auto;
-}
 
 .js-empty-product-card {
   display: flex;
@@ -196,6 +193,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .js-empty-product-cards-container {
+    margin: 0 auto;
+    justify-content: center;
+    width: 370px;
+  }
   .text-nothing-found {
     font-size: 20px;
     line-height: 1.2;
@@ -211,6 +213,7 @@
   .js-empty-product-card {
     padding-top: 110px;
     padding-bottom: 236px;
+    width: 370px;
   }
 }
 
