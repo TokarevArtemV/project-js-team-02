@@ -9,19 +9,17 @@ import { getDiscountProducts } from './discountProducts';
 import { countCartProducts } from './cartCount';
 
 const KEY_BASKET = 'BASKET';
+let count = 1;
 
-function checkBasket() {
-  const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
-  return basketArr;
-}
+///////////////
 
-export function modalProductCart() {
+export function modalDiscountProductCart() {
   let dataCardID;
-  refs.productCardsContainer.addEventListener('click', evt => {
-    if (!!evt.target.classList.contains('home_product-card-container')) return;
-    if (!!evt.target.closest('.js-button-shopping')) return;
+  refs.discountCardsContainer.addEventListener('click', evt => {
+    if (!!evt.target.classList.contains('discount-products-list')) return;
+    if (!!evt.target.closest('.js-button-discount')) return;
 
-    const idCard = evt.target.closest('.js-product-card');
+    const idCard = evt.target.closest('.js-discount-card');
     dataCardID = idCard.dataset.id;
     //оновлення сторінки
     loadOn();
@@ -44,23 +42,12 @@ export function modalProductCart() {
         removefromCartBtnEl.classList.toggle('visually-hidden');
       }
     }
-
-    refs.modal.addEventListener('click', modalProductsBtnHandler);
+    refs.modal.addEventListener('click', modalDiscountBtnHandler);
   });
 
-  function openModal() {
-    refs.modal.style.display = 'block';
-  }
+  ///////////////
 
-  function closeModal() {
-    refs.modal.style.display = 'none';
-
-    refs.modal.removeEventListener('click', modalProductsBtnHandler);
-  }
-
-  let count = 1;
-
-  function modalProductsBtnHandler(e) {
+  function modalDiscountBtnHandler(e) {
     const addToCartBtnEl = document.querySelector('.add-to-cart-btn');
     const removefromCartBtnEl = document.querySelector('.remove-from-cart-btn');
     const basketArr = checkBasket();
@@ -75,6 +62,7 @@ export function modalProductCart() {
 
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
+
       //  оновлення іконок всіх товарів
       loadOn();
       getProductsFromServer();
@@ -99,4 +87,24 @@ export function modalProductCart() {
   function productInLocalStorage(storageArr, product_id) {
     return storageArr.some(({ _id }) => _id === product_id);
   }
+}
+
+///////////////
+
+function checkBasket() {
+  const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
+  return basketArr;
+}
+
+///////////////
+
+function openModal() {
+  refs.modal.style.display = 'block';
+}
+
+///////////////
+
+function closeModal() {
+  refs.modal.style.display = 'none';
+  // refs.modal.removeEventListener('click', modalDiscountBtnHandler);
 }

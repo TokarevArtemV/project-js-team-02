@@ -9,14 +9,14 @@ export function createMarkupBasketProductsCard(data) {
           </div>
           <div class="product-details">
             <button class="remove-button">
-              <svg class="icon-close" width="18" height="18">
+              <svg class="icon-close" id="cart-icon-close" width="18" height="18">
                 <use href="${icon}#icon-close-sharp"></use>
               </svg>
             </button>
             <h2 class="product-name">${name}</h2>
             <div class="cart-product-box">
               <p class="product-basket-text category">
-                Category:&nbsp;&nbsp;<span class="category-style">${category.replaceAll(
+                Category:&nbsp;&nbsp;<span class="category-style" >${category.replaceAll(
                   '_',
                   ' '
                 )}</span>

@@ -5,23 +5,21 @@ import { appendMarkup } from './markup/appendMarkup';
 import { loadOn, loadOff } from './loadStateForLoader';
 import { getProductsFromServer } from './loadProduct';
 import { getPopularProducts } from './popularProducts';
-import { getDiscountProducts } from './discountProducts';
 import { countCartProducts } from './cartCount';
 
 const KEY_BASKET = 'BASKET';
+let count = 1;
 
-function checkBasket() {
-  const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
-  return basketArr;
-}
+///////////////
 
-export function modalProductCart() {
+export function modalPopularProductCart() {
   let dataCardID;
-  refs.productCardsContainer.addEventListener('click', evt => {
-    if (!!evt.target.classList.contains('home_product-card-container')) return;
-    if (!!evt.target.closest('.js-button-shopping')) return;
+  refs.popularCardsContainer.addEventListener('click', evt => {
+    if (!!evt.target.classList.contains('popular-products-container')) return;
+    if (!!evt.target.closest('.js-button-popular')) return;
 
-    const idCard = evt.target.closest('.js-product-card');
+    const idCard = evt.target.closest('.js-popular-card');
+
     dataCardID = idCard.dataset.id;
     //оновлення сторінки
     loadOn();
@@ -45,22 +43,12 @@ export function modalProductCart() {
       }
     }
 
-    refs.modal.addEventListener('click', modalProductsBtnHandler);
+    refs.modal.addEventListener('click', modalPopularBtnHandler);
   });
 
-  function openModal() {
-    refs.modal.style.display = 'block';
-  }
+  ///////////////
 
-  function closeModal() {
-    refs.modal.style.display = 'none';
-
-    refs.modal.removeEventListener('click', modalProductsBtnHandler);
-  }
-
-  let count = 1;
-
-  function modalProductsBtnHandler(e) {
+  function modalPopularBtnHandler(e) {
     const addToCartBtnEl = document.querySelector('.add-to-cart-btn');
     const removefromCartBtnEl = document.querySelector('.remove-from-cart-btn');
     const basketArr = checkBasket();
@@ -99,4 +87,24 @@ export function modalProductCart() {
   function productInLocalStorage(storageArr, product_id) {
     return storageArr.some(({ _id }) => _id === product_id);
   }
+}
+
+///////////////
+
+function checkBasket() {
+  const basketArr = JSON.parse(localStorage.getItem(KEY_BASKET)) ?? [];
+  return basketArr;
+}
+
+///////////////
+
+function openModal() {
+  refs.modal.style.display = 'block';
+}
+
+///////////////
+
+function closeModal() {
+  refs.modal.style.display = 'none';
+  // refs.modal.removeEventListener('click', modalPopularBtnHandler);
 }
