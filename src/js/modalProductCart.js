@@ -3,7 +3,7 @@ import { GetProduct } from './products-api/api';
 import { createMarkupModalProductCard } from './markup/createMarkupModalProductCard';
 import { appendMarkup } from './markup/appendMarkup';
 import { loadOn, loadOff } from './loadStateForLoader';
-import { updateLocStor } from './search';
+import { getProductsFromServer } from './loadProduct';
 
 const KEY_BASKET = 'BASKET';
 
@@ -20,9 +20,8 @@ export function modalProductCart() {
 
     const idCard = evt.target.closest('.js-product-card');
     dataCardID = idCard.dataset.id;
-
+    //оновлення сторінки
     loadOn();
-
     getProductId();
 
     async function getProductId() {
@@ -74,7 +73,7 @@ export function modalProductCart() {
       // оновлення контейнеру з товарами
       // const liEl = document.querySelector(`[data-id=${cardId}]`);
       // console.log(liEl);
-      updateLocStor();
+      getProductsFromServer();
     }
     if (e.target === removefromCartBtnEl) {
       const updateStorageArr = basketArr.filter(item => item._id != dataCardID);
@@ -84,7 +83,7 @@ export function modalProductCart() {
       // оновлення контейнеру з товарами
       // const liEl = document.querySelector(`[data-id=${cardId}]`);
       // console.log(liEl);
-      updateLocStor();
+      getProductsFromServer();
     }
   }
 

@@ -3,9 +3,7 @@ import { GetProduct } from './products-api/api';
 import { createMarkupDiscountProducts } from './markup/createMarkupDiscountProducts';
 import { appendMarkup } from './markup/appendMarkup';
 
-getDiscount();
-
-async function getDiscount() {
+export async function getDiscountProducts() {
   const getProduct = new GetProduct();
   const objDiscount = await getProduct.getDiscount();
   objDiscount.splice(2);

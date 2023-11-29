@@ -1,10 +1,30 @@
 import icon from '../../images/icons/icons.svg';
+import { productsInBasket } from '../getProductFormBasket';
+
+function isProduct(product, arrProducts) {
+  for (let key in arrProducts) {
+    if (Object.hasOwnProperty.call(arrProducts, key)) {
+      const element = arrProducts[key];
+      if (Object.values(element).includes(product)) {
+        return Object.values(element).includes(product);
+      }
+    }
+  }
+}
 
 export function createMarkupPopularProducts(data) {
+  const arrProducts = productsInBasket() || [];
+
   const markup = data
     .map(({ img, name, category, size, popularity, _id, is10PercentOff }) => {
+      const disable = isProduct(_id, arrProducts) ? 'js-button-disabled' : '';
+
+      const iconBasket = isProduct(_id, arrProducts)
+        ? 'icon-checkbox'
+        : 'icon-shopping-cart';
+
       if (is10PercentOff) {
-        return `<li class="popular-products-item common-card" data-cardId=${_id}>
+        return `<li data-id=${_id} class="popular-products-item common-card js-popular-card ${disable}" >
                 <svg class="icon-popular-discount" width="30" height="30">
                     <use href="${icon}#icon-discount"></use>
                 </svg>
@@ -23,14 +43,15 @@ export function createMarkupPopularProducts(data) {
                     </p>
                   </div>
                 </div>
-                <button class="button-shopping">
+                <button class="button-shopping js-button-popular ${disable}">
                   <svg class="icon-shopping" width="12" height="12">
-                    <use href="${icon}#icon-shopping-cart"></use>
+                    <use href="${icon}#${iconBasket}"></use>
                   </svg>
                 </button>
               </li>`;
       }
-      return `<li class="popular-products-item common-card" data-cardId=${_id}>
+
+      return `<li data-id=${_id} class="popular-products-item common-card js-popular-card ${disable}" >
                 <div class="card-image">
                   <img src="${img}" alt="${name}" />
                 </div>
@@ -46,9 +67,9 @@ export function createMarkupPopularProducts(data) {
                     </p>
                   </div>
                 </div>
-                <button class="button-shopping">
+                <button class="button-shopping js-button-popular ${disable}">
                   <svg class="icon-shopping" width="12" height="12">
-                    <use href="${icon}#icon-shopping-cart"></use>
+                    <use href="${icon}#${iconBasket}"></use>
                   </svg>
                 </button>
               </li>`;

@@ -1,30 +1,49 @@
 import '../node_modules/slim-select/dist/slimselect.css';
 // import './js/header.js';
 import './js/popularProducts.js';
-import './js/discountProducts.js';
+
 import './js/scroll.js';
 import './js/cartCount.js';
 import './js/subscription.js';
-
+import { getDiscountProducts } from './js/discountProducts.js';
 import { refs } from './js/refs';
 import { loadPage } from './js/select.js';
 import { getProductSearch } from './js/search.js';
+import { getPopularProducts } from './js/popularProducts.js';
 import { modalProductCart } from './js/modalProductCart';
 import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
-import { addProductInBasket } from './js/addItemToBasketChangeIcon';
+import { addProductInBasket } from './js/addProductToBasket';
+import { addPopularProductInBasket } from './js/addPopularToBasket';
+import { addDiscountProductInBasket } from './js/addDiscountToBasket';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
+
 //  оновлення запису в локальном сховищі
 updateLocStor();
+
+//  відмалювання дисконтних товарів
+getDiscountProducts();
+
+//  відмалювання популярних товарів
+getPopularProducts();
 
 //пошук по кнопці батон
 refs.searchForm.addEventListener('submit', getProductSearch);
 
-// зміна іконки корзини
+// слухач на додавання до корзини товарів
 refs.productCardsContainer.addEventListener('click', addProductInBasket);
+
+// слухач на додавання до корзини популярних товарів
+refs.popularCardsContainer.addEventListener('click', addPopularProductInBasket);
+
+// слухач на додавання до корзини дисконтних товарів
+refs.popularDiscountContainer.addEventListener(
+  'click',
+  addDiscountProductInBasket
+);
 
 // пагінація
 refs.pagesRibbonEL.addEventListener('click', onLoadContent);
