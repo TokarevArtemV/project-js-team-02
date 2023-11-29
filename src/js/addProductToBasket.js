@@ -38,18 +38,13 @@ export function addProductInBasket(evt) {
     use.closest('.js-button-shopping').classList.add('button-disabled');
 
     productCard.classList.add('js-button-disabled');
-    countCartProducts();
 
-    //оновлення сторінки
+    //  оновлення іконок всіх товарів
     loadOn();
     getProductsFromServer();
     getDiscountProducts();
     getPopularProducts();
-
-    // // setTimeout(() => {
-    // //   updateLocStor();
-    // //   countCartProducts();
-    // // }, 1000);
+    countCartProducts();
   }
 }
 

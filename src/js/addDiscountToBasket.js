@@ -5,6 +5,7 @@ import { getPopularProducts } from './popularProducts';
 import { getDiscountProducts } from './discountProducts';
 import { loadOn } from './loadStateForLoader';
 import { getProductsFromServer } from './loadProduct';
+import { countCartProducts } from './cartCount';
 
 export function addDiscountProductInBasket(evt) {
   evt.preventDefault();
@@ -38,11 +39,12 @@ export function addDiscountProductInBasket(evt) {
 
     productCard.classList.add('js-button-disabled');
 
-    //  відмалювання популярних товарів
+    //  оновлення іконок всіх товарів
     loadOn();
     getProductsFromServer();
     getPopularProducts();
     getDiscountProducts();
+    countCartProducts();
   }
 }
 
