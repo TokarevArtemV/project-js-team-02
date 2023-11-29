@@ -13,6 +13,8 @@ import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
 import './js/addItemToBasketChangeIcon.js';
+import { addProductInBasket } from './js/addItemToBasketChangeIcon';
+
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
@@ -23,7 +25,7 @@ updateLocStor();
 refs.searchForm.addEventListener('submit', getProductSearch);
 
 // зміна іконки корзини
-// import './js/addItemToBasketChangeIcon.js';
+refs.productCardsContainer.addEventListener('click', addProductInBasket);
 
 // пагінація
 refs.pagesRibbonEL.addEventListener('click', onLoadContent);

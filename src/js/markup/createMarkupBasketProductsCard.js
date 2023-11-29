@@ -16,18 +16,29 @@ export function createMarkupBasketProductsCard(data) {
             <h2 class="product-name">${name}</h2>
             <div class="cart-product-box">
               <p class="product-basket-text category">
-                Category: <span class="category-style">${category.replaceAll(
+                Category:&nbsp;&nbsp;<span class="category-style">${category.replaceAll(
                   '_',
                   ' '
                 )}</span>
               </p>
               <p class="product-basket-text size">
-                Size: <span class="size-slyle">${size}</span>
+                Size:&nbsp;&nbsp;<span class="size-slyle">${size}</span>
               </p>
             </div>
+            <div class="price-and-counter-wrapper">
             <p class="product-price">$ ${price
               .toString()
               .replaceAll('.', ',')}</p>
+              <div class="counter-box">
+              <button class="item-decrease-counter"><svg class="cart-minus" width="14" height="14">
+    <use href="${icon}#icon-minus"></use>
+  </svg></button>
+              <span class="item-counter-span">0</span>
+              <button class="item-increase-counter"><svg class="cart-plus" width="14" height="14">
+    <use href="${icon}#icon-plus"></use>
+  </svg></button>
+              </div>
+              </div>
           </div>
         </div>`;
     })

@@ -2,10 +2,12 @@ import icon from '../../images/icons/icons.svg';
 import { productsInBasket } from '../getProductFormBasket';
 
 function isProduct(product, arrProducts) {
-  for (const key in arrProducts) {
+  for (let key in arrProducts) {
     if (Object.hasOwnProperty.call(arrProducts, key)) {
       const element = arrProducts[key];
-      return Object.values(element).includes(product);
+      if (Object.values(element).includes(product)) {
+        return Object.values(element).includes(product);
+      }
     }
   }
 }
@@ -25,13 +27,14 @@ export function createMarkupProducts(data) {
         _id,
         is10PercentOff,
       }) => {
-        const disable = isProduct(_id, arrProducts) ? 'button-disabled' : '';
+        const disable = isProduct(_id, arrProducts) ? 'js-button-disabled' : '';
+
         const iconBasket = isProduct(_id, arrProducts)
           ? 'icon-checkbox'
           : 'icon-shopping-cart';
 
         if (is10PercentOff) {
-          return `<li data-id="${_id}" class="product-card js-product-card common-card js-${disable}">
+          return `<li data-id="${_id}" class="product-card js-product-card common-card ${disable}">
                 <div class="image-product">
                 <svg class="icon-discount" width="60" height="60">
                     <use href="${icon}#icon-discount"></use>
@@ -59,7 +62,7 @@ export function createMarkupProducts(data) {
                 </div>
             </li>`;
         } else {
-          return `<li data-id="${_id}" class="product-card js-product-card common-card js-${disable}">
+          return `<li data-id="${_id}" class="product-card js-product-card common-card ${disable}">
                 <div class="image-product">
                     <img class="image" src="${img}" alt="${name}" />
                 </div>
