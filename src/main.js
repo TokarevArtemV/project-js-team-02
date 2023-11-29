@@ -1,9 +1,8 @@
 import '../node_modules/slim-select/dist/slimselect.css';
-// import './js/header.js';
-import './js/popularProducts.js';
+// import './js/popularProducts.js';
 
 import './js/scroll.js';
-import './js/cartCount.js';
+// import './js/cartCount.js';
 import './js/subscription.js';
 import { getDiscountProducts } from './js/discountProducts.js';
 import { refs } from './js/refs';
@@ -11,6 +10,8 @@ import { loadPage } from './js/select.js';
 import { getProductSearch } from './js/search.js';
 import { getPopularProducts } from './js/popularProducts.js';
 import { modalProductCart } from './js/modalProductCart';
+import { modalPopularProductCart } from './js/modalPopularProductCart';
+import { modalDiscountProductCart } from './js/modalDiscountProductCart copy';
 import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
@@ -40,7 +41,7 @@ refs.productCardsContainer.addEventListener('click', addProductInBasket);
 refs.popularCardsContainer.addEventListener('click', addPopularProductInBasket);
 
 // слухач на додавання до корзини дисконтних товарів
-refs.popularDiscountContainer.addEventListener(
+refs.discountCardsContainer.addEventListener(
   'click',
   addDiscountProductInBasket
 );
@@ -50,6 +51,12 @@ refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 
 // слухачь на картки товарів для модального вікна
 modalProductCart();
+
+// слухачь на картки дисконтних товарів для модального вікна
+modalDiscountProductCart();
+
+// слухачь на картки популярних товарів для модального вікна
+modalPopularProductCart();
 
 // підрахунок кількості товарів в корзині
 countCartProducts();

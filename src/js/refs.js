@@ -1,7 +1,7 @@
 export const refs = {
   productCardsContainer: document.querySelector('.home_product-card-container'),
   popularCardsContainer: document.querySelector('.popular-products-container'),
-  popularDiscountContainer: document.querySelector(
+  discountCardsContainer: document.querySelector(
     '.discount-products-container'
   ),
   //footer
