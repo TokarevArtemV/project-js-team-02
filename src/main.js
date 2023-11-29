@@ -12,7 +12,6 @@ import { modalProductCart } from './js/modalProductCart';
 import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
-import './js/addItemToBasketChangeIcon.js';
 import { addProductInBasket } from './js/addItemToBasketChangeIcon';
 
 
