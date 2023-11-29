@@ -12,6 +12,7 @@ import { modalProductCart } from './js/modalProductCart';
 import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
+import './js/addItemToBasketChangeIcon.js';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();

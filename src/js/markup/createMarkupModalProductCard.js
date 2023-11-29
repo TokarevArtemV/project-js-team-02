@@ -37,6 +37,12 @@ export function createMarkupModalProductCard(data) {
                             <use href="${icon}#icon-shopping-cart"></use>
                         </svg>
                     </button>
+                    <button class="remove-from-cart-btn btn visually-hidden" type="button">
+                    Remove from
+                    <svg class="modal-cart-icon" width="18" height="18">
+                        <use href="${icon}#icon-shopping-cart"></use>
+                    </svg>
+                </button>
                 </div>
             </div>`;
   }
@@ -77,6 +83,12 @@ export function createMarkupModalProductCard(data) {
                 <p class="modal-price">$${data.price}</p>
                 <button class="add-to-cart-btn btn" type="button">
                     Add to
+                    <svg class="modal-cart-icon" width="18" height="18">
+                        <use href="${icon}#icon-shopping-cart"></use>
+                    </svg>
+                </button>
+                <button class="remove-from-cart-btn btn visually-hidden" type="button">
+                    Remove from
                     <svg class="modal-cart-icon" width="18" height="18">
                         <use href="${icon}#icon-shopping-cart"></use>
                     </svg>
