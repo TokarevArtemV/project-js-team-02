@@ -16,7 +16,8 @@ export async function getProductsFromServer() {
     if (!arrProducts.results.length) {
       console.log(arrProducts.results);
       //якщо нічого не знайшло
-      //......
+      refs.productCardsContainer.innerHTML = '';
+
       return;
     }
 
