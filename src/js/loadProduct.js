@@ -17,10 +17,16 @@ export async function getProductsFromServer() {
       console.log(arrProducts.results);
       //якщо нічого не знайшло
       refs.productCardsContainer.innerHTML = '';
-
+      refs.productCardsContainer.innerHTML =
+        '<div class="js-empty-product-card"><p class="text-nothing-found">Nothing was found for the selected <span class=""> filters...</span></p class="text-try"><p class="text-try">Try adjusting your search parameters or browse our range by other criteria to find the perfect product for you. </p></div > ';
+      refs.productCardsContainer.classList.add(
+        'js-empty-product-cards-container'
+      );
       return;
     }
-
+    refs.productCardsContainer.classList.remove(
+      'js-empty-product-cards-container'
+    );
     const markupProductCards = createMarkupProducts(arrProducts.results);
 
     onPaginationRender(getProduct.currentPage, getProduct.totalPages);

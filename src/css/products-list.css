@@ -151,23 +151,26 @@
     font-size: 20px;
   }
 
-    .home_product-card-container{
-      padding-bottom: 0;
-    }
+  .home_product-card-container {
+    padding-bottom: 0;
+  }
 }
 
-
-
 /*! стилі для тексту,коли товар не знайдено */
+.js-empty-product-cards-container {
+  margin: 0 auto;
+}
+
 .js-empty-product-card {
   display: flex;
   flex-direction: column;
+  width: 270px;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   padding-bottom: 100px;
-  padding-top: 60px
+  padding-top: 60px;
 }
-
 
 .text-nothing-found {
   color: var(--black-color);
@@ -184,15 +187,13 @@
 }
 
 .text-try {
-  color: rgba(1, 1, 1, 0.70);
+  color: rgba(1, 1, 1, 0.7);
   text-align: center;
   font-family: Neue Montreal;
   font-size: 14px;
   line-height: 1.29;
   width: 279px;
 }
-
-
 
 @media screen and (min-width: 768px) {
   .text-nothing-found {
@@ -211,9 +212,7 @@
     padding-top: 110px;
     padding-bottom: 236px;
   }
-
 }
-
 
 @media screen and (min-width: 1440px) {
   .js-empty-product-card {
