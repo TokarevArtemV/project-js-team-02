@@ -4,6 +4,9 @@ import { createMarkupModalProductCard } from './markup/createMarkupModalProductC
 import { appendMarkup } from './markup/appendMarkup';
 import { loadOn, loadOff } from './loadStateForLoader';
 import { getProductsFromServer } from './loadProduct';
+import { getPopularProducts } from './popularProducts';
+import { getDiscountProducts } from './discountProducts';
+import { countCartProducts } from './cartCount';
 
 const KEY_BASKET = 'BASKET';
 
@@ -70,20 +73,24 @@ export function modalProductCart() {
 
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
-      // оновлення контейнеру з товарами
-      // const liEl = document.querySelector(`[data-id=${cardId}]`);
-      // console.log(liEl);
+      //  оновлення іконок всіх товарів
+      loadOn();
       getProductsFromServer();
+      getPopularProducts();
+      getDiscountProducts();
+      countCartProducts();
     }
     if (e.target === removefromCartBtnEl) {
       const updateStorageArr = basketArr.filter(item => item._id != dataCardID);
       localStorage.setItem(KEY_BASKET, JSON.stringify(updateStorageArr));
       addToCartBtnEl.classList.toggle('visually-hidden');
       removefromCartBtnEl.classList.toggle('visually-hidden');
-      // оновлення контейнеру з товарами
-      // const liEl = document.querySelector(`[data-id=${cardId}]`);
-      // console.log(liEl);
+      //  оновлення іконок всіх товарів
+      loadOn();
       getProductsFromServer();
+      getPopularProducts();
+      getDiscountProducts();
+      countCartProducts();
     }
   }
 
