@@ -11,7 +11,7 @@ import { getProductSearch } from './js/search.js';
 import { getPopularProducts } from './js/popularProducts.js';
 import { modalProductCart } from './js/modalProductCart';
 import { modalPopularProductCart } from './js/modalPopularProductCart';
-import { modalDiscountProductCart } from './js/modalDiscountProductCart copy';
+import { modalDiscountProductCart } from './js/modalDiscountProductCart';
 import { countCartProducts } from './js/cartCount.js';
 import { updateLocStor } from './js/search.js';
 import { onLoadContent } from './js/loadContent';
