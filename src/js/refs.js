@@ -36,6 +36,9 @@ export const refs = {
   submitBtnCartEl: document.querySelector('.js-submit-btn-cart'),
   //cart count sum
   sumCartEl: document.querySelector('.sum-span'),
+  //cart empty
+  emptyBasketBoxEl: document.querySelector('.empty-cart-content-js'),
+  fullBasketBoxEl: document.querySelector('.cart-wrapper-js'),
 
   //pagination
   pagesRibbonEL: document.querySelector('.pag-ribbon'),

@@ -3,6 +3,10 @@ import { saveProductsToBasket } from './saveSerchParamsToLocStg';
 import { getProductFormBasket } from './getProductFormBasket';
 import { countCartProducts } from './cartCount';
 import { loadOn, loadOff } from './loadStateForLoader';
+//cart
+import { checkStorage } from './toggleEmptyCart';
+import { toggleFullBasket } from './toggleEmptyCart';
+import { toggleEmptyBasket } from './toggleEmptyCart';
 
 export async function deleteBasketProductCards(evt) {
   try {
@@ -14,6 +18,12 @@ export async function deleteBasketProductCards(evt) {
     const newDataProd = dataProduct.filter(product => product._id !== cardId);
     saveProductsToBasket(newDataProd);
     evt.target.closest('.product-cart-js').remove();
+    const isStorageFull = checkStorage();
+    if (!isStorageFull) {
+      toggleFullBasket();
+      toggleEmptyBasket();
+      // return ; ?
+    }
     getProductFormBasket();
     countCartProducts();
     loadOff();
