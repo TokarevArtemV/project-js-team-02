@@ -8,7 +8,7 @@ import { getPopularProducts } from './popularProducts';
 import { countCartProducts } from './cartCount';
 
 const KEY_BASKET = 'BASKET';
-let count = 1;
+let amount = 1;
 
 ///////////////
 
@@ -57,7 +57,7 @@ export function modalPopularProductCart() {
     }
     if (e.target === addToCartBtnEl) {
       let cardId = dataCardID;
-      let product = { _id: cardId, count: count };
+      let product = { _id: cardId, amount: amount };
       basketArr.push(product);
       localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr));
 

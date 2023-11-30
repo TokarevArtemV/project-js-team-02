@@ -10,7 +10,7 @@ export function countCartProducts() {
     //
 
     const totalProductsCount = cartProducts.reduce((acc, product) => {
-      return acc + product.count;
+      return acc + product.amount;
     }, 0);
     allCartElArr.forEach(el => (el.innerHTML = `${totalProductsCount}`));
   } catch (error) {

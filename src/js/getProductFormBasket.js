@@ -7,10 +7,10 @@ export async function getProductFormBasket() {
   const datafromLocStor = productsInBasket();
 
   const getInfoCard = await Promise.all(
-    datafromLocStor.map(async ({ _id, count }) => {
+    datafromLocStor.map(async ({ _id, amount }) => {
       const data = await getProduct.getProductId(_id);
 
-      totalCount += data.price * count;
+      totalCount += data.price * amount;
 
       return data;
     })

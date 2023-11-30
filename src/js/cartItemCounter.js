@@ -52,10 +52,10 @@ function countOfProducts(productId, counter) {
 
   const newBasketObj = arrProducts.map(elem => {
     if (elem._id === productId) {
-      elem.count = counter;
+      elem.amount = counter;
       return {
         _id: productId,
-        count: counter,
+        amount: counter,
       };
     }
     return elem;

@@ -49,10 +49,10 @@ export function addDiscountProductInBasket(evt) {
 }
 
 function createProductObj(element) {
-  const count = 1;
+  const amount = 1;
 
   const productId = element.closest('.js-discount-card');
   const cardId = productId.dataset.id;
-  const product = { _id: cardId, count: count };
+  const product = { _id: cardId, amount: amount };
   return product;
 }

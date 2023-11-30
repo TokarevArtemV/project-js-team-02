@@ -9,9 +9,9 @@ const arrProducts = productsInBasket() || [];
 
 function countOfProducts(productId) {
   let counter;
-  arrProducts.forEach(({ _id, count }) => {
+  arrProducts.forEach(({ _id, amount }) => {
     if (_id === productId) {
-      counter = Number(count);
+      counter = Number(amount);
     }
   });
 

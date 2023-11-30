@@ -58,7 +58,7 @@ export function modalProductCart() {
     refs.modal.removeEventListener('click', modalProductsBtnHandler);
   }
 
-  let count = 1;
+  let amount = 1;
 
   function modalProductsBtnHandler(e) {
     const addToCartBtnEl = document.querySelector('.add-to-cart-btn');
@@ -69,7 +69,7 @@ export function modalProductCart() {
     }
     if (e.target === addToCartBtnEl) {
       let cardId = dataCardID;
-      let product = { _id: cardId, count: count };
+      let product = { _id: cardId, amount: amount };
       basketArr.push(product);
       localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr));
 

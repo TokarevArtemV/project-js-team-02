@@ -9,7 +9,7 @@ import { getDiscountProducts } from './discountProducts';
 import { countCartProducts } from './cartCount';
 
 const KEY_BASKET = 'BASKET';
-let count = 1;
+let amount = 1;
 
 ///////////////
 
@@ -56,7 +56,7 @@ export function modalDiscountProductCart() {
     }
     if (e.target === addToCartBtnEl) {
       let cardId = dataCardID;
-      let product = { _id: cardId, count: count };
+      let product = { _id: cardId, amount: amount };
       basketArr.push(product);
       localStorage.setItem(KEY_BASKET, JSON.stringify(basketArr));
 
