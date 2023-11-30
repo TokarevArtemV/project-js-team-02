@@ -13,17 +13,26 @@ export function createMarkupModalProductCard(data) {
                 </button> 
                 <div class="modal-content-wrapper">
                 <div class="picture">
-                    <img class="js-modal-picture-onLoad" src="${data.img}" alt="${data.name}" width="160">
+                    <img class="js-modal-picture-onLoad" src="${
+                      data.img
+                    }" alt="${data.name}" width="160">
                 </div>
     
                 <div class="modal-container">
                     <h3 class="modal-name">${data.name}</h3>
                     <ul class="modal-list list">
                         <div class="group-item">
-                            <li>Category: <span class="category modal-item">${data.category}</span></li>
-                            <li>Size: <span class="size modal-item">${data.size}</span></li>
+                            <li>Category: <span class="category modal-item">${data.category.replaceAll(
+                              '_',
+                              ' '
+                            )}</span></li>
+                            <li>Size: <span class="size modal-item">${
+                              data.size
+                            }</span></li>
                         </div>
-                        <li>Popularity: <span class="popularity modal-item">${data.popularity}</span></li>
+                        <li>Popularity: <span class="popularity modal-item">${
+                          data.popularity
+                        }</span></li>
                     </ul>
                     <p class="modal-text">${data.desc}</p>
                 </div>
