@@ -19,12 +19,20 @@
 
     <div class="home_select-categories">
       <select class="home_categorias-search" id="searchParams1" name="category">
-        <option data-placeholder="true"></option>
+        <option
+          disabled
+          selected
+          value="Show All"
+          hidden
+          data-placeholder="true"
+        >
+          Categories
+        </option>
       </select>
     </div>
     <div class="home_select-sort">
       <select class="home_categorias-sort" id="searchParams2" name="sort">
-        <option data-placeholder="true"></option>
+        <option value="byABC=true" data-placeholder="true">A-Z</option>
         <option value="byABC=true">A-Z</option>
         <option value="byABC=false">Z-A</option>
         <option value="byPrice=true">Cheap</option>
