@@ -28,7 +28,7 @@ export const refs = {
 
   //видалення всіх товарів з корзини
   deleteAllButton: document.querySelector('.delete-all-button'),
-  cartContent: document.querySelector('.cart-content'),
+  cartContent: document.querySelector('.js-cart-content'),
   cartNumber: document.querySelector('.js-cart-number'),
 
   //cart valiidation

@@ -1,11 +1,14 @@
 import { loadOff } from './loadStateForLoader';
+import { productsInBasket } from './getProductFormBasket';
 
 export function countCartProducts() {
   const allCartElArr = document.querySelectorAll('.js-cart-number');
 
   try {
-    const cartProducts = JSON.parse(localStorage.getItem('BASKET'));
+    const cartProducts = productsInBasket() || [];
+
     //
+
     const totalProductsCount = cartProducts.reduce((acc, product) => {
       return acc + product.count;
     }, 0);

@@ -1,3 +1,5 @@
+import { countCartProducts } from './cartCount';
+
 // функция сохранения параметров поиска в локальное хранилище
 
 export function saveSerchParamsToLocStg(serchParams) {
@@ -6,4 +8,5 @@ export function saveSerchParamsToLocStg(serchParams) {
 
 export function saveProductsToBasket(arrProducts) {
   localStorage.setItem('BASKET', JSON.stringify(arrProducts));
+  countCartProducts();
 }

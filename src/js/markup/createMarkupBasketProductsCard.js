@@ -1,9 +1,31 @@
 import icon from '../../images/icons/icons.svg';
+import { productsInBasket } from '../getProductFormBasket';
+
+//////
+
+const arrProducts = productsInBasket() || [];
+
+//////
+
+function countOfProducts(productId) {
+  let counter;
+  arrProducts.forEach(({ _id, count }) => {
+    if (_id === productId) {
+      counter = Number(count);
+    }
+  });
+
+  return counter || 0;
+}
+
+////////
 
 export function createMarkupBasketProductsCard(data) {
   const markup = data
     .map(({ img, name, category, price, size, _id }) => {
-      return `<div class="product-cart-js" data-cardId=${_id}>
+      const counter = countOfProducts(_id);
+
+      return `<div class="product-cart-js js-basket-card" data-cardId=${_id}>
           <div class="basket-img-box">
             <img src="${img}" alt="${name}" class="product-image" />
           </div>
@@ -30,11 +52,11 @@ export function createMarkupBasketProductsCard(data) {
               .toString()
               .replaceAll('.', ',')}</p>
               <div class="counter-box">
-              <button class="item-decrease-counter"><svg class="cart-minus" width="14" height="14">
+              <button id="minus" class="item-decrease-counter"><svg class="cart-minus" width="14" height="14">
     <use href="${icon}#icon-minus"></use>
   </svg></button>
-              <span class="item-counter-span">0</span>
-              <button class="item-increase-counter"><svg class="cart-plus" width="14" height="14">
+              <span class="item-counter-span">${counter}</span>
+              <button id="plus" class="item-increase-counter"><svg class="cart-plus" width="14" height="14">
     <use href="${icon}#icon-plus"></use>
   </svg></button>
               </div>
