@@ -6,6 +6,7 @@ import { loadOn, loadOff } from './loadStateForLoader';
 import { getProductsFromServer } from './loadProduct';
 import { getPopularProducts } from './popularProducts';
 import { countCartProducts } from './cartCount';
+import { getDiscountProducts } from './discountProducts';
 
 const KEY_BASKET = 'BASKET';
 let amount = 1;
