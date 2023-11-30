@@ -9,6 +9,7 @@ import { deleteBasketProductCards } from './deleteBasketProductCard';
 import throttle from 'lodash.throttle';
 import { deleteAllProducts } from './deleteAll';
 import { toggleCartMarkup } from './toggleEmptyCart';
+import { createOrder } from './createOrder';
 
 //запуск лоадера
 loadOn();
@@ -30,3 +31,6 @@ refs.deleteAllButton.addEventListener('click', deleteAllProducts);
 
 //пуста повна корзина
 toggleCartMarkup();
+
+//submit order
+createOrder();

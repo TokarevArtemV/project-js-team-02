@@ -31,7 +31,8 @@ export const refs = {
   cartContent: document.querySelector('.js-cart-content'),
   cartNumber: document.querySelector('.js-cart-number'),
 
-  //cart valiidation
+  //cart valiidation,
+  //cart subscription
   inputCartEl: document.querySelector('.js-cart-email'),
   submitBtnCartEl: document.querySelector('.js-submit-btn-cart'),
   //cart count sum
@@ -39,6 +40,12 @@ export const refs = {
   //cart empty
   emptyBasketBoxEl: document.querySelector('.empty-cart-content-js'),
   fullBasketBoxEl: document.querySelector('.cart-wrapper-js'),
+  //cart modal
+  cartBackdropEl: document.querySelector('[data-modal-cart]'),
+  cartModalCloseBtn: document.querySelector('[data-modal-close-cart]'),
+  cartModalEl: document.querySelector('.cart-modal'),
+  cartFormEl: document.querySelector('.cart-form'),
+  // catTitleNumEl: document.querySelector('#cartTitle'),
 
   //pagination
   pagesRibbonEL: document.querySelector('.pag-ribbon'),

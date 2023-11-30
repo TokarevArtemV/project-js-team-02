@@ -1,10 +1,13 @@
 import { GetProduct } from './products-api/api';
 import { refs } from './refs';
+import { getCartProductsFromStorage } from './createOrder';
 
 export async function getProductFormBasket() {
   let totalCount = 0;
   const getProduct = new GetProduct();
-  const datafromLocStor = productsInBasket();
+  const datafromLocStor = getCartProductsFromStorage();
+  console.log(datafromLocStor);
+  // if (datafromLocStor.length === 0) return ..;
 
   const getInfoCard = await Promise.all(
     datafromLocStor.map(async ({ _id, count }) => {
@@ -31,3 +34,12 @@ export function productsInBasket() {
     error.message;
   }
 }
+
+// function getProductsFromStorage() {
+//   try {
+//     const storageData = JSON.parse(localStorage.getItem('BASKET')) ?? [];
+//     return storageData;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }

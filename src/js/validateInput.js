@@ -9,5 +9,6 @@ export function validateInput(inputEl, btnEl) {
     if (isValid) {
       btnEl.disabled = false;
     }
+    console.log(isValid);
   }
 }
