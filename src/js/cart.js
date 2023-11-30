@@ -28,5 +28,5 @@ refs.productFormBasket.addEventListener(
 //слухач на кнопку видалити
 refs.deleteAllButton.addEventListener('click', deleteAllProducts);
 
-//пуста повнв корзина
+//пуста повна корзина
 toggleCartMarkup();

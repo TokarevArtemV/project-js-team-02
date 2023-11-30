@@ -2,6 +2,8 @@
 import { loadOff } from './loadStateForLoader';
 import { productsInBasket } from './getProductFormBasket';
 import { saveProductsToBasket } from './saveSerchParamsToLocStg';
+import { countCartProducts } from './cartCount';
+import { getProductFormBasket } from './getProductFormBasket';
 
 //////
 
@@ -10,7 +12,6 @@ import { saveProductsToBasket } from './saveSerchParamsToLocStg';
 export function cartItemCounter() {
   let counter = 0;
   try {
-    // const data = await getProductFormBasket();
     const counterBoxEl = document.querySelector('.flex-cart-js');
 
     counterBoxEl.addEventListener('click', onClick);
@@ -23,6 +24,7 @@ export function cartItemCounter() {
         if (counter !== 0) {
           spanNumberEl.textContent = counter;
           countOfProducts(cardId, (spanNumberEl.textContent = counter - 1));
+          getProductFormBasket();
         }
       }
 
@@ -32,8 +34,11 @@ export function cartItemCounter() {
         if (counter < 100) {
           spanNumberEl.textContent = counter;
           countOfProducts(cardId, (spanNumberEl.textContent = counter + 1));
+          getProductFormBasket();
         }
       }
+
+      countCartProducts();
     }
   } catch (error) {
     loadOff();
@@ -43,7 +48,6 @@ export function cartItemCounter() {
 ////// перерахунок кількості в корзині
 
 function countOfProducts(productId, counter) {
-  console.log(productId, counter);
   const arrProducts = productsInBasket() || [];
 
   const newBasketObj = arrProducts.map(elem => {

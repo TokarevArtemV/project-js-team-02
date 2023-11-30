@@ -2,7 +2,7 @@ import { refs } from './refs';
 
 export function toggleCartMarkup() {
   const isStorageFull = checkStorage();
-  console.log(isStorageFull);
+
   if (isStorageFull) {
     toggleFullBasket();
   } else {
@@ -14,7 +14,7 @@ export function toggleCartMarkup() {
 export function checkStorage() {
   try {
     const storageData = JSON.parse(localStorage.getItem('BASKET')) ?? [];
-    console.log(storageData);
+
     return storageData.length !== 0 ? true : false;
   } catch (error) {
     console.log(error);

@@ -10,7 +10,6 @@ export function deleteAllProducts() {
   toggleEmptyBasket();
   toggleFullBasket();
 
-  // refs.sumCartEl.textContent = '$0,00';
   refs.cartNumber.textContent = '0';
 
   refs.deleteAllButton.removeEventListener('click', deleteAllProducts);

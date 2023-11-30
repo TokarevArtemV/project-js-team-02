@@ -18,14 +18,19 @@ export async function deleteBasketProductCards(evt) {
     const newDataProd = dataProduct.filter(product => product._id !== cardId);
     saveProductsToBasket(newDataProd);
     evt.target.closest('.product-cart-js').remove();
+
     const isStorageFull = checkStorage();
+
     if (!isStorageFull) {
       toggleFullBasket();
       toggleEmptyBasket();
       // return ; ?
     }
+
     getProductFormBasket();
+
     countCartProducts();
+
     loadOff();
   } catch (error) {
     loadOff();
