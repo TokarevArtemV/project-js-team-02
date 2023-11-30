@@ -1,48 +1,38 @@
-<div class="home_filters-container"></div>
-  <h2 class="home_filters">Filters:</h2>
-  <div class="home_search-params"></div>
-  <form class="home__form-search">
-    <div class="home_form">
-      <div class="home_input-wrapper">
-        <input
-          class="home_search-input"
-          type="text"
-          id="searchInput"
-          name="keyword"
-          placeholder="Search for anything"
-        />
-        <button type="submit" class="home_search-button">
-          <svg class="home_icon-search" width="20" height="20">
-            <use href="./images/icons/icons.svg#icon-search"></use>
-          </svg>
-        </button>
-      </div>
+<h2 class="home_filters">Filters:</h2>
 
-      <div class="home_select-categories">
-        <select
-          class="home_categorias-search"
-          id="searchParams1"
-          name="category"
-        >
-          <option data-placeholder="true"></option>
-        </select>
-      </div>
-      <div class="home_select-sort">
-        <select
-          class="home_categorias-sort"
-          id="searchParams2"
-          name="sort"
-        >
-          <option data-placeholder="true"></option>
-          <option value="byABC=true">A-Z</option>
-          <option value="byABC=false">Z-A</option>
-          <option value="byPrice=true">Cheap</option>
-          <option value="byPrice=false">Expensive</option>
-          <option value="byPopularity=false">Popular</option>
-          <option value="byPopularity=true">Not popular</option>
-          <option value="byABC=true">Show All</option>
-        </select>
-      </div>
+<form class="home__form-search">
+  <div class="home_form">
+    <div class="home_input-wrapper">
+      <input
+        class="home_search-input"
+        type="text"
+        id="searchInput"
+        name="keyword"
+        placeholder="Search for anything"
+      />
+      <button type="submit" class="home_search-button">
+        <svg class="home_icon-search" width="20" height="20">
+          <use href="./images/icons/icons.svg#icon-search"></use>
+        </svg>
+      </button>
     </div>
-  </form>
-</div>
+
+    <div class="home_select-categories">
+      <select class="home_categorias-search" id="searchParams1" name="category">
+        <option data-placeholder="true"></option>
+      </select>
+    </div>
+    <div class="home_select-sort">
+      <select class="home_categorias-sort" id="searchParams2" name="sort">
+        <option data-placeholder="true"></option>
+        <option value="byABC=true">A-Z</option>
+        <option value="byABC=false">Z-A</option>
+        <option value="byPrice=true">Cheap</option>
+        <option value="byPrice=false">Expensive</option>
+        <option value="byPopularity=false">Popular</option>
+        <option value="byPopularity=true">Not popular</option>
+        <option value="byABC=true">Show All</option>
+      </select>
+    </div>
+  </div>
+</form>
