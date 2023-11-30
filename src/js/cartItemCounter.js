@@ -10,7 +10,7 @@ import { getProductFormBasket } from './getProductFormBasket';
 //////лічильник одиниць прродуктів
 
 export function cartItemCounter() {
-  let counter = 0;
+  let counter = 1;
   try {
     const counterBoxEl = document.querySelector('.flex-cart-js');
 
@@ -21,7 +21,7 @@ export function cartItemCounter() {
       if (evt.target.closest('#minus')) {
         const spanNumberEl = evt.target.closest('#minus').nextElementSibling;
         counter = Number(spanNumberEl.textContent);
-        if (counter !== 0) {
+        if (counter !== 1) {
           spanNumberEl.textContent = counter;
           countOfProducts(cardId, (spanNumberEl.textContent = counter - 1));
           getProductFormBasket();
