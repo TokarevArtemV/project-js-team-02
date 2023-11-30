@@ -34,7 +34,7 @@ export function createMarkupProducts(data) {
           : 'icon-shopping-cart';
 
         if (is10PercentOff) {
-          return `<li data-id="${_id}" class="product-card common-card js-product-card${disable}">
+          return `<li data-id="${_id}" class="product-card common-card js-product-card ${disable}">
                 <div class="image-product">
                 <svg class="icon-discount" width="60" height="60">
                     <use href="${icon}#icon-discount"></use>

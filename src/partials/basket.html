@@ -6,51 +6,62 @@
           <use href="./images/icons/icons.svg#icon-shopping-cart"></use>
         </svg>
       </button>
+
       <div class="cart-info">
         <h1 id="cartTitle">
           Cart&nbsp;(<span class="js-cart-number">0</span>)
         </h1>
       </div>
     </div>
-    <div class="cart-wrapper-js  visually-hidden">
-    <div class="button-delete-all-box">
-      <button class="delete-all-button">
-        Delete All
-        <svg class="icon-delete" width="24" height="24">
-          <use href="./images/icons/icons.svg#icon-close-sharp"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="basket-content-box">
-      <div class="flex-cart-js"></div>
-      <div class="order-summary">
-        <h1 class="order-title">YOUR ORDER</h1>
-        <div class="summary-box">
-          <p class="product-name-total">Total</p>
-          <p class="product-basket-text">
-            Sum:&nbsp;&nbsp;<span class="sum-span" id="sum-important">$0</span>
-          </p>
+    <div class="cart-wrapper-js visually-hidden">
+      <div class="button-delete-all-box">
+        <button class="delete-all-button">
+          Delete All
+          <svg class="icon-delete" width="24" height="24">
+            <use href="./images/icons/icons.svg#icon-close-sharp"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="basket-content-box">
+        <div class="flex-cart-js"></div>
+        <div class="order-summary">
+          <h1 class="order-title">YOUR ORDER</h1>
+          <div class="summary-box">
+            <p class="product-name-total">Total</p>
+            <p class="product-basket-text">
+              Sum:&nbsp;&nbsp;<span class="sum-span" id="sum-important"
+                >$0</span
+              >
+            </p>
+          </div>
+
+          <form class="cart-form email-and-checkout">
+            <input
+              type="email"
+              name="email"
+              class="email-input reset-autofill-cart js-cart-email"
+              placeholder="Mail:&nbsp;&nbsp;Enter your email"
+              title="Invalid email address"
+              aria-label="Email"
+              required
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            />
+
+            <button class="checkout-button js-submit-btn-cart">Checkout</button>
+          </form>
         </div>
-
-        <form class="cart-form email-and-checkout">
-          <input
-            type="email"
-            name="email"
-            class="email-input reset-autofill-cart js-cart-email"
-            placeholder="Mail:&nbsp;&nbsp;Enter your email"
-            title="Invalid email address"
-            aria-label="Email"
-            required
-            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-          />
-
-          <button class="checkout-button js-submit-btn-cart">Checkout</button>
-        </form>
       </div>
     </div>
- </div>
-    <div class="empty-cart-content-js visually-hidden" id="cartContent">
-      <img src="./images/basket-2x.png" alt="Basket Image" class="basket-image"/>
+
+    <div
+      class="empty-cart-container empty-cart-content-js visually-hidden"
+      id="cartContent"
+    >
+      <img
+        src="./images/basket-2x.png"
+        alt="Basket Image"
+        class="basket-image"
+      />
       <p class="first-empty-message" id="emptyMessage">
         Your basket is<span style="color: #6d8434"> empty ...</span>
       </p>
@@ -60,11 +71,5 @@
         to the cart<br />
       </p>
     </div>
- 
+  </div>
 </section>
-
-
-
-
-
- 
