@@ -93,12 +93,8 @@ export class GetProduct {
   }
 
   async sendOrder(bodyData) {
-    const url = '/subscription';
-    const response = await axios.post(url, bodyData, {
-      validateStatus: function (status) {
-        return status < 500;
-      },
-    });
+    const url = '/orders';
+    const response = await axios.post(url, bodyData);
     return response.data;
   }
 }
