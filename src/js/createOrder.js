@@ -30,7 +30,7 @@ async function onSubmit(e) {
     email: refs.inputCartEl.value,
     products: productsArray,
   };
-  console.log(bodyData);
+  // console.log(bodyData);
 
   //пост запит
   try {
@@ -80,6 +80,6 @@ function appendMarkup(parentEl, markup) {
 
 function toggleModal() {
   refs.cartBackdropEl.classList.toggle('visually-hidden');
-  console.log('backdrop');
+  // console.log('backdrop');
   document.body.classList.toggle('no-scroll');
 }

@@ -6,7 +6,7 @@ export async function getProductFormBasket() {
   let totalCount = 0;
   const getProduct = new GetProduct();
   const datafromLocStor = getCartProductsFromStorage();
-  console.log(datafromLocStor);
+  // console.log(datafromLocStor);
   // if (datafromLocStor.length === 0) return ..;
 
   const getInfoCard = await Promise.all(

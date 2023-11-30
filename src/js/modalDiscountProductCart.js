@@ -33,14 +33,15 @@ export function modalDiscountProductCart() {
       const removefromCartBtnEl = document.querySelector(
         '.remove-from-cart-btn'
       );
-      document.querySelector('.js-modal-picture-onLoad').onload = () => {
-        openModal();
-        loadOff();
-      };
+
       if (productInLocalStorage(checkBasket(), dataCardID)) {
         addToCartBtnEl.classList.toggle('visually-hidden');
         removefromCartBtnEl.classList.toggle('visually-hidden');
       }
+      document.querySelector('.js-modal-picture-onLoad').onload = () => {
+        openModal();
+        loadOff();
+      };
     }
     refs.modal.addEventListener('click', modalDiscountBtnHandler);
   });
