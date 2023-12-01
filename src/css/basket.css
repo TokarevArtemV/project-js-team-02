@@ -41,6 +41,7 @@
 }
 
 /* ------------------------------MOBILE 320-374px */
+
 @media screen and (max-width: 374px) {
   .order-summary {
     max-width: 100%;
