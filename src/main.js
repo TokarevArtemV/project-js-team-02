@@ -61,11 +61,3 @@ modalPopularProductCart();
 
 // підрахунок кількості товарів в корзині
 countCartProducts();
-
-///////////////////////
-const basket = getProductFormBasket();
-const idProd = '640c2dd963a319ea671e3676';
-
-const objInBasket = basket.idProd?.cont;
-
-console.log(objInBasket);
