@@ -18,6 +18,7 @@ import { onLoadContent } from './js/loadContent';
 import { addProductInBasket } from './js/addProductToBasket';
 import { addPopularProductInBasket } from './js/addPopularToBasket';
 import { addDiscountProductInBasket } from './js/addDiscountToBasket';
+import { getProductFormBasket } from './js/getProductFormBasket';
 
 // відмалювання по отриманим категоріям селекта1 при запуску сторінки
 loadPage();
@@ -60,3 +61,11 @@ modalPopularProductCart();
 
 // підрахунок кількості товарів в корзині
 countCartProducts();
+
+///////////////////////
+const basket = getProductFormBasket();
+const idProd = '640c2dd963a319ea671e3676';
+
+const objInBasket = basket.idProd?.cont;
+
+console.log(objInBasket);
