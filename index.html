@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/project-js-team-02/assets/favicon-1087623b.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodBoutique</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <script type="module" crossorigin src="/project-js-team-02/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-js-team-02/assets/vendor-860dfefd.js">
+    <link rel="modulepreload" crossorigin href="/project-js-team-02/assets/subscription-395be4f6.js">
+    <link rel="stylesheet" href="/project-js-team-02/assets/subscription-33f1ee3c.css">
+    <link rel="stylesheet" href="/project-js-team-02/assets/vendor-b37df716.css">
+  </head>
+  <body>
+    <!-- Mobile menu in svg -->
+<header class="header">
+  <div class="container">
+    <nav class="nav flex">
+      <div class="logo-box flex">
+        <a href="./index.html" class="logo flex">
+          <div class="logo-img flex">
+            <svg class="logo-svg-header">
+              <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-cabbage"></use>
+            </svg>
+          </div>
+          <span class="logo-text">food boutique</span>
+        </a>
+      </div>
+      <div class="basket-header-box flex">
+        <a href="./index.html" class="btn-home flex">
+          <span class="btn-home-text">home</span>
+        </a>
+
+        <a href="./cart.html" class="heder-cart-link js-header-cart">
+          <svg class="heder-cart" width="14" height="14">
+            <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-shopping-cart"></use>
+          </svg>
+        </a>
+
+        <p class="heder-cart-text">cart</p>
+        <div class="cart-number-box">
+          &nbsp;(<span class="js-cart-number">0</span>)
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <main>
+      <section class="hero">
+  <div class="container hero-container">
+    <div class="hero__main">
+      <h1 class="hero__header">Welcome to the <span> Food </span> Boutique!</h1>
+      <p class="hero__descr">
+        With Food Boutique, you're not just subscribing to food, you're signing
+        up for a fresher, fitter, and happier you.
+      </p>
+    </div>
+    <div class="hero__image">
+      <picture>
+        <source
+          srcset="/project-js-team-02/assets/hero-desktop-dfce4e24.jpg 1x, /project-js-team-02/assets/hero-desktop-2x-e84d1cb0.jpg 2x"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcset="/project-js-team-02/assets/hero-tablet-4af3d966.jpg 1x, /project-js-team-02/assets/hero-tablet-2x-410e78b4.jpg 2x"
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="/project-js-team-02/assets/hero-mobile-63382c28.jpg 1x, /project-js-team-02/assets/hero-mobile-2x-9d3bcbc9.jpg 2x"
+          media="(max-width: 767px)"
+        />
+        <img
+          class="hero__image-main"
+          src="/project-js-team-02/assets/hero-mobile-63382c28.jpg"
+          alt="Girl with vegetable"
+        />
+      </picture>
+      <svg class="hero-icon" width="100px" height="100px">
+        <use xlink:href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-organic-food"></use>
+      </svg>
+    </div>
+  </div>
+</section>
+
+      <section id="home-page" class="section-home-page js-home-page">
+        <div class="hero-products-filter-container container">
+          <h2 class="home_filters">Filters:</h2>
+
+<form class="home__form-search">
+  <div class="home_form">
+    <div class="home_input-wrapper">
+      <input
+        class="home_search-input"
+        type="text"
+        id="searchInput"
+        name="keyword"
+        placeholder="Search for anything"
+      />
+      <button type="submit" class="home_search-button">
+        <svg class="home_icon-search" width="20" height="20">
+          <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-search"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="home_select-categories">
+      <select class="home_categorias-search" id="searchParams1" name="category">
+        <option
+          disabled
+          selected
+          value="Show All"
+          hidden
+          data-placeholder="true"
+        >
+          Categories
+        </option>
+      </select>
+    </div>
+    <div class="home_select-sort">
+      <select class="home_categorias-sort" id="searchParams2" name="sort">
+        <option value="byABC=true" data-placeholder="true">A-Z</option>
+        <option value="byABC=true">A-Z</option>
+        <option value="byABC=false">Z-A</option>
+        <option value="byPrice=true">Cheap</option>
+        <option value="byPrice=false">Expensive</option>
+        <option value="byPopularity=false">Popular</option>
+        <option value="byPopularity=true">Not popular</option>
+        <option value="byABC=true">Show All</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+        </div>
+        <div class="hero-products-container container">
+          <div class="products-wraper">
+            <div class="home_product-card-container">
+    <ul class="products-list">
+    </ul>
+</div>
+
+            <div class="pag-ribbon"></div>
+          </div>
+          <div class="popular-products-wraper">
+            <div class="popular-products-container">
+  <h2 class="products-title popular">Popular products</h2>
+  <ul class="popular-products-list"></ul>
+</div>
+
+            <div class="discount-products-container">
+  <h2 class="products-title discount">Discount products</h2>
+  <ul class="discount-products-list"></ul>
+</div>
+
+          </div>
+        </div>
+      </section>
+      <div class="modal" data-modal></div>
+
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer-wrapper">
+      <div class="footer-first-box">
+        <div class="footer-logo-text-container">
+          <a href="./index.html" class="logo-link-svg link">
+            <svg class="logo-svg" width="16" height="16">
+              <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-cabbage"></use>
+            </svg>
+          </a>
+          <a href="./index.html" class="footer-logo-link link">Food Boutique</a>
+        </div>
+
+        <ul class="footer-socials-list list">
+          <li class="footer-socials-item">
+            <a
+              href="https://www.facebook.com/goITclub/"
+              target="_blank"
+              rel="noopener no-referrer"
+              class="socials-link link"
+              ><svg class="socials-svg" width="24" height="24">
+                <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-socials-item">
+            <a
+              href="https://www.instagram.com/goitclub/ "
+              target="_blank"
+              rel="noopener no-referrer"
+              class="socials-link link"
+            >
+              <svg class="socials-svg" width="24" height="24">
+                <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer-socials-item">
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              target="_blank"
+              rel="noopener no-referrer"
+              class="socials-link link"
+            >
+              <svg class="socials-svg" width="24" height="24">
+                <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-second-box">
+        <div class="footer-text-box">
+          <p class="footer-first-text">
+            Discover the Variety of Flavors and Quality
+          </p>
+          <p class="footer-second-text">
+            An online store where you will find fresh, natural and delicious
+            products for a healthy life and unforgettable gastronomic
+            adventures.
+          </p>
+        </div>
+        <div class="footer-form-container">
+          <form class="footer-form">
+            <label for="email" class="footer-form-subscribe"
+              >Subscribe and learn about new products!</label
+            >
+            <input
+              id="email"
+              class="footer-input reset-autofill"
+              type="email"
+              name="email"
+              placeholder="Email"
+              title="Invalid email address"
+              aria-label="Email"
+              required
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            />
+            <button class="footer-form-btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rights-policy-terms">
+      <p class="footer-rights">Food Boutique. All rights reserved.</p>
+      <div class="policy-terms-box">
+        <a
+          href="https://www.freeprivacypolicy.com/live/f1ec1e9a-d65b-4d41-a840-424a3674fd56"
+          class="footer-policy link"
+          target="_blank"
+          rel="noopener no-referrer"
+          >Privacy Policy</a
+        >
+        <span>&nbsp;/&nbsp;</span>
+        <a
+          href="https://www.freeprivacypolicy.com/live/f925529a-df02-4c84-a792-7b270ee39ee9"
+          class="footer-terms link"
+          target="_blank"
+          rel="noopener no-referrer"
+          >Terms of Service</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-backdrop is-hidden" data-modal-footer>
+  <div class="footer-modal">
+    <!-- <button class="footer-modal-close-btn" type="button" data-modal-close>
+      <svg class="footer-modal-icon" width="22" height="22">
+        <use href="./images/icons/icons.svg#icon-close-sharp"></use>
+      </svg>
+    </button> -->
+    <button class="footer-btn-ok data-modal-close" data-modal-close>OK</button>
+  </div>
+</div>
+
+    <div class="go-top">
+  <svg class="scroll-icon" width="30" height="20">
+    <use href="/project-js-team-02/assets/icons-c5b81d5f.svg#icon-scroll"></use>
+  </svg>
+</div>
+
+    <div class="hystmodal is-modal-hidden" id="myModal">
+  <div class="hystmodal__window">
+    <p class="loader"></p>
+  </div>
+</div>
+
+    
+  </body>
+</html>
