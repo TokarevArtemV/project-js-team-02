@@ -1,31 +1,13 @@
+import { getFromLocalStg } from './local-storadge/localstorage';
 import { refs } from './refs';
+import { BASKET_KEY } from './variables/variables';
 
 export function toggleCartMarkup() {
-  const isStorageFull = checkStorage();
-
-  if (isStorageFull) {
-    toggleFullBasket();
+  if (!!getFromLocalStg(BASKET_KEY).length) {
+    refs.emptyBasketBoxEl.classList.add('visually-hidden');
+    refs.fullBasketBoxEl.classList.remove('visually-hidden');
   } else {
-    toggleEmptyBasket();
+    refs.emptyBasketBoxEl.classList.remove('visually-hidden');
+    refs.fullBasketBoxEl.classList.add('visually-hidden');
   }
-}
-
-//--------------------перевірка локального сховища
-export function checkStorage() {
-  try {
-    const storageData = JSON.parse(localStorage.getItem('BASKET')) ?? [];
-
-    return storageData.length !== 0 ? true : false;
-  } catch (error) {
-    console.log(error);
-  }
-}
-//--------------------тогл класу візуал-хідден
-
-export function toggleEmptyBasket() {
-  refs.emptyBasketBoxEl.classList.toggle('visually-hidden');
-}
-
-export function toggleFullBasket() {
-  refs.fullBasketBoxEl.classList.toggle('visually-hidden');
 }

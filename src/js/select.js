@@ -1,32 +1,39 @@
 import SlimSelect from 'slim-select';
-import { getCategories } from './createRequestCategory';
-import { markupOptionsCategory } from './markup/markupOptionsCategory';
+import { getCategories } from './products-api/createRequestCategory';
+import { createMarkupOptionsCategory } from './markup/createMarkupOptionsCategory';
 import { updateLocStor } from './search';
+import { createProductsCards } from './create-products-card/createProductsCards';
 import { refs } from './refs';
 
-// инициализация библиотеки сортировки
-
-new SlimSelect({
-  select: '.home_categorias-sort',
-  settings: {
-    placeholderText: 'A-Z',
-    showSearch: false,
-    searchHighlight: true,
-  },
-  events: {
-    // формирование запроса
-    afterChange: newVal => {
-      updateLocStor();
+// ініціалізація бібліотеки селекту сортування
+export async function createSortCategories() {
+  new SlimSelect({
+    select: '.home_categorias-sort',
+    settings: {
+      placeholderText: 'A-Z',
+      showSearch: false,
+      searchHighlight: true,
     },
-  },
-});
+    events: {
+      // формування запиту
+      afterChange: newVal => {
+        //  оновлення запису в локальном сховищі
+        updateLocStor();
+        //  відмалювання карток товарів
+        createProductsCards();
+      },
+    },
+  });
+}
 
-export async function loadPage() {
+//////////
+/////////
+export async function createSelectCategories() {
   // получение масива категорий
   const arrCategories = await getCategories();
 
   // создание разметки селекта
-  const markupOptions = markupOptionsCategory(arrCategories);
+  const markupOptions = createMarkupOptionsCategory(arrCategories);
 
   // отрисовка селекта
   refs.searchElCategories.insertAdjacentHTML('beforeend', markupOptions);
@@ -42,7 +49,10 @@ export async function loadPage() {
     events: {
       // формирование запроса
       afterChange: newVal => {
+        //  оновлення запису в локальном сховищі
         updateLocStor();
+        //  відмалювання карток товарів
+        createProductsCards();
       },
     },
   });

@@ -1,4 +1,4 @@
-import { GetProduct } from './products-api/api';
+import { GetProduct } from './api';
 
 export async function getCategories() {
   const getProduct = new GetProduct();

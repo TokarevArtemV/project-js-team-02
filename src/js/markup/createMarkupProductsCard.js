@@ -1,19 +1,13 @@
 import icon from '../../images/icons/icons.svg';
-import { productsInBasket } from '../getProductFormBasket';
+import { getFromLocalStg } from '../local-storadge/localstorage';
+import { BASKET_KEY } from '../variables/variables';
 
-function isProduct(product, arrProducts) {
-  for (let key in arrProducts) {
-    if (Object.hasOwnProperty.call(arrProducts, key)) {
-      const element = arrProducts[key];
-      if (Object.values(element).includes(product)) {
-        return Object.values(element).includes(product);
-      }
-    }
-  }
+function isProduct(product_id, arrProducts) {
+  return arrProducts.some(({ product: { _id } }) => _id === product_id);
 }
 
 export function createMarkupProducts(data) {
-  const arrProducts = productsInBasket() || [];
+  const arrProducts = getFromLocalStg(BASKET_KEY) || [];
 
   const markup = data
     .map(
@@ -27,14 +21,14 @@ export function createMarkupProducts(data) {
         _id,
         is10PercentOff,
       }) => {
-        const disable = isProduct(_id, arrProducts) ? 'js-button-disabled' : '';
+        const disable = isProduct(_id, arrProducts) ? 'button-disabled' : '';
 
         const iconBasket = isProduct(_id, arrProducts)
           ? 'icon-checkbox'
           : 'icon-shopping-cart';
 
         if (is10PercentOff) {
-          return `<li data-id="${_id}" class="product-card common-card js-product-card ${disable}">
+          return `<li data-id="${_id}" class="product-card common-card js-product-card">
                 <div class="image-product">
                 <svg class="icon-discount" width="60" height="60">
                     <use href="${icon}#icon-discount"></use>
@@ -56,13 +50,13 @@ export function createMarkupProducts(data) {
                     <p class="price-product">$${price}</p>
                     <button class="js-button-shopping ${disable}" >
                     <svg class="icon-shopping-card" width="28" height="28">
-                        <use href="${icon}#${iconBasket}"></use>
+                        <use class="js-use-icon" href="${icon}#${iconBasket}"></use>
                     </svg>
                     </button>
                 </div>
             </li>`;
         } else {
-          return `<li data-id="${_id}" class="product-card common-card js-product-card ${disable}">
+          return `<li data-id="${_id}" class="product-card common-card js-product-card">
                 <div class="image-product">
                     <img class="image js-product-img" src="${img}" alt="${name}" />
                 </div>
@@ -81,7 +75,7 @@ export function createMarkupProducts(data) {
                     <p class="price-product">$${price}</p>
                     <button class="js-button-shopping ${disable}">
                     <svg class="icon-shopping-card" width="28" height="28">
-                        <use href="${icon}#${iconBasket}"></use>
+                        <use class="js-use-icon" href="${icon}#${iconBasket}"></use>
                     </svg>
                     </button>
                 </div>

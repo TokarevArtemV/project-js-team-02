@@ -1,18 +1,22 @@
-import { getSerchParamsFromLocStg } from './getSerchParamsFromLocStg';
-import { GetProduct } from './products-api/api';
-import { appendMarkup } from './markup/appendMarkup';
-import { createMarkupProducts } from './markup/createMarkupProductsCard';
-import { refs } from './refs';
-import { onPaginationRender } from './pagination';
-import { loadOff } from './loadStateForLoader';
+import { GetProduct } from '../products-api/api';
+import { appendMarkup } from '../markup/appendMarkup';
+import { createMarkupProducts } from '../markup/createMarkupProductsCard';
+import { refs } from '../refs';
+import { onPaginationRender } from '../pagination';
+import { loadOff } from '../loadStateForLoader';
+import { getFromLocalStg, setToLocalStg } from '../local-storadge/localstorage';
+import { FILTERS_KEY, PRODUCTS_KEY } from '../variables/variables';
 
-export async function getProductsFromServer() {
+export async function createProductsCards() {
   try {
     const getProduct = new GetProduct();
 
-    const searchParams = await getSerchParamsFromLocStg();
+    const searchParams = await getFromLocalStg(FILTERS_KEY);
 
     const arrProducts = await getProduct.getProducts(searchParams);
+
+    //запис до локального сховища товарів
+    setToLocalStg(PRODUCTS_KEY, arrProducts.results);
 
     if (!arrProducts.results.length) {
       loadOff();
@@ -27,14 +31,15 @@ export async function getProductsFromServer() {
       return;
     }
 
-    refs.productCardsContainer.classList.remove(
-      'js-empty-product-cards-container'
-    );
     const markupProductCards = createMarkupProducts(arrProducts.results);
 
     onPaginationRender(getProduct.currentPage, getProduct.totalPages);
 
     appendMarkup(refs.productCardsContainer, markupProductCards);
+
+    refs.productCardsContainer.classList.remove(
+      'js-empty-product-cards-container'
+    );
   } catch (error) {
     console.log(error.message);
   }

@@ -1,11 +1,9 @@
 // import { getProductFormBasket } from './getProductFormBasket';
 import { loadOff } from './loadStateForLoader';
-import { productsInBasket } from './getProductFormBasket';
-import { saveProductsToBasket } from './saveSerchParamsToLocStg';
-import { countCartProducts } from './cartCount';
-import { getProductFormBasket } from './getProductFormBasket';
-
-//////
+import { countCartProducts } from './countCartProducts';
+import { calculateTotalCount } from './calculateTotalCount';
+import { getFromLocalStg, setToLocalStg } from './local-storadge/localstorage';
+import { BASKET_KEY } from './variables/variables';
 
 //////лічильник одиниць прродуктів
 
@@ -24,7 +22,7 @@ export function cartItemCounter() {
         if (counter !== 1) {
           spanNumberEl.textContent = counter;
           countOfProducts(cardId, (spanNumberEl.textContent = counter - 1));
-          getProductFormBasket();
+          calculateTotalCount();
         }
       }
 
@@ -34,7 +32,7 @@ export function cartItemCounter() {
         if (counter < 100) {
           spanNumberEl.textContent = counter;
           countOfProducts(cardId, (spanNumberEl.textContent = counter + 1));
-          getProductFormBasket();
+          calculateTotalCount();
         }
       }
 
@@ -48,20 +46,20 @@ export function cartItemCounter() {
 ////// перерахунок кількості в корзині
 
 function countOfProducts(productId, counter) {
-  const arrProducts = productsInBasket() || [];
+  const arrProducts = getFromLocalStg(BASKET_KEY) || [];
 
-  const newBasketObj = arrProducts.map(elem => {
-    if (elem._id === productId) {
-      elem.amount = counter;
+  const newBasketObj = arrProducts.map(({ product, amount }) => {
+    if (product._id === productId) {
+      amount = counter;
       return {
-        _id: productId,
+        product,
         amount: counter,
       };
     }
-    return elem;
+    return { product, amount };
   });
 
-  saveProductsToBasket(newBasketObj);
+  setToLocalStg(BASKET_KEY, newBasketObj);
 }
 
 ////////

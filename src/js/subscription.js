@@ -1,16 +1,9 @@
+import { appendMarkupAfterbeginWithoutReset } from './markup/appendMarkup';
 import { GetProduct } from './products-api/api';
 import { refs } from './refs';
-import { validateInput } from './validateInput';
-
-refs.footerSubmitBtnEl.addEventListener('click', onSubmit);
-
-refs.footerSubmitBtnEl.disabled = true;
-
-// ------------------------------валідація форми
-validateInput(refs.footerInputEl, refs.footerSubmitBtnEl);
 
 // -----------------------------сабміт форми
-async function onSubmit(e) {
+export async function onSubmitSubscription(e) {
   const getProduct = new GetProduct();
   e.preventDefault();
   const userEmailData = {
@@ -22,31 +15,31 @@ async function onSubmit(e) {
     refs.footerSubmitBtnEl.disabled = false;
 
     const modalMarkup = renderDataMarkup(data.message);
-    appendMarkup(refs.footerModalEl, modalMarkup);
-
+    appendMarkupAfterbeginWithoutReset(refs.footerModalEl, modalMarkup);
+    refs.footerSubmitBtnEl.disabled = true;
     toggleModal();
     refs.footerFormEl.reset();
   } catch (error) {
     console.error(error);
   }
 }
+
 // -------------------------по кліку на кнопку модалки
+
+refs.footerModalBtnCloseEl.addEventListener('click', onClick);
+
 function onClick() {
   toggleModal();
   const mesEl = document.querySelector('.footer-modal-message');
   refs.footerSubmitBtnEl.disabled = true;
   mesEl.remove();
+  refs.footerModalBtnCloseEl.removeEventListener('click', onClick);
 }
-refs.footerModalBtnCloseEl.addEventListener('click', onClick);
 
 // ---------------------------helpers
 
 function renderDataMarkup(mes) {
   return `<p class="footer-modal-message"">${mes}</p>`;
-}
-
-function appendMarkup(parentEl, markup) {
-  parentEl.insertAdjacentHTML('afterbegin', markup);
 }
 
 function toggleModal() {

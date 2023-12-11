@@ -1,13 +1,20 @@
 import { GetProduct } from './products-api/api';
-import { saveSerchParamsToLocStg } from './saveSerchParamsToLocStg';
-import { getProductsFromServer } from './loadProduct';
+import { createProductsCards } from './create-products-card/createProductsCards';
 import { refs } from './refs';
-import { loadOn } from './loadStateForLoader';
+import { setToLocalStg } from './local-storadge/localstorage';
+import { FILTERS_KEY } from './variables/variables';
 
-// формування запиту по сабміту
+//пошук по кнопці "Search" форми пошуку
 export async function getProductSearch(evt) {
   evt.preventDefault();
   updateLocStor();
+  createProductsCards();
+}
+
+// оновлення данних в локальному сховищі і відмалювання карток товарів
+export function updateLocStor() {
+  const searchParams = setSerchParams();
+  setToLocalStg(FILTERS_KEY, searchParams);
 }
 
 // формування параметрів для збереження в локальне сховище
@@ -20,14 +27,6 @@ export function setSerchParams() {
   objSearch.page = getProduct.page;
   objSearch.limit = getProduct.perPage;
   return objSearch;
-}
-
-// оновлення данних в локальному сховищі
-export function updateLocStor() {
-  loadOn();
-  const searchParams = setSerchParams();
-  saveSerchParamsToLocStg(searchParams);
-  getProductsFromServer(searchParams);
 }
 
 //зміна кількості карток продукту в залежності від розміру екрана

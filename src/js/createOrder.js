@@ -1,15 +1,18 @@
 import { refs } from './refs';
 import { GetProduct } from './products-api/api';
 import { validateInput } from './validateInput';
+import { deleteAllProducts } from './deleteAllProducts';
 
-import { deleteAllProducts } from './deleteAll';
+//////////////////////
 
 export function createOrder() {
   refs.submitBtnCartEl.addEventListener('click', onSubmit);
   refs.submitBtnCartEl.disabled = true;
   validateInput(refs.inputCartEl, refs.submitBtnCartEl);
 }
+
 // -----------------------------on submit
+
 async function onSubmit(e) {
   e.preventDefault();
   const getProduct = new GetProduct();
@@ -17,6 +20,7 @@ async function onSubmit(e) {
   if (productsFromStorage.length === 0) return;
 
   //формування array для запиту
+
   const productsArray = productsFromStorage.map(product => {
     return {
       productId: product._id,
@@ -26,13 +30,14 @@ async function onSubmit(e) {
   });
 
   //формування об'єкту для запиту
+
   const bodyData = {
     email: refs.inputCartEl.value,
     products: productsArray,
   };
-  // console.log(bodyData);
 
   //пост запит
+
   try {
     const data = await getProduct.sendOrder(bodyData);
     refs.submitBtnCartEl.disabled = false;
@@ -46,17 +51,8 @@ async function onSubmit(e) {
   }
 }
 
-// -----------------------------get products array
-export function getCartProductsFromStorage() {
-  try {
-    const storageData = JSON.parse(localStorage.getItem('BASKET')) ?? [];
-    return storageData;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 // -------------------------по кліку на кнопку модалки
+
 function onClick() {
   toggleModal();
   const mesEl = document.querySelector('.footer-modal-message');
@@ -80,6 +76,5 @@ function appendMarkup(parentEl, markup) {
 
 function toggleModal() {
   refs.cartBackdropEl.classList.toggle('visually-hidden');
-  // console.log('backdrop');
   document.body.classList.toggle('no-scroll');
 }

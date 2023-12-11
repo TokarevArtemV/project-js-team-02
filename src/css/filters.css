@@ -85,16 +85,10 @@
 
 .home_categorias-search {
   display: none;
-  /* margin-bottom: 12px; */
 }
-/* .home_select-categories {
-  width: 100%;
-  max-width: 335px;
-} */
-/* .home_select-sort {
-  max-width: 335px;
-  width: 100%;
-} */
+.home_categorias-sort {
+  display: none;
+}
 
 div.ss-main {
   align-items: center;

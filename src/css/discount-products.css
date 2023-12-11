@@ -11,6 +11,7 @@
 }
 
 .discount-products-list {
+  flex-wrap: wrap;
 }
 
 .discount-products-item {

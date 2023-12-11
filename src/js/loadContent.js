@@ -1,4 +1,4 @@
-import { getProductsFromServer } from './loadProduct';
+import { createProductsCards } from './create-products-card/createProductsCards';
 import { loadOn, loadOff } from './loadStateForLoader';
 // refs.pagesRibbonEL.addEventListener('click', onLoadContent);
 
@@ -21,7 +21,7 @@ export function onLoadContent(e) {
     }
     localStorageObj.page = buttonId;
     localStorage.setItem('FILTERS_ITEM', JSON.stringify(localStorageObj));
-    getProductsFromServer();
+    createProductsCards();
   } catch (error) {
     loadOff();
     return;

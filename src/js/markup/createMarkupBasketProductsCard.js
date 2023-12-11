@@ -1,20 +1,21 @@
 import icon from '../../images/icons/icons.svg';
-import { productsInBasket } from '../getProductFormBasket';
+import { getFromLocalStg } from '../local-storadge/localstorage';
+import { BASKET_KEY } from '../variables/variables';
 
 //////
 
-const arrProducts = productsInBasket() || [];
+const arrProducts = getFromLocalStg(BASKET_KEY) || [];
 
 //////
 
 function countOfProducts(productId) {
   let counter;
-  arrProducts.forEach(({ _id, amount }) => {
+
+  arrProducts.forEach(({ product: { _id }, amount }) => {
     if (_id === productId) {
       counter = Number(amount);
     }
   });
-
   return counter || 0;
 }
 
@@ -22,7 +23,7 @@ function countOfProducts(productId) {
 
 export function createMarkupBasketProductsCard(data) {
   const markup = data
-    .map(({ img, name, category, price, size, _id }) => {
+    .map(({ product: { img, name, category, price, size, _id } }) => {
       const counter = countOfProducts(_id);
 
       return `<div class="product-cart-js js-basket-card" data-cardId=${_id}>

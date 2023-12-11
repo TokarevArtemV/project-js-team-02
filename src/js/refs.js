@@ -20,6 +20,7 @@ export const refs = {
   searchElCategories: document.getElementById('searchParams1'),
 
   // зміна іконки корзини
+  productsContainer: document.querySelector('.hero-products-container'),
   prodEl: document.querySelector('.js-product-card'),
   buttonShopping: document.querySelector('.js-button-shopping'),
   // зміна іконки корзини

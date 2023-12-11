@@ -1,4 +1,4 @@
-export function markupOptionsCategory(arrCategories) {
+export function createMarkupOptionsCategory(arrCategories) {
   const uniqArr = new Set();
 
   arrCategories.map(elem => {

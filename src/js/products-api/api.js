@@ -14,14 +14,10 @@ export class GetProduct {
   }
 
   async getCategories() {
-    try {
-      const url = '/products/categories';
-      const response = await axios.get(url);
-      if (response.status === 200) return response.data;
-      return Promise.reject(response.status);
-    } catch (error) {
-      return Promise.reject(response.status);
-    }
+    const url = '/products/categories';
+    const response = await axios.get(url);
+    if (response.status === 200) return response.data;
+    return Promise.reject(response.status);
   }
 
   async getProducts({ keyword, category, sort, page, limit }) {
@@ -33,53 +29,37 @@ export class GetProduct {
 
     const PARAMS = `${this.keyword}${this.category}${this.sort}${this.page}${this.perPage}`;
 
-    try {
-      const url = '/products' + '?' + PARAMS;
-      const response = await axios.get(url);
-      if (response.status === 200) {
-        this.currentPage = response.data.page;
-        this.totalPages = response.data.totalPages;
-        return response.data;
-      }
-      return Promise.reject(response.status);
-    } catch (error) {
-      return Promise.reject(response.status);
+    const url = '/products' + '?' + PARAMS;
+    const response = await axios.get(url);
+    if (response.status === 200) {
+      this.currentPage = response.data.page;
+      this.totalPages = response.data.totalPages;
+      return response.data;
     }
+    return Promise.reject(response.status);
   }
 
   async getProductId(productId) {
-    try {
-      const url = '/products' + '/' + productId;
-      const response = await axios.get(url);
-      if (response.status === 200) {
-        return response.data;
-      }
-      return Promise.reject(response.status);
-    } catch (error) {
-      return Promise.reject(response.status);
+    const url = '/products' + '/' + productId;
+    const response = await axios.get(url);
+    if (response.status === 200) {
+      return response.data;
     }
+    return Promise.reject(response.status);
   }
 
   async getPopular() {
-    try {
-      const url = '/products/popular';
-      const response = await axios.get(url);
-      if (response.status === 200) return response.data;
-      return Promise.reject(response.status);
-    } catch (error) {
-      return Promise.reject(response.status);
-    }
+    const url = '/products/popular';
+    const response = await axios.get(url);
+    if (response.status === 200) return response.data;
+    return Promise.reject(response.status);
   }
 
   async getDiscount() {
-    try {
-      const url = '/products/discount';
-      const response = await axios.get(url);
-      if (response.status === 200) return response.data;
-      return Promise.reject(response.status);
-    } catch (error) {
-      return Promise.reject(response.status);
-    }
+    const url = '/products/discount';
+    const response = await axios.get(url);
+    if (response.status === 200) return response.data;
+    return Promise.reject(response.status);
   }
 
   async subscription(bodyData) {

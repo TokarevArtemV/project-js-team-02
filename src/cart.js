@@ -1,15 +1,13 @@
-import './scroll';
-import { renderBasketProducts } from './renderBasketProducts';
-import { validateInput } from './validateInput';
-import { refs } from './refs';
-
-import { loadOn } from './loadStateForLoader';
-// import './deleteBasketProductCard';
-import { deleteBasketProductCards } from './deleteBasketProductCard';
+import './js/scroll';
 import throttle from 'lodash.throttle';
-import { deleteAllProducts } from './deleteAll';
-import { toggleCartMarkup } from './toggleEmptyCart';
-import { createOrder } from './createOrder';
+import { renderBasketProducts } from './js/renderBasketProducts';
+import { validateInput } from './js/validateInput';
+import { refs } from './js/refs';
+import { loadOn } from './js/loadStateForLoader';
+import { deleteProductFromBasket } from './js/deleteProductFromBasket';
+import { deleteAllProducts } from './js/deleteAllProducts';
+import { toggleCartMarkup } from './js/toggleEmptyCart';
+import { createOrder } from './js/createOrder';
 
 //запуск лоадера
 loadOn();
@@ -23,7 +21,7 @@ validateInput(refs.inputCartEl, refs.submitBtnCartEl);
 //закриття продуктових карток натисканням на кнопку
 refs.productFormBasket.addEventListener(
   'click',
-  throttle(deleteBasketProductCards, 1000)
+  throttle(deleteProductFromBasket, 1000)
 );
 
 //слухач на кнопку видалити

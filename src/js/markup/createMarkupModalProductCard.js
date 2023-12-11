@@ -13,7 +13,7 @@ export function createMarkupModalProductCard(data) {
                 </button> 
                 <div class="modal-content-wrapper">
                 <div class="picture">
-                    <img class="js-modal-picture-onLoad" src="${
+                    <img class="js-modal-picture-onLoad js-product-img" src="${
                       data.img
                     }" alt="${data.name}" width="160">
                 </div>
@@ -63,7 +63,7 @@ export function createMarkupModalProductCard(data) {
                 </button> 
                 <div class="modal-content-wrapper">
                 <div class="picture">
-                    <img class="js-modal-picture-onLoad" src="${
+                    <img class="js-modal-picture-onLoad js-product-img" src="${
                       data.img
                     }" alt="${data.name}" width="160">
                 </div>
